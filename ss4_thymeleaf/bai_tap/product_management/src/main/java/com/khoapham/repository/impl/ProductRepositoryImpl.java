@@ -54,6 +54,7 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public List<Product> search(String keyWord) {
+        keyWord = keyWord.toLowerCase();
         List<Product> resultSearch = new ArrayList<>();
         for (Map.Entry<Integer, Product> entry : products.entrySet()) {
             if (entry.getValue().getName().toLowerCase().contains(keyWord)) {
