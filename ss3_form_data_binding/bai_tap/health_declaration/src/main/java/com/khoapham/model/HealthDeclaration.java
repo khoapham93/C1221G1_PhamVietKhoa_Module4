@@ -6,24 +6,54 @@ public class HealthDeclaration {
     private String name;
     private String birthday;
     private String gender;
+    private String national;
     private String idCard;
     private String vehicle;
     private String licensePlate;
+    private Integer numberOfSeat;
     private LocalDate dateStart;
+    private LocalDate dateEnd;
     private String cityArrived;
 
-    public HealthDeclaration(String name, String birthday, String gender, String idCard, String vehicle, String licensePlate, LocalDate dateStart, String cityArrived) {
+    public HealthDeclaration(String name, String birthday, String gender, String national, String idCard, String vehicle, String licensePlate, Integer numberOfSeat, LocalDate dateStart, LocalDate dateEnd, String cityArrived) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
+        this.national = national;
         this.idCard = idCard;
         this.vehicle = vehicle;
         this.licensePlate = licensePlate;
+        this.numberOfSeat = numberOfSeat;
         this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
         this.cityArrived = cityArrived;
     }
 
     public HealthDeclaration() {
+    }
+
+    public LocalDate getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(LocalDate dateEnd) {
+        this.dateEnd = dateEnd;
+    }
+
+    public Integer getNumberOfSeat() {
+        return numberOfSeat;
+    }
+
+    public void setNumberOfSeat(Integer numberOfSeat) {
+        this.numberOfSeat = numberOfSeat;
+    }
+
+    public String getNational() {
+        return national;
+    }
+
+    public void setNational(String national) {
+        this.national = national;
     }
 
     public String getName() {

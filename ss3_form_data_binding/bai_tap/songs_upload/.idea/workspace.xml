@@ -20,191 +20,286 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e703aa-a859-45c4-b370-bd33833a105d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/configuration/AppConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/controller/SongController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/model/Song.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/model/SongForm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/repository/ISongRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/repository/impl/SongRepositoryImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/service/ISongService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/service/impl/SongServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/controller/HealthDeclarationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/model/HealthDeclaration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/repository/IHealthDeclarationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/repository/impl/HealthDeclarationRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/service/IHealthDeclarationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/service/impl/HealthDeclarationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/webapp/WEB-INF/views/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/6.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/classes/java/main/com/khoapham/controller/EmailSetting.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/classes/java/main/com/khoapham/model/Setting.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/classes/java/main/com/khoapham/repository/IEmailSettingRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/classes/java/main/com/khoapham/repository/impl/EmailSettingRepositoryImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/classes/java/main/com/khoapham/service/IEmailSettingService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/classes/java/main/com/khoapham/service/impl/EmailSettingServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/build/tmp/war/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/java/com/khoapham/controller/EmailSettingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/java/com/khoapham/model/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/java/com/khoapham/repository/IEmailSettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/java/com/khoapham/repository/impl/EmailSettingRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/java/com/khoapham/service/IEmailSettingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/java/com/khoapham/service/impl/EmailSettingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/webapp/WEB-INF/views/setting.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting_email/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/libs/songs_upload-1.0-SNAPSHOT.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/song_upload.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/controller/SongController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/model/Song.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/model/SongForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/ISongRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/impl/SongRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/service/ISongService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/service/impl/SongServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/song_upload.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/songs/Pitbull.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/model/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/repository/IUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/webapp/WEB-INF/views/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/webapp/WEB-INF/views/user.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/6.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/build/tmp/war/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/java/com/khoapham/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/java/com/khoapham/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/java/com/khoapham/model/ProductForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/java/com/khoapham/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/java/com/khoapham/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/resources/upload_file.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/upload_file/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss2_spring_controller/bai_tap/simple_calculator/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2_spring_controller/bai_tap/simple_calculator/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss2_spring_controller/bai_tap/simple_calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2_spring_controller/bai_tap/simple_calculator/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/src/main/webapp/WEB-INF/views/employee/create.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/form_data_binding/src/main/webapp/WEB-INF/views/employee/info.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/login_application/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/controller/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/java/com/khoapham/model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/webapp/WEB-INF/views/employee/create.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/login_application/src/main/webapp/WEB-INF/views/employee/info.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/util/AttribueList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../health_declaration/src/main/webapp/WEB-INF/views/save.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/configuration/AppConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/controller/ProductController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/model/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/repository/IProductRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/repository/impl/ProductRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/service/IProductService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/classes/java/main/com/khoapham/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/repository/impl/ProductRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/css/maps/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/about/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/about/bg-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/about/home-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/about/home-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/counter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/bg/home-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/blog-author.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/bt-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/bt-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/bt-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/test1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/blog/test2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/portfolio/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/portfolio/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/portfolio/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/portfolio/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/portfolio/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/portfolio/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/team/team-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/team/team-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/team/team-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/team/team-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/team/team-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/images/team/team-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/js/contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/animate-css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/js/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/counterup/jquery.counterup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/counterup/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/google-map/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/external/sizzle/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/load.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/parseXML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/var/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/var/nonce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/var/rquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/ajax/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/attributes/attr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/attributes/classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/attributes/prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/attributes/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/attributes/val.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/callbacks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/DOMEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/access.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/nodeName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/parseHTML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/ready-no-deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/ready.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/readyException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/stripAndCollapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/core/var/rsingleTag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/addGetHookIf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/adjustCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/curCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/var/cssExpand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/var/getStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/var/isHiddenWithinTree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/var/rmargin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/css/var/swap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/data/Data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/data/var/acceptData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/data/var/dataPriv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/data/var/dataUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/deferred/exceptionHook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/deprecated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/dimensions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/effects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/effects/Tween.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/effects/animatedSelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/event/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/event/alias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/event/focusin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/event/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/event/trigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/exports/amd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/exports/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/buildFragment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/getAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/setGlobalEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/var/rscriptType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/var/rtagName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/manipulation/wrapMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/offset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/queue/delay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/selector-native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/selector-sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/serialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/traversing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/traversing/findFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/traversing/var/dir.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/traversing/var/siblings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/ObjectFunctionString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/arr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/class2type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/concat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/documentElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/fnToString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/getProto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/hasOwn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/indexOf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/pnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/rcssNum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/rnothtmlwhite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/var/toString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/jquery/src/wrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/magnific-popup/dist/jquery.magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/magnific-popup/dist/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/config.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick-theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/themify/css/themify-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/themify/fonts/themify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/themify/fonts/themify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/themify/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/themify/fonts/themify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_media-query.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_about.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_backgrounds.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_blog-sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_blog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_contact.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_counter.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_cta.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_feature.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_intro.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_portfolio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_pricing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_review.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_service.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_single-post.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_slider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/scss/templates/_team.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/repository/impl/CustomerRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/java/com/khoapham/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/controller/SongController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/model/Song.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/model/SongForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/repository/ISongRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/repository/impl/SongRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/service/ISongService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/classes/java/main/com/khoapham/service/impl/SongServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/build/libs/health_declaration-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/build/libs/health_declaration-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/configuration/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/controller/HealthDeclarationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/controller/HealthDeclarationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/model/HealthDeclaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/src/main/java/com/khoapham/model/HealthDeclaration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../health_declaration/src/main/webapp/WEB-INF/views/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../health_declaration/src/main/webapp/WEB-INF/views/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../setting_email/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../setting_email/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +451,9 @@
       <option name="presentableId" value="Default" />
       <updated>1651733510905</updated>
       <workItem from="1651733515428" duration="9082000" />
-      <workItem from="1651744889023" duration="695000" />
+      <workItem from="1651744889023" duration="696000" />
+      <workItem from="1651758550367" duration="1140000" />
+      <workItem from="1651822455125" duration="788000" />
     </task>
     <servers />
   </component>
@@ -399,10 +496,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1651734882710" />
-    <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1651733754081">
+    <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1651758594390">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="580" y="187" key="FileChooserDialogImpl/62.0.1474.864@62.0.1474.864" timestamp="1651733754081" />
+    <state x="580" y="187" key="FileChooserDialogImpl/62.0.1474.864@62.0.1474.864" timestamp="1651758594390" />
     <state width="1383" height="196" key="GridCell.Tab.0.bottom" timestamp="1651742849315">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
