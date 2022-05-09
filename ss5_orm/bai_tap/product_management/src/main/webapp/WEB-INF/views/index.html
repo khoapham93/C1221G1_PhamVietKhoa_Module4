@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper ">
+    <div class="container">
+        <div class="row ">
+            <div class="section-title">
+                <h5 class="mt-3 content-title ">Product list </h5>
+                <div class="form-group row">
+                    <span class="message text-success" th:text="${success}"></span>
+                </div>
+            </div>
+            <table class="table table-borderless table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">View</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="row,rowStat : ${products}" class="">
+                    <td th:text="${rowStat.count}"></td>
+                    <td th:text="${row.getName()}"></td>
+                    <td th:text="${row.getPrice()}"></td>
+                    <td th:text="${row.getDescription()}"></td>
+                    <td th:text="${row.getManufacturer()}"></td>
+                    <td><a th:href="@{/{id}/edit(id=${row.getId()})}"
+                           class="btn btn-outline-warning">
+                        edit
+                    </a>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal"
+                                th:onclick="'javascript:deleteProduct(' + ${row.getId()} + ',\''+${row.getName()}+'\')'">
+                            Delete
+                        </button>
+                    </td>
+                    <td><a th:href="@{/{id}/view(id=${row.getId()})}"
+                           class="btn btn-outline-info">
+                        view
+                    </a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete product
+                    <span class="text-danger font-weight-bold" id="nameDelete"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="mx-auto row">
+                    <form th:action="@{/delete}" method="post">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" id="idDelete">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
+<script>
+    function deleteProduct(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = " " + name + "?";
+    }
+</script>

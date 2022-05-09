@@ -30,11 +30,6 @@ public class SongServiceImpl implements ISongService {
     }
 
     @Override
-    public void update(int id, Song song) {
-        this.iSongRepository.update(id,song);
-    }
-
-    @Override
     public void remove(int id) {
         this.iSongRepository.remove(id);
     }

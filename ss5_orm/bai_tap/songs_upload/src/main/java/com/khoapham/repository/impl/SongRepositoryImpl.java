@@ -4,49 +4,51 @@ import com.khoapham.model.Song;
 import com.khoapham.repository.ISongRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class SongRepositoryImpl implements ISongRepository {
-    private List<Song> songs = new ArrayList<>();
 
     @Override
     public List<Song> findAll() {
-        return songs;
+        TypedQuery<Song> typedQuery = BaseRepository.entityManager
+                .createQuery("select s from Song as s", Song.class);
+        return typedQuery.getResultList();
     }
 
     @Override
     public void save(Song song) {
-        Integer id = (int) (Math.random() * 100);
-        song.setId(id);
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
 
-        songs.add(song);
+        entityTransaction.begin();
 
+        if (song.getId() == null) {
+            BaseRepository.entityManager.persist(song);
+        } else {
+            BaseRepository.entityManager.merge(song);
+
+        }
+        entityTransaction.commit();
     }
 
     @Override
     public Song findById(int id) {
-        return songs.get(id);
-    }
-
-    @Override
-    public void update(int id, Song song) {
-        for (Song p : songs) {
-            if (p.getId() == id) {
-                p = song;
-                break;
-            }
-        }
+        return BaseRepository.entityManager.find(Song.class, id);
     }
 
     @Override
     public void remove(int id) {
-        for (int i = 0; i < songs.size(); i++) {
-            if (songs.get(i).getId() == id) {
-                songs.remove(i);
-                break;
-            }
+        Song song = findById(id);
+        if (song != null) {
+            EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+            entityTransaction.begin();
+            BaseRepository.entityManager.remove(song);
+            entityTransaction.commit();
         }
+
     }
 }

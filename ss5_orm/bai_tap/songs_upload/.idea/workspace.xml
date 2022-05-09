@@ -20,20 +20,549 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e703aa-a859-45c4-b370-bd33833a105d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/css/mdb.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/css/mdb.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/js/mdb.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/resources/templates/plugins/bootstrap/js/mdb.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss5_orm/thuc_hanh/customer-management-spring-thymleaf/src/main/java/cg/wbd/grandemonstration/service/impl/HibernateCustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss5_orm/thuc_hanh/customer-management-spring-thymleaf/src/main/resources/hibernate.conf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/configuration/AppConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/controller/ProductController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/model/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/repository/IProductRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/repository/impl/BaseRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/repository/impl/ProductRepositoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/service/IProductService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/libs/product_management-1.0-SNAPSHOT.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/hibernate.conf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/css/maps/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/about/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/about/bg-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/about/home-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/about/home-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/counter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/bg/home-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/blog-author.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/bt-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/bt-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/bt-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/test1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/blog/test2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/portfolio/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/portfolio/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/portfolio/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/portfolio/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/portfolio/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/portfolio/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/team/team-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/team/team-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/team/team-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/team/team-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/team/team-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/images/team/team-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/js/contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/animate-css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/css/mdb.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/css/mdb.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/js/mdb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/js/mdb.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/bootstrap/js/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/counterup/jquery.counterup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/counterup/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/google-map/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/external/sizzle/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/load.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/parseXML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/var/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/var/nonce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/var/rquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/ajax/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/attributes/attr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/attributes/classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/attributes/prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/attributes/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/attributes/val.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/callbacks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/DOMEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/access.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/nodeName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/parseHTML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/ready-no-deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/ready.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/readyException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/stripAndCollapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/core/var/rsingleTag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/addGetHookIf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/adjustCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/curCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/var/cssExpand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/var/getStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/var/isHiddenWithinTree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/var/rmargin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/css/var/swap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/data/Data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/data/var/acceptData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/data/var/dataPriv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/data/var/dataUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/deferred/exceptionHook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/deprecated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/dimensions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/effects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/effects/Tween.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/effects/animatedSelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/event/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/event/alias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/event/focusin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/event/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/event/trigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/exports/amd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/exports/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/buildFragment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/getAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/setGlobalEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/var/rscriptType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/var/rtagName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/manipulation/wrapMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/offset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/queue/delay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/selector-native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/selector-sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/serialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/traversing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/traversing/findFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/traversing/var/dir.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/traversing/var/siblings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/ObjectFunctionString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/arr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/class2type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/concat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/documentElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/fnToString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/getProto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/hasOwn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/indexOf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/pnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/rcssNum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/rnothtmlwhite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/var/toString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/jquery/src/wrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/magnific-popup/dist/jquery.magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/magnific-popup/dist/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/config.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick-theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/slick-carousel/slick/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/themify/css/themify-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/themify/fonts/themify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/themify/fonts/themify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/themify/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/plugins/themify/fonts/themify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_media-query.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_about.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_backgrounds.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_blog-sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_blog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_contact.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_counter.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_cta.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_feature.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_intro.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_portfolio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_pricing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_review.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_service.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_single-post.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_slider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/resources/main/templates/scss/templates/_team.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/build/tmp/war/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/repository/impl/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/repository/impl/ProductRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/hibernate.conf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/css/maps/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/about/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/about/bg-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/about/home-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/about/home-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/counter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/bg/home-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/blog-author.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/bt-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/bt-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/bt-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/test1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/blog/test2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/portfolio/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/portfolio/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/portfolio/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/portfolio/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/portfolio/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/portfolio/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/team/team-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/team/team-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/team/team-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/team/team-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/team/team-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/images/team/team-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/js/contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/animate-css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/css/mdb.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/css/mdb.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/js/mdb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/js/mdb.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/bootstrap/js/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/counterup/jquery.counterup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/counterup/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/google-map/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/external/sizzle/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/load.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/parseXML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/var/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/var/nonce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/var/rquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/ajax/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/attributes/attr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/attributes/classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/attributes/prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/attributes/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/attributes/val.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/callbacks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/DOMEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/access.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/nodeName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/parseHTML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/ready-no-deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/ready.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/readyException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/stripAndCollapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/core/var/rsingleTag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/addGetHookIf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/adjustCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/curCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/var/cssExpand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/var/getStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/var/isHiddenWithinTree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/var/rmargin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/css/var/swap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/data/Data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/data/var/acceptData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/data/var/dataPriv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/data/var/dataUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/deferred/exceptionHook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/deprecated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/dimensions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/effects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/effects/Tween.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/effects/animatedSelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/event/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/event/alias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/event/focusin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/event/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/event/trigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/exports/amd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/exports/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/buildFragment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/getAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/setGlobalEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/var/rscriptType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/var/rtagName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/manipulation/wrapMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/offset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/queue/delay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/selector-native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/selector-sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/serialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/traversing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/traversing/findFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/traversing/var/dir.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/traversing/var/siblings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/ObjectFunctionString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/arr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/class2type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/concat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/documentElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/fnToString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/getProto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/hasOwn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/indexOf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/pnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/rcssNum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/rnothtmlwhite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/var/toString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/jquery/src/wrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/magnific-popup/dist/jquery.magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/magnific-popup/dist/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/config.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick-theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/slick-carousel/slick/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/themify/css/themify-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/themify/fonts/themify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/themify/fonts/themify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/themify/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/plugins/themify/fonts/themify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_media-query.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_about.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_backgrounds.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_blog-sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_blog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_contact.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_counter.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_cta.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_feature.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_intro.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_portfolio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_pricing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_review.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_service.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_single-post.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_slider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/resources/templates/scss/templates/_team.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/impl/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.conf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/configuration/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/libs/product_management-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/build/libs/product_management-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_thymeleaf/bai_tap/product_management/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/configuration/AppConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/configuration/AppConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/configuration/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/controller/SongController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/controller/SongController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/model/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/model/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/repository/ISongRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/repository/ISongRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/repository/impl/SongRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/repository/impl/SongRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/service/ISongService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/service/ISongService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/service/impl/SongServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/khoapham/service/impl/SongServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/songs_upload-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/songs_upload-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/song_upload.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/song_upload.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/configuration/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/controller/SongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/model/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/ISongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/impl/SongRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/repository/impl/SongRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/service/ISongService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/service/ISongService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khoapham/service/impl/SongServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khoapham/service/impl/SongServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/song_upload.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/song_upload.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/songs/Pitbull.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/songs/TRAICIONERA.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/songs/TRAICIONERA.mp3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +591,7 @@
       <list>
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -85,17 +615,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../product_management" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\Module_4\ss5_orm\bai_tap\songs_upload\src\main\resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\Module_4\ss5_orm\bai_tap\songs_upload\src\main\java\com\khoapham\repository\impl" />
+      <recent name="D:\CODEGYM\Module_4\ss5_orm\bai_tap\songs_upload\src\main\resources" />
       <recent name="D:\CODEGYM\Module_4\ss3_form_data_binding\bai_tap\songs_upload\src\main\java\com\khoapham\configuration" />
       <recent name="D:\CODEGYM\Module_4\ss3_form_data_binding\bai_tap\songs_upload\src\main\java\com\khoapham" />
       <recent name="D:\CODEGYM\Module_4\ss3_form_data_binding\bai_tap\songs_upload\src\main\webapp" />
-      <recent name="D:\CODEGYM\Module_4\ss3_form_data_binding\bai_tap\songs_upload\src\main\java" />
     </key>
   </component>
   <component name="RunManager">
@@ -189,6 +724,7 @@
       <workItem from="1651758550367" duration="1140000" />
       <workItem from="1651822455125" duration="788000" />
       <workItem from="1652066562376" duration="452000" />
+      <workItem from="1652067433146" duration="13256000" />
     </task>
     <servers />
   </component>
@@ -231,58 +767,58 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="530" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1474.864@62.0.1474.864" timestamp="1651734882710" />
-    <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1651758594390">
+    <state x="580" y="187" key="FileChooserDialogImpl" timestamp="1652084430863">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="580" y="187" key="FileChooserDialogImpl/62.0.1474.864@62.0.1474.864" timestamp="1651758594390" />
-    <state width="1383" height="196" key="GridCell.Tab.0.bottom" timestamp="1651742849315">
+    <state x="580" y="187" key="FileChooserDialogImpl/62.0.1474.864@62.0.1474.864" timestamp="1652084430863" />
+    <state width="1383" height="264" key="GridCell.Tab.0.bottom" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.0.center" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.0.bottom/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.0.center" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.0.left" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.0.center/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.0.left" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.0.right" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.0.left/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.0.right" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.1.bottom" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.0.right/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.1.bottom" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.1.bottom/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.1.center" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.1.bottom/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.1.center" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.1.center/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.1.left" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.1.center/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.1.left" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.1.left/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.1.right" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.1.left/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.1.right" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.1.right/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.2.bottom" timestamp="1651742849316">
+    <state width="1383" height="264" key="GridCell.Tab.1.right/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.2.bottom" timestamp="1652084290541">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.2.bottom/62.0.1474.864@62.0.1474.864" timestamp="1651742849316" />
-    <state width="1383" height="196" key="GridCell.Tab.2.center" timestamp="1651742849316">
+    <state width="1383" height="264" key="GridCell.Tab.2.bottom/62.0.1474.864@62.0.1474.864" timestamp="1652084290541" />
+    <state width="1383" height="264" key="GridCell.Tab.2.center" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.2.center/62.0.1474.864@62.0.1474.864" timestamp="1651742849316" />
-    <state width="1383" height="196" key="GridCell.Tab.2.left" timestamp="1651742849315">
+    <state width="1383" height="264" key="GridCell.Tab.2.center/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.2.left" timestamp="1652084290540">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.2.left/62.0.1474.864@62.0.1474.864" timestamp="1651742849315" />
-    <state width="1383" height="196" key="GridCell.Tab.2.right" timestamp="1651742849316">
+    <state width="1383" height="264" key="GridCell.Tab.2.left/62.0.1474.864@62.0.1474.864" timestamp="1652084290540" />
+    <state width="1383" height="264" key="GridCell.Tab.2.right" timestamp="1652084290541">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state width="1383" height="196" key="GridCell.Tab.2.right/62.0.1474.864@62.0.1474.864" timestamp="1651742849316" />
+    <state width="1383" height="264" key="GridCell.Tab.2.right/62.0.1474.864@62.0.1474.864" timestamp="1652084290541" />
     <state width="1383" height="361" key="GridCell.Tab.3.bottom" timestamp="1651740211528">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
@@ -299,6 +835,10 @@
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state width="1383" height="361" key="GridCell.Tab.3.right/62.0.1474.864@62.0.1474.864" timestamp="1651740211528" />
+    <state x="609" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1652069720633">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="609" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1474.864@62.0.1474.864" timestamp="1652069720633" />
     <state x="240" y="43" key="new project wizard" timestamp="1651741901121">
       <screen x="62" y="0" width="1474" height="864" />
     </state>

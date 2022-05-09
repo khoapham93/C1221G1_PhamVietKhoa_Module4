@@ -1,10 +1,17 @@
 package com.khoapham.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "song")
 public class Song {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String artist;
     private String genre;
+    @Column(name = "file_path")
     private String filePath;
 
     public Song(Integer id, String name, String artist, String genre, String filePath) {
@@ -14,7 +21,13 @@ public class Song {
         this.genre = genre;
         this.filePath = filePath;
     }
+    public Song( String name, String artist, String genre, String filePath) {
 
+        this.name = name;
+        this.artist = artist;
+        this.genre = genre;
+        this.filePath = filePath;
+    }
     public Song() {
     }
 

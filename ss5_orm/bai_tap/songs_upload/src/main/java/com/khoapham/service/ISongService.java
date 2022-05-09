@@ -11,7 +11,5 @@ public interface ISongService {
 
     Song findById(int id);
 
-    void update(int id, Song song);
-
     void remove(int id);
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<nav th:replace="/layout :: navbar"></nav>
+<div class="container col-5 mx-auto">
+    <h2>Edit Song</h2>
+
+    <form Class="form" th:action="@{/update}" method="post" th:object="${songForm}" enctype="multipart/form-data">
+        <input type="hidden" Class="form-control" th:field="*{id}">
+
+        <div class="form-group">
+            name:
+            <input type="text" Class="form-control" th:field="*{name}">
+        </div>
+        <div class="form-group">
+            Artist:
+            <input type="text" Class="form-control" th:field="*{artist}">
+        </div >
+        <div class="form-group">
+            Genre:
+            <input type="text" Class="form-control" th:field="*{genre}">
+
+        </div >
+        <input type="hidden" th:field="*{filePath}">
+        <div class="form-group">
+            File:
+            <input type="file" Class="form-control" th:field="*{filePath}" accept="audio/mp3, audio/wav, audio/ogg"
+                   >
+        </div>
+        <input class="btn btn-success" role="button" type="submit" value="Update"/>
+    </form>
+    <div>
+        <p class="text-success"><span th:text="${message}"></span> </p>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block  th:replace = "/layout :: script"> </th:block>
+</html>
+
