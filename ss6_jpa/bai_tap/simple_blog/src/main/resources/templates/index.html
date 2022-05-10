@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper ">
+    <div class="container">
+        <div class="row ">
+            <div class="section-title">
+                <h5 class="mt-3 content-title ">Blog list </h5>
+                <div class="form-group row">
+                    <span class="message text-success" th:text="${success}"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div th:each="row : ${blogs}" class="card col-4 px-1">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>
+                        <a th:href="@{/{id}/view(id=${row.getId()})}">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${row.name}"></h5>
+                        <p class="card-text" th:text="${row.descriptionBlog}"></p>
+                        <div class="row my-1">
+                            <div class="col">
+                                <div>By:</div>
+                                <div th:text="${row.author}"></div>
+                            </div>
+                            <div class="col">
+                                <div>Category:</div>
+                                <div th:text="${row.category.name}"></div>
+                            </div>
+                            <div class="col">
+                                <div>Created:</div>
+                                <div th:text="${row.dateCreate}"></div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <a th:href="@{/{id}/edit(id=${row.getId()})}"
+                               class="btn btn-warning col mx-1">
+                                edit
+                            </a>
+
+                            <button type="button"
+                                    class="btn btn-danger col mx-1"
+                                    data-mdb-toggle="modal" data-mdb-target="#deleteModal"
+                                    th:attr="onclick=|deleteProduct(${row.id},'${row.name}')|"
+                            >
+                                Delete
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Blog</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete blog
+                    <span class="text-danger font-weight-bold" id="nameDelete"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="mx-auto row">
+                    <form th:action="@{/delete}" method="post">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" id="idDelete">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
+<!--<script>-->
+<!--    $('#myModal').on('shown.bs.modal', function () {-->
+<!--        $('#myInput').trigger('focus')-->
+<!--    })-->
+<!--</script>-->
+<script>
+    function deleteProduct(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = " " + name + "?";
+    }
+</script>

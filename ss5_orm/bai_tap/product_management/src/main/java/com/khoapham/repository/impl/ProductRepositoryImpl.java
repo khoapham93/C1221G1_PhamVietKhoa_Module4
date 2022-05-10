@@ -13,19 +13,6 @@ import java.util.Map;
 
 @Repository
 public class ProductRepositoryImpl implements IProductRepository {
-//
-//    private static final Map<Integer, Product> products;
-//
-//    static {
-//
-//        products = new HashMap<>();
-//        products.put(1, new Product(1, "John", 100000.0, "Hanoi", "Omo"));
-//        products.put(2, new Product(2, "Bill", 20000.0, "Hanoi", "Omo"));
-//        products.put(3, new Product(3, "Alex", 30000.0, "Hanoi", "Omo"));
-//        products.put(4, new Product(4, "Adam", 500000.0, "Hanoi", "Omo"));
-//        products.put(5, new Product(5, "Sophia", 9000000.0, "Hanoi", "Omo"));
-//        products.put(6, new Product(6, "Rose", 500.0, "Hanoi", "Omo"));
-//    }
 
     @Override
     public List<Product> findAll() {
@@ -54,8 +41,6 @@ public class ProductRepositoryImpl implements IProductRepository {
         return BaseRepository.entityManager.find(Product.class, id);
     }
 
-
-
     @Override
     public void remove(int id) {
         Product product = findById(id);
@@ -73,16 +58,8 @@ public class ProductRepositoryImpl implements IProductRepository {
 
         TypedQuery<Product> typedQuery = BaseRepository.entityManager
                 .createQuery("select s from Product as s where s.name like :name", Product.class);
-        typedQuery.setParameter("name",keyWord);
+        typedQuery.setParameter("name", "%" + keyWord + "%");
         return typedQuery.getResultList();
 
-//
-//        List<Product> resultSearch = new ArrayList<>();
-//        for (Map.Entry<Integer, Product> entry : products.entrySet()) {
-//            if (entry.getValue().getName().toLowerCase().contains(keyWord)) {
-//                resultSearch.add(entry.getValue());
-//            }
-//        }
-//        return resultSearch;
     }
 }
