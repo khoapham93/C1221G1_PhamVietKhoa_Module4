@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class ProductRepositoryImpl implements IProductRepository {
+public class ProductRepository implements IProductRepository {
 
     @Override
     public List<Product> findAll() {
