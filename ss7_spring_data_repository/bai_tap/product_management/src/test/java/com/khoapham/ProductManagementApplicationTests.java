@@ -1,10 +1,10 @@
-package com.khoapham.demo;
+package com.khoapham;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SimpleBlogApplicationTests {
+class ProductManagementApplicationTests {
 
     @Test
     void contextLoads() {

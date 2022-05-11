@@ -24,7 +24,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public void save(Blog blog) {
-        if (blog.getId() == null){
+        if (blog.getId() == null) {
             blog.setDateCreate(LocalDate.now());
         }
         this.iBlogRepository.save(blog);
@@ -42,6 +42,6 @@ public class BlogService implements IBlogService {
 
     @Override
     public Page<Blog> search(String keyWord, Pageable pageable) {
-        return this.iBlogRepository.findAllByNameContaining(keyWord,pageable);
+        return this.iBlogRepository.findAllByNameContaining(keyWord, pageable);
     }
 }

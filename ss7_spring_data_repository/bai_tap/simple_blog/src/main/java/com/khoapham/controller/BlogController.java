@@ -58,7 +58,6 @@ public class BlogController {
         return "/create";
     }
 
-
     @PostMapping("/save")
     public String save(@ModelAttribute Blog blog, RedirectAttributes redirect) {
         iBlogService.save(blog);

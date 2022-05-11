@@ -23,6 +23,7 @@ public class Category {
 
         this.name = name;
     }
+
     public Set<Blog> getBlogSet() {
         return blogSet;
     }

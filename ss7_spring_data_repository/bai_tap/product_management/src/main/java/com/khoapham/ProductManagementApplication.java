@@ -1,13 +1,13 @@
-package com.khoapham.demo;
+package com.khoapham;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SimpleBlogApplication {
+public class ProductManagementApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SimpleBlogApplication.class, args);
+        SpringApplication.run(ProductManagementApplication.class, args);
     }
 
 }
