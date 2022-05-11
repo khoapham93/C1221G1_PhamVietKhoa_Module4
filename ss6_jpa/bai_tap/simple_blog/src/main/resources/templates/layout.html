@@ -23,7 +23,7 @@
 <body >
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light " th:fragment="header_nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" th:fragment="header_nav">
     <!-- Container wrapper -->
     <div class="container-fluid">
         <!-- Toggle button -->
@@ -65,7 +65,7 @@
         <!-- Collapsible wrapper -->
 
         <!-- Right elements -->
-        <form th:action="@{/search}" class="d-flex input-group w-auto">
+        <form th:action="@{/}" class="d-flex input-group w-auto">
             <input
                     type="search"
                     name="keyword"
@@ -81,7 +81,6 @@
                 Search
             </button>
         </form>
-
         <!-- Right elements -->
     </div>
     <!-- Container wrapper -->
@@ -89,7 +88,7 @@
 <!-- Navbar -->
 
 <!-- Footer -->
-<footer class=" text-center text-lg-start bg-light text-muted" th:fragment="footer">
+<footer class=" text-center text-lg-start bg-light text-muted mt-3" th:fragment="footer">
     <!-- Section: Social media -->
     <section
             class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"

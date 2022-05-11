@@ -4,7 +4,7 @@
 </head>
 <body>
 <header th:replace="/layout :: header_nav"></header>
-<div class="row py-5">
+<div class="row py-5" style="margin-top: 59px;">
     <div class="col-7 mx-auto">
         <form th:object="${blog}"
               method="POST" novalidate="novalidate">
@@ -30,7 +30,7 @@
                         <button type="button"
                                 class="btn btn-danger mx-1"
                                 data-mdb-toggle="modal" data-mdb-target="#deleteModal"
-                                th:attr="onclick=|deleteProduct(*${id},'*{name}')|"
+                                th:attr="onclick=|deleteProduct(*{id},'*{name}')|"
                         >
                             Delete
                         </button>
