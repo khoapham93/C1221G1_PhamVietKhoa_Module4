@@ -1,13 +1,17 @@
 package com.khoapham.controller;
 
+import com.khoapham.dto.SongFormDto;
 import com.khoapham.model.Song;
 import com.khoapham.model.SongForm;
 import com.khoapham.service.ISongService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,25 +42,37 @@ public class SongController {
     @GetMapping("/create")
     public ModelAndView showCreateForm() {
         ModelAndView modelAndView = new ModelAndView("create");
-        modelAndView.addObject("songForm", new SongForm());
+        modelAndView.addObject("songFormDto", new SongFormDto());
         return modelAndView;
     }
 
     @PostMapping("/save")
-    public ModelAndView saveSong(@ModelAttribute SongForm songForm) {
-        MultipartFile multipartFile = songForm.getFilePath();
-        String fileName = multipartFile.getOriginalFilename();
-        try {
-            FileCopyUtils.copy(songForm.getFilePath().getBytes(), new File(fileUpload + fileName));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        Song song = new Song(songForm.getId(), songForm.getName(),
-                songForm.getArtist(), songForm.getGenre(), fileName);
-        iSongService.save(song);
+    public ModelAndView saveSong(@ModelAttribute @Validated SongFormDto songFormDto,
+                                 BindingResult bindingResult) {
+        new SongFormDto().validate(songFormDto, bindingResult);
         ModelAndView modelAndView = new ModelAndView("/create");
-//        modelAndView.addObject("songForm", songForm);
-        modelAndView.addObject("message", "Created new song successfully !");
+
+        if (bindingResult.hasErrors()) {
+            modelAndView.addObject("songFormDto", songFormDto);
+
+        } else {
+            SongForm songForm = new SongForm();
+            BeanUtils.copyProperties(songFormDto, songForm);
+
+            MultipartFile multipartFile = songForm.getFilePath();
+            String fileName = multipartFile.getOriginalFilename();
+            try {
+                FileCopyUtils.copy(songForm.getFilePath().getBytes(), new File(fileUpload + fileName));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            Song song = new Song(songForm.getId(), songForm.getName(),
+                    songForm.getArtist(), songForm.getGenre(), fileName);
+            iSongService.save(song);
+
+            modelAndView.addObject("message", "Created new song successfully !");
+        }
+
         return modelAndView;
     }
 
@@ -69,15 +85,47 @@ public class SongController {
 
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
-        model.addAttribute("songForm", iSongService.findById(id));
+        Song song = this.iSongService.findById(id);
+        SongFormDto songFormDto
+                = new SongFormDto(song.getId(),
+                song.getName(),
+                song.getArtist(),
+                song.getGenre(), null
+        );
+        model.addAttribute("songFormDto", songFormDto);
+
         return "/edit";
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Song songForm, RedirectAttributes redirect) {
-        iSongService.save(songForm);
-        redirect.addFlashAttribute("success", "Update song successfully!");
+    public String update(@ModelAttribute @Validated SongFormDto songFormDto,
+                         BindingResult bindingResult,
+                         RedirectAttributes redirect,
+                         Model model) {
 
-        return "redirect:/";
+        new SongFormDto().validate(songFormDto, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            // model.addAttribute("songFormDto", songFormDto);
+            return "/edit";
+        } else {
+
+            SongForm songForm = new SongForm();
+            BeanUtils.copyProperties(songFormDto, songForm);
+
+            MultipartFile multipartFile = songForm.getFilePath();
+            String fileName = multipartFile.getOriginalFilename();
+            try {
+                FileCopyUtils.copy(songForm.getFilePath().getBytes(), new File(fileUpload + fileName));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            Song song = new Song(songForm.getId(), songForm.getName(),
+                    songForm.getArtist(), songForm.getGenre(), fileName);
+            iSongService.save(song);
+            redirect.addFlashAttribute("success", "Update song successfully!");
+            return "redirect:/";
+        }
+
     }
 }

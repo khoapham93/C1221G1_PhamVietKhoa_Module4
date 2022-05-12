@@ -26,12 +26,12 @@ public class SongServiceImpl implements ISongService {
 
     @Override
     public Song findById(int id) {
-        return this.iSongRepository.findById(id);
+        return this.iSongRepository.findById(id).orElse(null);
     }
 
     @Override
     public void remove(int id) {
-        this.iSongRepository.remove(id);
+        this.iSongRepository.deleteById(id);
     }
 
 }

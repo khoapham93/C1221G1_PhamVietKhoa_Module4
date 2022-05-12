@@ -120,7 +120,6 @@ public class UserDto implements Validator {
     public void validate(Object target, Errors errors) {
         UserDto userDto = (UserDto) target;
 
-
         if ("".equals(userDto.getFirstName())) {
             errors.rejectValue("firstName","name.empty");
         }

@@ -1,12 +1,19 @@
 package com.khoapham.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+import java.io.IOException;
 
 @Configuration
 @EnableWebMvc
@@ -22,6 +29,13 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/songs/**")
                 .addResourceLocations("file:" + fileUpload);
 
+    }
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("message");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
     }
 
 //    @Bean(name = "multipartResolver")

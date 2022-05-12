@@ -37,14 +37,14 @@
                 </audio>
             </td>
             <td><a th:href="@{/{id}/edit(id=${song.id})}"
-                   class="btn btn-outline-warning">
+                   class="btn btn-warning">
                 edit
             </a>
             </td>
             <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-danger" data-mdb-toggle="modal" data-mdb-target="#deleteModal"
-                        th:onclick="'javascript:deleteProduct(' + ${song.id} + ',\''+${song.name}+'\')'">
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#deleteModal"
+                        th:attr="onclick=|deleteProduct(${song.id} ,'${song.name}')|">
                     Delete
                 </button>
             </td>
