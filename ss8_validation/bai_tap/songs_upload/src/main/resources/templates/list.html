@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<nav th:replace="/layout :: navbar"></nav>
+<div class="container">
+    <h2>Songs list</h2>
+    <div>
+        <p class="text-success"><span th:text="${success}"></span> </p>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">Song</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Genre</th>
+            <th scope="col">File</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="song,loop: ${songs}">
+            <th scope="row" th:text="${loop.count}"></th>
+            <td th:text="${song.id}"></td>
+            <td th:text="${song.name}"></td>
+            <td th:text="${song.artist}"></td>
+            <td th:text="${song.genre}"></td>
+            <td>
+                <audio controls>
+                    <source th:src="@{/songs/{id}/(id=${song.filePath})}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </td>
+            <td><a th:href="@{/{id}/edit(id=${song.id})}"
+                   class="btn btn-outline-warning">
+                edit
+            </a>
+            </td>
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-mdb-toggle="modal" data-mdb-target="#deleteModal"
+                        th:onclick="'javascript:deleteProduct(' + ${song.id} + ',\''+${song.name}+'\')'">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Song</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete song
+                    <span class="text-danger font-weight-bold" id="nameDelete"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="mx-auto row">
+                    <form th:action="@{/delete}" method="post">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" id="idDelete">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
+<script>
+    function deleteProduct(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = " " + name + "?";
+    }
+</script>

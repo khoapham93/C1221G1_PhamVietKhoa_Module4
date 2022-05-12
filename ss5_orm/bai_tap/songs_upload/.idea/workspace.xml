@@ -20,66 +20,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e703aa-a859-45c4-b370-bd33833a105d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/6.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/6.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/SimpleBlogApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/model/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/model/Catelogy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/repository/IProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/repository/impl/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/repository/impl/ProductRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/java/com/khoapham/demo/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/templates/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/main/resources/templates/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/simple_blog_new/src/test/java/com/khoapham/demo/SimpleBlogApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/configuration/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/configuration/AppInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/repository/IGeneralRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/repository/impl/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/service/IGeneralService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/java/com/khoapham/service/impl/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ss6_jpa/thuc_hanh/user_management/src/main/webapp/WEB-INF/views/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/repository/impl/ProductRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/build/classes/java/main/com/khoapham/repository/impl/ProductRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/build/libs/product_management-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/build/libs/product_management-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/repository/impl/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/src/main/java/com/khoapham/repository/impl/ProductRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../product_management/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/SongsUploadApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/controller/SongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/model/Song.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/model/SongForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/repository/ISongRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/repository/impl/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/repository/impl/SongRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/service/ISongService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/java/com/khoapham/service/impl/SongServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/song_upload.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/static/songs/Pitbull.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/static/songs/TRAICIONERA.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/songs_upload/src/test/java/com/khoapham/SongsUploadApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/configation/Applicationconfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/repository/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/java/com/khoapham/validation_register_form/service/impl/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/resources/message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/bai_tap/validation_register_form/src/main/resources/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/java/com/codegym/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/java/com/codegym/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/java/com/codegym/controller/PhoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/java/com/codegym/model/PhoneNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/resources/validation-message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/custom_validation/src/main/webapp/WEB-INF/views/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/validating_form_input/src/main/java/com/codegym/configuration/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/validating_form_input/src/main/java/com/codegym/configuration/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/validating_form_input/src/main/java/com/codegym/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/validating_form_input/src/main/java/com/codegym/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/validating_form_input/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss8_validation/thuc_hanh/validating_form_input/src/main/webapp/WEB-INF/views/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +136,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../product_management" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -244,6 +243,7 @@
       <workItem from="1652066562376" duration="452000" />
       <workItem from="1652067433146" duration="14496000" />
       <workItem from="1652154505800" duration="599000" />
+      <workItem from="1652348291238" duration="1861000" />
     </task>
     <servers />
   </component>

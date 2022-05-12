@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="row py-5 " style="margin-top: 59px;">
+    <div class="col-7 mx-auto">
+        <h2 class="text-center"> Create new User</h2>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form th:action="@{/save}" th:object="${userDto}"
+                  method="POST">
+                <small class="text-danger" th:if="${#fields.hasErrors('firstName')}"
+
+                       th:errors="*{firstName}"></small>
+                <div class="form-outline mb-4">
+                    <input th:field="*{firstName}"
+                           type="text" id="firstName" class="form-control"/>
+                    <label class="form-label" for="firstName">First Name</label>
+                </div>
+
+                <small class="text-danger" th:if="${#fields.hasErrors('lastName')}"
+                       th:errors="*{lastName}"></small>
+                <div class="form-outline mb-4">
+                    <input th:field="*{lastName}"
+                           type="text" id="lastName" class="form-control"/>
+                    <label class="form-label" for="lastName">Last Name</label>
+                </div>
+
+                <small class="text-danger" th:if="${#fields.hasErrors('phoneNumber')}"
+                       th:errors="*{phoneNumber}"></small>
+                <div class="form-outline mb-4">
+                    <input th:field="*{phoneNumber}"
+                           type="number" id="phone" class="form-control"/>
+                    <label class="form-label" for="phone">Phone Number</label>
+                </div>
+
+                <small class="text-danger" th:if="${#fields.hasErrors('email')}"
+                       th:errors="*{email}"></small>
+                <div class="form-outline mb-4">
+                    <input th:field="*{email}"
+                           type="email" id="email" class="form-control"/>
+                    <label class="form-label" for="email">Email</label>
+                </div>
+                <small class="text-danger" th:if="${#fields.hasErrors('age')}"
+                       th:errors="*{age}"></small>
+                <div class="form-outline mb-4">
+                    <input th:field="*{age}"
+                           type="number" id="age" class="form-control"/>
+                    <label class="form-label" for="age">Age</label>
+                </div>
+                <div class="col-sm-6 mx-auto">
+                    <button type="submit" class="btn btn-primary btn-block">+ Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
