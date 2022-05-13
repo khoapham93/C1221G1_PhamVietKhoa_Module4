@@ -88,6 +88,7 @@
                 </div>
                 <div class="col-7 w-auto">
                     <form th:action="@{/}">
+                        <input type="hidden" name="keyword" th:value="${keywordVal}">
                         <div class="row px-auto">
                             <div class="col-3">
                                 <label for="search">Sort by</label>

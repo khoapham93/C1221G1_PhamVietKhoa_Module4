@@ -1,26 +1,24 @@
-package com.khoapham.model;
+package com.khoapham.dto;
 
-import javax.persistence.*;
+import com.khoapham.model.Manufacturer;
+import com.khoapham.model.Product;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
-@Entity
-@Table(name = "product")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+import javax.validation.constraints.NotBlank;
+
+public class ProductDto implements Validator {
     private Integer id;
     private String name;
     private Double price;
-    @Column(unique = true)
     private String imei;
     private String description;
-    @ManyToOne
-    @JoinColumn(name = "manufacturer_id",referencedColumnName = "id")
     private Manufacturer manufacturer;
 
-    public Product() {
+    public ProductDto() {
     }
 
-    public Product(Integer id, String name, Double price, String imei, String description, Manufacturer manufacturer) {
+    public ProductDto(Integer id, String name, Double price, String imei, String description, Manufacturer manufacturer) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -28,7 +26,7 @@ public class Product {
         this.description = description;
         this.manufacturer = manufacturer;
     }
-    public Product( String name, Double price, String imei, String description, Manufacturer manufacturer) {
+    public ProductDto( String name, Double price, String imei, String description, Manufacturer manufacturer) {
 
         this.name = name;
         this.price = price;
@@ -94,5 +92,22 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        ProductDto productDto = (ProductDto) target;
+        String regexSpecialChar = "^(\\p{L}|\\d)+( (\\p{L}|\\d)+)*$";
+
+        if ("".equals(productDto.getName())){
+            errors.rejectValue("name","name.empty");
+        }else if (!productDto.getName().matches(regexSpecialChar)){
+            errors.rejectValue("name","name.empty");
+        }
     }
 }

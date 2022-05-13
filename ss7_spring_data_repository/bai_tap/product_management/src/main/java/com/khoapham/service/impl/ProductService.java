@@ -1,5 +1,6 @@
 package com.khoapham.service.impl;
 
+import com.khoapham.dto.ProductDto;
 import com.khoapham.model.Product;
 import com.khoapham.repository.IProductRepository;
 import com.khoapham.service.IProductService;
@@ -27,6 +28,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    public Boolean checkExists(ProductDto productDto) {
+        Product product = this.iProductRepository.findFirstByImei(productDto.getImei());
+        return product != null;
+    }
+
+    @Override
     public Product findById(int id) {
         return this.iProductRepository.findById(id).orElse(null);
     }
@@ -37,9 +44,13 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Page<Product> findAllByNameAndManufacturerAndPrice(String keyWord1, String keyWord2, String keyWord3, Pageable pageable) {
-        return this.iProductRepository.findAllByNameContainingAndManufacturerContainingAndDescriptionContaining(keyWord1, keyWord2, keyWord3, pageable);
-
+    public Page<Product> findAllByNameAndManufacturerAndPrice(String keyWord1, int keyWord2, String keyWord3, Pageable pageable) {
+        if (keyWord2 == -1) {
+            return this.iProductRepository.findAllByNameContainingAndDescriptionContaining(keyWord1, keyWord3, pageable);
+            //call method not include Manufacturer
+        } else {
+            return this.iProductRepository.findAllByNameContainingAndManufacturer_IdAndDescriptionContaining(keyWord1, keyWord2, keyWord3, pageable);
+        }
     }
 
 }

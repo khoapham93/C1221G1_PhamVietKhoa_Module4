@@ -9,24 +9,49 @@
     <div class="col-4 mx-auto">
         <h2 class="text-center"> Create new product</h2>
         <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
-            <form th:action="@{/save}" th:object="${product}"
+            <form th:action="@{/save}" th:object="${productDto}"
                   method="POST" novalidate="novalidate">
-                <input type="hidden" th:field="*{id}"/>
                 <div class="form-group">
                     <label>Name</label>
                     <input class="form-control" type="text" th:field="*{name}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('name')}"
+                           th:errors="*{name}"></small>
                 </div>
                 <div class="form-group">
                     <label>Price</label>
                     <input class="form-control" type="number" step="any" th:field="*{price}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('price')}"
+                           th:errors="*{price}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Imei</label>
+                    <input class="form-control" type="text" th:field="*{imei}"/>
+
+<!--                    <small Class="text-danger" th:text="${imeiDuplicate}"></small>-->
+                    <small Class="text-danger" th:if="${#fields.hasErrors('imei')}"
+                           th:errors="*{imei}"></small>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
                     <input class="form-control" type="text" th:field="*{description}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('description')}"
+                           th:errors="*{description}"></small>
                 </div>
                 <div class="form-group">
                     <label>Manufacturer</label>
-                    <input class="form-control" type="text" th:field="*{manufacturer}"/>
+                    <select th:field="*{manufacturer}"
+                            class="form-control">
+                        <option th:value="null"
+                        >Select Manufacturer
+                        </option>
+                        <option th:each="manufacturer :${manufacturers}"
+                                th:value="${manufacturer.id}"
+                                th:text="${manufacturer.name}"
+                        >
+                        </option>
+                    </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('manufacturer')}"
+                           th:errors="*{manufacturer}"></small>
                 </div>
                 <div class="col-sm-6 mx-auto">
                     <button type="submit" class="btn btn-primary btn-block">+ Create</button>

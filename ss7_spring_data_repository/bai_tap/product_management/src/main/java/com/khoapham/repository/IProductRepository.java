@@ -9,5 +9,9 @@ import java.util.List;
 
 public interface IProductRepository extends JpaRepository<Product, Integer> {
 
-    Page<Product> findAllByNameContainingAndManufacturerContainingAndDescriptionContaining(String keyWord1, String keyWord2, String keyWord3, Pageable Pageable);
+    Page<Product> findAllByNameContainingAndManufacturer_IdAndDescriptionContaining(String keyWord1, int keyWord2, String keyWord3, Pageable Pageable);
+
+    Page<Product> findAllByNameContainingAndDescriptionContaining(String keyWord1, String keyWord3, Pageable Pageable);
+
+    Product findFirstByImei(String imei);
 }

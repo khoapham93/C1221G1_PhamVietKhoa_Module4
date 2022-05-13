@@ -29,25 +29,32 @@ public class BlogController {
     public String index(Model model,
                         @RequestParam(defaultValue = "0") Integer page,
                         @RequestParam(defaultValue = "3") Integer pageSize,
-                        @RequestParam(defaultValue = "author") String sort,
-                        @RequestParam(defaultValue = "asc") String dir,
+                        @RequestParam Optional<String> sort,
+                        @RequestParam Optional<String> dir,
                         @RequestParam Optional<String> keyword) {
+
         String keywordVal = keyword.orElse("");
+        String sortVal = sort.orElse("");
+        String dirVal = dir.orElse("");
 
         Pageable pageable;
 
-        if (dir.equals("asc")) {
-            pageable = PageRequest.of(page, pageSize, Sort.by(sort).ascending());
+        if ("".equals(sortVal)) {
+            pageable = PageRequest.of(page, pageSize);
         } else {
-            pageable = PageRequest.of(page, pageSize, Sort.by(sort).descending());
+            if (dirVal.equals("asc")) {
+                pageable = PageRequest.of(page, pageSize, Sort.by(sortVal).ascending());
+            } else {
+                pageable = PageRequest.of(page, pageSize, Sort.by(sortVal).descending());
+            }
         }
 
         Page<Blog> productList = iBlogService.search(keywordVal, pageable);
 
         model.addAttribute("blogs", productList);
         model.addAttribute("keywordVal", keywordVal);
-        model.addAttribute("sort", sort);
-        model.addAttribute("dir", dir);
+        model.addAttribute("sort", sortVal);
+        model.addAttribute("dir", dirVal);
         return "/index";
     }
 

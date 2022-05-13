@@ -12,17 +12,30 @@
                 <form class="form-inline my-2 my-lg-0" th:action="@{/}">
                     <div class="row">
                         <div class="col">
-                            <input class="form-control mr-sm-2" type="search" placeholder="name" aria-label="Search" th:name="keyword1">
-
+                            <input class="form-control mr-sm-2" type="search" placeholder="name" aria-label="Search"
+                                   th:name="keyword1"
+                            th:value="${keywordVal1}">
                         </div>
                         <div class="col">
-                            <input class="form-control mr-sm-2" type="search" placeholder="manufacturer" aria-label="Search" th:name="keyword2">
-
+                            <input class="form-control mr-sm-2" type="search" placeholder="Description" aria-label="Search"
+                                   th:name="keyword3"
+                                   th:value="${keywordVal3}">
                         </div>
                         <div class="col">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Description" aria-label="Search" th:name="keyword3">
-
+                            <select th:name="keyword2"
+                                    class="form-control" >
+                                <option value="-1"
+                                >Select Manufacturer
+                                </option>
+                                <option th:each="manufacturer :${manufacturers}"
+                                        th:value="${manufacturer.id}"
+                                        th:text="${manufacturer.name}"
+                                >
+                                </option>
+                            </select>
+                            <!--                            <input class="form-control mr-sm-2" type="search" placeholder="manufacturer" aria-label="Search" th:name="keyword2">-->
                         </div>
+
                         <div class="col">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </div>
@@ -38,6 +51,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Imei</th>
                     <th scope="col">Description</th>
                     <th scope="col">Manufacturer</th>
                     <th scope="col">Edit</th>
@@ -47,19 +61,21 @@
                 </thead>
                 <tbody>
                 <tr th:each="row,rowStat : ${products}" class="">
-                    <td th:text="${rowStat.count}"></td>
+                    <td th:text=" ${(products.number *5) + rowStat.count}"></td>
                     <td th:text="${row.getName()}"></td>
                     <td th:text="${row.getPrice()}"></td>
+                    <td th:text="${row.getImei()}"></td>
                     <td th:text="${row.getDescription()}"></td>
-                    <td th:text="${row.getManufacturer()}"></td>
+                    <td>
+                        <span th:if="${row.manufacturer}" th:text="${row.manufacturer.name}"></span>
+                        <span th:unless="${row.manufacturer}" th:text="${row.manufacturer.name}"></span>
+                    </td>
                     <td><a th:href="@{/{id}/edit(id=${row.getId()})}"
                            class="btn btn-outline-warning">
                         edit
                     </a>
                     </td>
                     <td>
-                        <!--                        th:onclick="'javascript:deleteProduct(' + ${row.getId()} + ',\''+${row.getName()}+'\')'"-->
-                        <!-- Button trigger modal -->
                         <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal"
                                 th:attr="onclick=|deleteProduct(${row.id},'${row.name}')|"
                         >
@@ -137,7 +153,6 @@
             <div class="modal-footer">
                 <div class="mx-auto row">
                     <form th:action="@{/delete}" method="post">
-                        <input type="hidden" name="action" value="delete">
                         <input type="hidden" name="id" id="idDelete">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -151,11 +166,7 @@
 </body>
 <th:block th:replace="/layout :: script"></th:block>
 </html>
-<script>
-    $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
-</script>
+
 <script>
     function deleteProduct(id, name) {
         document.getElementById("idDelete").value = id;
