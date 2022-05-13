@@ -38,11 +38,8 @@ public class ProductController {
                         @PageableDefault(value = 5) Pageable pageable) {
 
         String keywordVal1 = keyword1.orElse("");
-
         int keywordVal2 = keyword2.orElse(-1);
-
         String keywordVal3 = keyword3.orElse("");
-
         Page<Product> productList = iProductService.findAllByNameAndManufacturerAndPrice(keywordVal1, keywordVal2, keywordVal3, pageable);
         List<Manufacturer> manufacturerList = this.iManufacturerService.findAll();
         model.addAttribute("products", productList);
@@ -68,28 +65,19 @@ public class ProductController {
                        RedirectAttributes redirect) {
 
         new ProductDto().validate(productDto, bindingResult);
-
-        if (bindingResult.hasErrors() || this.iProductService.checkExists(productDto)) {
-            if (this.iProductService.checkExists(productDto)) {
-
-                FieldError fieldError = new FieldError("productDto","imei","A Product already exists for this imei");
-                bindingResult.addError(fieldError);
-            }
+        this.iProductService.checkExists(productDto, bindingResult);
+        if (bindingResult.hasErrors()) {
             List<Manufacturer> manufacturerList = this.iManufacturerService.findAll();
             model.addAttribute("manufacturers", manufacturerList);
             model.addAttribute("productDto", productDto);
             return "/create";
         } else {
-
             Product product = new Product();
             BeanUtils.copyProperties(productDto, product);
-
             iProductService.save(product);
             redirect.addFlashAttribute("success", "Create product successfully!");
             return "redirect:";
-
         }
-
     }
 
     @GetMapping("/{id}/edit")
@@ -112,12 +100,8 @@ public class ProductController {
                          Model model,
                          RedirectAttributes redirect) {
         new ProductDto().validate(productDto, bindingResult);
-
-        if (bindingResult.hasErrors() || this.iProductService.checkExists(productDto)) {
-            if (this.iProductService.checkExists(productDto)) {
-                FieldError fieldError = new FieldError("productDto","imei","A Product already exists for this imei");
-                bindingResult.addError(fieldError);
-            }
+        this.iProductService.checkExists(productDto, bindingResult);
+        if (bindingResult.hasErrors()) {
             List<Manufacturer> manufacturerList = this.iManufacturerService.findAll();
             model.addAttribute("manufacturers", manufacturerList);
             model.addAttribute("productDto", productDto);

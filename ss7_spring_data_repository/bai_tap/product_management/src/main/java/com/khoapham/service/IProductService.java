@@ -4,6 +4,7 @@ import com.khoapham.dto.ProductDto;
 import com.khoapham.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.validation.BindingResult;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,7 @@ public interface IProductService {
 
     void save(Product product);
 
-    Boolean checkExists(ProductDto productDto);
+    void checkExists(ProductDto productDto, BindingResult bindingResult);
 
     Product findById(int id);
 

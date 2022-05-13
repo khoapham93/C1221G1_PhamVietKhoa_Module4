@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 import java.util.List;
 
@@ -28,9 +29,22 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Boolean checkExists(ProductDto productDto) {
+    public void checkExists(ProductDto productDto, BindingResult bindingResult) {
         Product product = this.iProductRepository.findFirstByImei(productDto.getImei());
-        return product != null;
+
+        if (productDto.getId() == null) {
+            //Add new
+            if (!"".equals(productDto.getImei())) {
+                if (product != null) {
+                    bindingResult.rejectValue("imei", "imei.exists");
+                }
+            }
+        } else {
+            //update
+            if (product.getId().equals(productDto.getId())) {
+                bindingResult.rejectValue("imei", "imei.exists");
+            }
+        }
     }
 
     @Override

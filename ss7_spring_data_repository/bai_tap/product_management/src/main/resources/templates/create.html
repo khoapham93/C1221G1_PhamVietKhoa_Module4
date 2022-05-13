@@ -26,8 +26,6 @@
                 <div class="form-group">
                     <label>Imei</label>
                     <input class="form-control" type="text" th:field="*{imei}"/>
-
-<!--                    <small Class="text-danger" th:text="${imeiDuplicate}"></small>-->
                     <small Class="text-danger" th:if="${#fields.hasErrors('imei')}"
                            th:errors="*{imei}"></small>
                 </div>

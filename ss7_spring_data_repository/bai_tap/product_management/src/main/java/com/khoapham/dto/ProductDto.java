@@ -107,7 +107,21 @@ public class ProductDto implements Validator {
         if ("".equals(productDto.getName())){
             errors.rejectValue("name","name.empty");
         }else if (!productDto.getName().matches(regexSpecialChar)){
-            errors.rejectValue("name","name.empty");
+            errors.rejectValue("name","name.char");
+        }
+
+        if (productDto.getPrice()== null){
+            errors.rejectValue("price","price.empty");
+        }else if (productDto.getPrice() <0){
+            errors.rejectValue("price","price.negative");
+        }
+
+        if ("".equals(productDto.imei)){
+            errors.rejectValue("imei","imei.empty");
+        }
+
+        if (productDto.getManufacturer() == null){
+            errors.rejectValue("manufacturer","manufacturer.invalid");
         }
     }
 }
