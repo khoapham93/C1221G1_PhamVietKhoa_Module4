@@ -105,7 +105,7 @@ public class ProductController {
             List<Manufacturer> manufacturerList = this.iManufacturerService.findAll();
             model.addAttribute("manufacturers", manufacturerList);
             model.addAttribute("productDto", productDto);
-            return "/create";
+            return "/edit";
         } else {
             Product product = new Product();
             BeanUtils.copyProperties(productDto, product);

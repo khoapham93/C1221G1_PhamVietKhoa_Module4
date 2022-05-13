@@ -15,24 +15,32 @@
                 <div class="form-group">
                     <label>Name</label>
                     <input class="form-control" type="text" th:field="*{name}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('name')}"
+                           th:errors="*{name}"></small>
                 </div>
                 <div class="form-group">
                     <label>Price</label>
                     <input class="form-control" type="number" step="any" th:field="*{price}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('price')}"
+                           th:errors="*{price}"></small>
                 </div>
                 <div class="form-group">
                     <label>Imei</label>
-                    <input class="form-control" type="text" step="any" th:field="*{imei}" />
+                    <input class="form-control" type="text" th:field="*{imei}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('imei')}"
+                           th:errors="*{imei}"></small>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <input class="form-control" type="text" th:field="*{description}" />
+                    <input class="form-control" type="text" th:field="*{description}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('description')}"
+                           th:errors="*{description}"></small>
                 </div>
                 <div class="form-group">
                     <label>Manufacturer</label>
                     <select th:field="*{manufacturer}"
                             class="form-control">
-                        <option value=""
+                        <option th:value="null"
                         >Select Manufacturer
                         </option>
                         <option th:each="manufacturer :${manufacturers}"
@@ -41,10 +49,18 @@
                         >
                         </option>
                     </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('manufacturer')}"
+                           th:errors="*{manufacturer}"></small>
                 </div>
-                <div class="col-sm-6 mx-auto">
-                    <button type="submit" class="btn btn-primary btn-block">Update</button>
+                <div class="row">
+                    <div class="col-sm-6 mx-auto">
+                        <a type="button" th:href="@{/}" class="btn btn-warning btn-block">Cancel</a>
+                    </div>
+                    <div class="col-sm-6 mx-auto">
+                        <button type="submit" class="btn btn-success btn-block">Update</button>
+                    </div>
                 </div>
+
             </form>
         </div>
     </div>

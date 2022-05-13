@@ -41,7 +41,7 @@ public class ProductService implements IProductService {
             }
         } else {
             //update
-            if (product.getId().equals(productDto.getId())) {
+            if (!product.getId().equals(productDto.getId())) {
                 bindingResult.rejectValue("imei", "imei.exists");
             }
         }
