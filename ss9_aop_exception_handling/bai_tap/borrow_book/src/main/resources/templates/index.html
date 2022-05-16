@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper ">
+    <div class="container">
+        <div class="row ">
+            <div class="section-title">
+                <h5 class="mt-3 content-title ">Book list </h5>
+
+            </div>
+            <table class="table table-borderless table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Borrow</th>
+                    <th scope="col">Return</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="row,rowStat : ${books}" class="">
+                    <td th:text=" ${(books.number *5) + rowStat.count}"></td>
+                    <td th:text="${row.getName()}"></td>
+                    <td th:text="${row.getAuthor()}"></td>
+                    <td th:text="${row.getAmount()}"></td>
+                    <td><a th:href="@{/{id}/detail(id=${row.getId()})}"
+                           class="btn btn-outline-warning">
+                        Borrow
+                    </a>
+                    </td>
+                    <td><a href="/return"
+                           class="btn btn-outline-info">
+                        Return
+                    </a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        paging-->
+        <nav class="d-flex justify-content-center py-3">
+            <ul class="pagination">
+                <li th:if="${books.hasPrevious()}" class="page-item active px-1">
+                    <a th:href="@{/(page=${books.number - 1}
+                                   )}" class="page-link">Previous</a>
+                </li>
+                <li th:unless="${books.hasPrevious()}" class="page-item disabled px-1">
+                    <a th:href="@{/(page=${books.number - 1}
+                                    )}" class="page-link">Previous</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link">
+                        <span th:text="${books.number +1}"></span></a></li>
+
+                <li class="page-item">
+                    <a class="page-link">
+                        <span>/</span></a></li>
+                <li class="page-item">
+                    <a class="page-link">
+                        <span th:text="${books.totalPages}"></span></a></li>
+
+                <li th:if="${books.hasNext()}" class="page-item active px-1">
+                    <a th:href="@{/(page=${books.number + 1})}" class="page-link">Next</a>
+                </li>
+                <li th:unless="${books.hasNext()}" class="page-item disabled px-1">
+                    <a th:href="@{/(page=${books.number + 1})}" class="page-link">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <!--        paging-->
+
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>

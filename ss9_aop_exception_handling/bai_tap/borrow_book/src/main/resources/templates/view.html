@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="row py-5">
+    <div class="col-4 mx-auto">
+        <h2 class="text-center">Book Details</h2>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form th:object="${book}"
+                  method="POST" action="/borrow">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control"  th:field="*{name}" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input class="form-control"  th:field="*{author}"  readonly >
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input class="form-control"  th:field="*{amount}"   readonly >
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6 mx-auto">
+                        <input class="btn btn-outline-success btn-block" role="button" type="submit" value="Borrow">
+                    </div>
+                    <div class="col-sm-6 mx-auto">
+                        <a class="btn btn-outline-info btn-block" role="button" href="/">
+                            Back
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+
+<th:block th:replace="/layout :: script"></th:block>
+</html>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
+<script>
+    function borrowBook(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = " " + name + "?";
+    }
+</script>

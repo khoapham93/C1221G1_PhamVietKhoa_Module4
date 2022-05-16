@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="row py-5">
+    <div class="col-7 mx-auto">
+        <h2 class="text-center">Return Book</h2>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form
+                  method="POST" action="/return">
+                <div class="form-group">
+                    <label>borrow code</label>
+                    <input class="form-control" name="borrowCode" placeholder="Enter your borrow code">
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mx-auto">
+                        <input class="btn btn-outline-success btn-block" role="button" type="submit" value="Return">
+                    </div>
+                    <div class="col-sm-6 mx-auto">
+                        <a class="btn btn-outline-info btn-block" role="button" href="/">
+                            Back
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
