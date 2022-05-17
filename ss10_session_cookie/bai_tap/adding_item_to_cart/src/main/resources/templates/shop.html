@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper " style="margin-top: 59px;">
+    <div class="container">
+        <div class="row px-1">
+            <div th:each="row : ${products}" class="card col-3 px-2 my-2">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light" style="height: 350px">
+                    <img th:src="@{${row.imageURL}}" class="img-fluid" style="height: 100%; width: 100%"/>
+                    <a th:href="@{/{id}/view(id=${row.getId()})}">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${row.name}"></h5>
+                    <h6>
+                        <span class="badge bg-primary rounded-pill" th:text="${row.description}"></span>
+                    </h6>
+                    <div class="row">
+                        <h5>
+                           <span class="text-muted" th:if="${row.oldPrice != row.price}">
+                            <s>
+                                <span th:text="${row.oldPrice}"> </span>
+                            </s>
+                        </span>
+                            <span class="card-title text-danger" th:text="${row.price}"></span>
+                        </h5>
+                    </div>
+                    <a class="btn btn-success" th:href="@{/add/__${row.id}__(action='list')}">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>

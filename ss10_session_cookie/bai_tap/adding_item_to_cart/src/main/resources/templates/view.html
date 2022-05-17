@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper " style="margin-top: 60px;">
+    <div class="container">
+        <div class="row px-1">
+            <div class="col-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img th:src="@{${product.imageURL}}" class="img-fluid" alt="product" />
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5>
+                            <span class="badge bg-primary rounded-pill" th:text="${product.description}"></span>
+                        </h5>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="text-muted" th:if="${product.oldPrice != product.price}"><s> Old Price: <span
+                                th:text="${product.oldPrice}"> </span></s></h6>
+                        <h6 class="card-title text-danger" th:if="${product.oldPrice != product.price}"> NEW PRICE: <span
+                                th:text="${product.price}"> </span></h6>
+                        <h6 class="card-title text-danger" th:if="${product.oldPrice == product.price}"> PRICE: <span
+                                th:text="${product.price}"> </span></h6>
+                        <div class="row">
+                            <a th:href="@{/{id}/edit(id=${product.getId()})}"
+                               class="btn btn-warning col mx-1">
+                                Add to cart
+                            </a>
+                            <button type="button"
+                                    class="btn btn-danger col mx-1"
+                                    data-mdb-toggle="modal" data-mdb-target="#deleteModal"
+                                    th:attr="onclick=|deleteProduct(${product.id},'${product.name}')|"
+                            >
+                                Buy now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h3 th:text="${product.name}"></h3>
+                <hr>
+                <div class="border border-success">
+                    <div class="px-2">
+                        <P><span class="badge bg-primary rounded-pill"> 1 </span> Tặng banner, thiệp (trị giá 20.000đ) miễn phí</P>
+                        <P><span class="badge bg-primary rounded-pill"> 2 </span> Giảm ngay 20.000đ khi tạo đơn hàng online</P>
+                        <P><span class="badge bg-primary rounded-pill"> 3 </span> Giảm tiếp 3% cho đơn hàng bạn tạo online lần thứ 2</P>
+                        <P><span class="badge bg-primary rounded-pill"> 4 </span> Giao hàng miễn phí nội thành 63/63 tỉnh/thành</P>
+                        <P><span class="badge bg-primary rounded-pill"> 5 </span> Giao ngay trong vòng 2 giờ.</P>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
