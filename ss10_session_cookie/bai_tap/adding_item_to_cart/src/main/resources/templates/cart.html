@@ -5,30 +5,36 @@
 <body>
 <header th:replace="/layout :: header_nav"></header>
 <div class="main-wrapper " style="margin-top: 59px;">
-    <div class="container" th:if="${cart !=null || cart.getProducts().size() >0}">
+    <div class="container" th:if="${cart !=null && cart.getProducts().size() >0}">
         <h1>Your Cart</h1>
-        <form th:action="@{/shop}" th:object="${cart}" method="post">
+        <form th:action="@{/buy}" th:object="${cart}" method="post">
             <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
             <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
             <table class="table" border="1">
                 <tr>
                     <th>Item</th>
+                    <th>Description</th>
+                    <th>Image</th>
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Action</th>
                 </tr>
                 <tr th:each="product: ${cart.products}">
                     <td th:text="${product.getKey().name}"></td>
+                    <td th:text="${product.getKey().description}"></td>
+                    <td style="height: 150px">
+                        <img th:src="@{${product.getKey().imageURL}}" class="img-fluid" style="height: 100%"/>
+                    </td>
                     <td>
-                        <a id="decrease_button" th:href="@{/minus/__${product.getKey().id}__(action='show')}"
+                        <a class="btn" id="decrease_button" th:href="@{/minus/__${product.getKey().id}__(action='show')}"
                            th:text="${'-'}"></a>
                         <span th:text="${product.getValue()}"></span>
-                        <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
+                        <a class="btn" id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
                            th:text="${'+'}"></a>
                     </td>
                     <td th:text="${product.getKey().price}"></td>
                     <td >
-                        <a  th:href="@{/delete/__${product.getKey().id}__(action='show')}"
+                        <a class="btn btn-danger" th:href="@{/delete/__${product.getKey().id}__(action='show')}"
                            th:text="${'delete'}"></a>
                     </td>
                 </tr>
@@ -38,6 +44,7 @@
                     <td th:text="${cart.countTotalPayment()}"></td>
                 </tr>
             </table>
+            <button class="btn btn-danger" type="submit">Buy now</button>
         </form>
     </div>
     <div class="container" th:if="${cart == null || cart.getProducts().size() ==0}">

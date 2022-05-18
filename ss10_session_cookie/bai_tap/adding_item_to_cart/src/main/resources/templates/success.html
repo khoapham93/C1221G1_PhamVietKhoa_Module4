@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper " style="margin-top: 59px;">
+    <div class="container" th:if="${cart !=null && cart.getProducts().size() >0}">
+        Thank you.
+    </div>
+    <div class="container" th:if="${cart == null || cart.getProducts().size() ==0}">
+        <strong>Cart Empty</strong>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>

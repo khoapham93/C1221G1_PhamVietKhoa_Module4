@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+<div class="main-wrapper " style="margin-top: 59px;">
+    <div class="container" th:if="${cart !=null && cart.getProducts().size() >0}">
+        <h1>Your Order</h1>
+        <form th:action="@{/confirm}" th:object="${cart}" method="post">
+            <label>Your Name: </label>
+            <input class="form-control" name = "name">
+            <label>Your Address: </label>
+            <input class="form-control" name = "address">
+            <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
+            <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
+            <h3>Total Products: <span th:text="${cart.countTotalPayment()}"></span></h3>
+            <button class="btn btn-danger" type="submit">Buy now</button>
+        </form>
+    </div>
+    <div class="container" th:if="${cart == null || cart.getProducts().size() ==0}">
+        <strong>Cart Empty</strong>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+</html>
