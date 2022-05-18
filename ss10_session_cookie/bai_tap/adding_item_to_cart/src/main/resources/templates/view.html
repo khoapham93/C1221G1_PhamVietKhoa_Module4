@@ -28,14 +28,13 @@
                         <h6 class="card-title text-danger" th:if="${product.oldPrice == product.price}"> PRICE: <span
                                 th:text="${product.price}"> </span></h6>
                         <div class="row">
-                            <a th:href="@{/{id}/edit(id=${product.getId()})}"
+                            <a th:href="@{/add/__${product.id}__(action='list')}"
                                class="btn btn-warning col mx-1">
                                 Add to cart
                             </a>
                             <button type="button"
                                     class="btn btn-danger col mx-1"
-                                    data-mdb-toggle="modal" data-mdb-target="#deleteModal"
-                                    th:attr="onclick=|deleteProduct(${product.id},'${product.name}')|"
+
                             >
                                 Buy now
                             </button>

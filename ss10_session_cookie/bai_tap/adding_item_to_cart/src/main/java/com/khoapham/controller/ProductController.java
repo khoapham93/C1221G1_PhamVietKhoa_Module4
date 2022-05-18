@@ -62,4 +62,18 @@ public class ProductController {
         model.addAttribute("product", productService.findById(id));
         return "/view";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
+        Product productOptional = productService.findById(id);
+        if (productOptional == null) {
+            return "/error.404";
+        }
+        if (action.equals("show")) {
+            cart.removeProduct(productOptional);
+            return "redirect:/shopping-cart";
+        }
+        cart.removeProduct(productOptional);
+        return "redirect:/shop";
+    }
 }
