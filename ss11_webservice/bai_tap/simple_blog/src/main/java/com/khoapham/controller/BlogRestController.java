@@ -17,24 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping(value = "/blogRest")
+@RequestMapping(value = "/blogsRest")
 @RestController
 public class BlogRestController {
     @Autowired
     private IBlogService iBlogService;
-    @Autowired
-    private ICategoryService iCategoryService;
-
-    @GetMapping("/categories")
-    public ResponseEntity<List<Category>> getCategoriesList() {
-        List<Category> categories = this.iCategoryService.findAll();
-
-        if (categories.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(categories, HttpStatus.OK);
-    }
-
     @GetMapping("/blogs")
     public ResponseEntity<Page<Blog>> getAllBlog(@RequestParam(defaultValue = "0") Integer page,
                                                  @RequestParam(defaultValue = "3") Integer pageSize,
