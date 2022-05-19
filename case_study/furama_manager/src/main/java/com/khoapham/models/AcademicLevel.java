@@ -7,17 +7,15 @@ import java.util.Set;
 public class AcademicLevel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "academic_id")
     private Integer id;
-    @Column(name = "level_name")
-    private String level;
+    private String academic;
 
     @OneToMany(mappedBy = "academicLevel")
     private Set<Employee> employeeSet;
 
-    public AcademicLevel(Integer id, String level, Set<Employee> employeeSet) {
+    public AcademicLevel(Integer id, String academic, Set<Employee> employeeSet) {
         this.id = id;
-        this.level = level;
+        this.academic = academic;
         this.employeeSet = employeeSet;
     }
 
@@ -32,12 +30,12 @@ public class AcademicLevel {
         this.id = id;
     }
 
-    public String getLevel() {
-        return level;
+    public String getAcademic() {
+        return academic;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setAcademic(String level) {
+        this.academic = level;
     }
 
     public Set<Employee> getEmployeeSet() {

@@ -7,10 +7,7 @@ import java.util.Set;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "department_id")
     private Integer id;
-
-    @Column(name = "department_name")
     private String department;
 
     @OneToMany(mappedBy = "department")

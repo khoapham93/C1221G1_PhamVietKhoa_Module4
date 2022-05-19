@@ -28,6 +28,7 @@ public class ShoppingCartController {
         modelAndView.addObject("cart", cart);
         return modelAndView;
     }
+
     @PostMapping("/confirm")
     public ModelAndView confirm(@SessionAttribute(value = "cart",required = false) Cart cart,
                                 @RequestParam String name,

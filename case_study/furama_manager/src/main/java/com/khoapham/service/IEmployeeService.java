@@ -1,12 +1,14 @@
 package com.khoapham.service;
 
+import com.khoapham.models.Employee;
 import dto.EmployeeDTO;
 import models.Employee;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 public interface IEmployeeService extends ICRUDService<Employee> {
-    List<EmployeeDTO> getList();
+    Pageable<EmployeeDTO> getList();
 
     Employee findById(Integer id);
 

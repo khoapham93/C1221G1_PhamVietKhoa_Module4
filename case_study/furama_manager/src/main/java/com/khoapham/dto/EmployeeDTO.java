@@ -1,33 +1,22 @@
 package com.khoapham.dto;
 
-import models.Person;
+import com.khoapham.models.AcademicLevel;
+import com.khoapham.models.Department;
+import com.khoapham.models.Position;
+import org.springframework.validation.Errors;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
-public class EmployeeDTO extends Person {
+public class EmployeeDTO extends PersonDto {
+
     private Double salary;
-    private String position;
-    private String academic;
-    private String department;
-
-    public EmployeeDTO(Integer id, String name, LocalDate birthday, String idCard, String phone, String email, String address, Double salary, String position, String academic, String department) {
-        super(id, name, birthday, idCard, phone, email, address);
-        this.salary = salary;
-        this.position = position;
-        this.academic = academic;
-        this.department = department;
-    }
-
-    public EmployeeDTO(String name, LocalDate birthday, String idCard, String phone, String email, String address, Double salary, String position, String academic, String department) {
-        super(name, birthday, idCard, phone, email, address);
-        this.salary = salary;
-        this.position = position;
-        this.academic = academic;
-        this.department = department;
-    }
+    private Position position;
+    private AcademicLevel academicLevel;
+    private Department department;
 
     public EmployeeDTO() {
-
     }
 
     public Double getSalary() {
@@ -38,27 +27,37 @@ public class EmployeeDTO extends Person {
         this.salary = salary;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
-    public String getAcademic() {
-        return academic;
+    public AcademicLevel getAcademicLevel() {
+        return academicLevel;
     }
 
-    public void setAcademic(String academic) {
-        this.academic = academic;
+    public void setAcademicLevel(AcademicLevel academicLevel) {
+        this.academicLevel = academicLevel;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }
