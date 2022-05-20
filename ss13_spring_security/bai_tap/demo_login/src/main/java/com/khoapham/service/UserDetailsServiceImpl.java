@@ -5,6 +5,7 @@ import com.khoapham.model.AppUser;
 import com.khoapham.model.UserRole;
 import com.khoapham.repository.IAppUserReopsitory;
 import com.khoapham.repository.IUserRoleRepository;
+import com.khoapham.util.EncrytedPasswordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -58,6 +59,9 @@ public class UserDetailsServiceImpl implements UserDetailsService,IAppUserServic
 
     @Override
     public void registerNewUserAccount(AppUser appUser) {
+        String encrytePassword =EncrytedPasswordUtils.encrytePassword(appUser.getEncrytedPassword());
+        appUser.setEncrytedPassword(encrytePassword);
+        appUser.setEnabled(true);
         this.iAppUserReopsitory.save(appUser);
     }
 

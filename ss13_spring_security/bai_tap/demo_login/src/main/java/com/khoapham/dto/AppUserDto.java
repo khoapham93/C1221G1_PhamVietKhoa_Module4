@@ -81,8 +81,11 @@ public class AppUserDto implements Validator {
         if ("".equals(userName)){
             errors.rejectValue("userName","userName.empty");
         }
+
         String passWord = appUserDto.getEncrytedPassword();
+
         String rePassWord = appUserDto.getRePassword();
+
         if ("".equals(passWord)){
             errors.rejectValue("encrytedPassword","password.empty");
         }else if (!passWord.equals(rePassWord)){

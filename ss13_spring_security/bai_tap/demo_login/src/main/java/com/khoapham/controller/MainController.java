@@ -1,9 +1,14 @@
 package com.khoapham.controller;
+
 import java.security.Principal;
 
 import com.khoapham.dto.AppUserDto;
+import com.khoapham.model.AppRole;
 import com.khoapham.model.AppUser;
+import com.khoapham.model.UserRole;
+import com.khoapham.service.IAppRoleService;
 import com.khoapham.service.IAppUserService;
+import com.khoapham.service.IUserRoleService;
 import com.khoapham.util.WebUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +27,12 @@ public class MainController {
 
     @Autowired
     private IAppUserService iAppUserService;
+    @Autowired
+    private IUserRoleService iUserRoleService;
+    @Autowired
+    private IAppRoleService iAppRoleService;
 
-    @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcomePage(Model model) {
         model.addAttribute("title", "Welcome");
         model.addAttribute("message", "This is welcome page!");
@@ -37,8 +46,6 @@ public class MainController {
         model.addAttribute("userInfo", userInfo);
         return "adminPage";
     }
-
-
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
@@ -75,28 +82,36 @@ public class MainController {
         }
         return "403Page";
     }
+
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String signUp(Model model) {
         AppUserDto appUserDto = new AppUserDto();
-        model.addAttribute("userDto",appUserDto);
-        return "signUpPage";
+        model.addAttribute("userDto", appUserDto);
+        return "/signUpPage";
     }
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public String adminPage(@Validated @ModelAttribute AppUserDto userDto,
-            BindingResult bindingResult,
-            Model model, Principal principal) {
+                            BindingResult bindingResult,
+                            Model model, Principal principal) {
 
-        new AppUserDto().validate(userDto,bindingResult);
-        this.iAppUserService.userNameExists(userDto,bindingResult);
-        if (bindingResult.hasErrors()){
+        new AppUserDto().validate(userDto, bindingResult);
+
+        this.iAppUserService.userNameExists(userDto, bindingResult);
+
+        if (bindingResult.hasErrors()) {
             model.addAttribute("userDto", userDto);
-            return "signUpPage";
-        }else {
+            return "/signUpPage";
+        } else {
+
             AppUser appUser = new AppUser();
-            BeanUtils.copyProperties(userDto,appUser);
+            BeanUtils.copyProperties(userDto, appUser);
             iAppUserService.registerNewUserAccount(appUser);
-            return "signUpSuccess";
+            AppRole appRole = this.iAppRoleService.findById(Long.valueOf(2)); // rule of user
+
+            UserRole userRole = new UserRole();
+            this.iUserRoleService.setUserRoleForNewUser(userRole,appRole,appUser);
+            return "/signUpSuccess";
         }
 
     }
