@@ -53,7 +53,7 @@
 </body>
 </html>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
+<script >
 
     function addNewSmartPhone() {
         //lay du lieu
@@ -108,37 +108,37 @@
                         <td >${smartphone.model}</td>
                         <td >${smartphone.price}</td>
                          <td>
-                            <button class="editSmartphone" value="${smartphone.id}">Edit</button>
+                            <button type="button" class="editSmartphone" value="${smartphone.id}">Edit</button>
                         </td>
                         <td>
-                            <button class="deleteSmartphone" value="${smartphone.id}">Delete</button>
+                            <button type="button" class="deleteSmartphone" value="${smartphone.id}">Delete</button>
                         </td>
                     </tr>`;
     }
 
-    $(document).ready(function () {
-        //sư kiện nào thực hiện Ajax
-        $('.deleteSmartphone').click(function () {
-            //lay du lieu
-            // let a = $(this);
-            let smartphoneId = $(this).attr("value");
-            // goi ajax
-            $.ajax({
-                type: "DELETE",
-                //tên API
-                url: "http://localhost:8080/smartphones/"+ smartphoneId,
-                //xử lý khi thành công
-                success: function (data) {
-                    // successHandler();
-                    a.parent().parent().remove();
-                }
 
-            });
-            //chặn sự kiện mặc định của thẻ
-            event.preventDefault();
-        });
-    })
-
+$(document).ready(function () {
     successHandler();
+    $(".deleteSmartphone").click(function() {
+        //lay du lieu
+        // let a = $(this);
+        let smartphoneId = $(this).attr("value");
+        console.log(smartphoneId);
+        // goi ajax
+        $.ajax({
+            type: "DELETE",
+            //tên API
+            url: "http://localhost:8080/smartphones/"+ smartphoneId,
+            //xử lý khi thành công
+            success: function (data) {
+                successHandler();
+                // a.parent().parent().remove();
+            }
+        });
+        //chặn sự kiện mặc định của thẻ
+        // event.preventDefault();
+    });
+})
+    // successHandler();
 
 </script>
