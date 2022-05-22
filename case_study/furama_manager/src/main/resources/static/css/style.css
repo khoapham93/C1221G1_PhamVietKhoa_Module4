@@ -115,16 +115,16 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 /*  color: #fff;*/
 /*}*/
 
-/*.btn-solid-border {*/
-/*  border: 2px solid #f75757;*/
-/*  background: transparent;*/
-/*  color: #242424;*/
-/*}*/
+.btn-solid-border {
+  border: 2px solid #f75757;
+  background: transparent;
+  color: #242424;
+}
 
-/*.btn-solid-border:hover {*/
-/*  border: 2px solid #f75757;*/
-/*  background: #f75757;*/
-/*}*/
+.btn-solid-border:hover {
+  border: 2px solid #f75757;
+  background: #f75757;
+}
 
 /*.btn-transparent {*/
 /*  background: transparent;*/
@@ -156,9 +156,9 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 /*  border-radius: 4px;*/
 /*}*/
 
-/*.btn-round-full {*/
-/*  border-radius: 50px;*/
-/*}*/
+.btn-round-full {
+  border-radius: 50px;
+}
 
 /*.btn.active:focus, .btn:active:focus, .btn:focus {*/
 /*  outline: 0;*/

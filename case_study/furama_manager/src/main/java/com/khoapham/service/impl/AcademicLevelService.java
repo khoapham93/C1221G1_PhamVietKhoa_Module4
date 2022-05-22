@@ -1,16 +1,20 @@
 package com.khoapham.service.impl;
 
-import models.AcademicLevel;
-import repository.IAcademicLevelRepository;
-import repository.impl.AcademicLevelRepositoryImpl;
-import service.IAcademicLevelService;
+import com.khoapham.models.AcademicLevel;
+import com.khoapham.repository.IAcademicLevelRepository;
+import com.khoapham.service.IAcademicLevelService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AcademicLevelService implements IAcademicLevelService {
-  private IAcademicLevelRepository iAcademicLevelRepository = new AcademicLevelRepositoryImpl();
+    @Autowired
+    private IAcademicLevelRepository iAcademicLevelRepository;
+
     @Override
-    public List<AcademicLevel> getList() {
-        return iAcademicLevelRepository.getList();
+    public List<AcademicLevel> findAll() {
+        return iAcademicLevelRepository.findAll();
     }
 }

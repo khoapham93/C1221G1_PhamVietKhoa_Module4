@@ -1,9 +1,8 @@
 package com.khoapham.repository;
 
-import models.RentType;
+import com.khoapham.models.RentType;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface IRentTypeRepository extends JpaRepository<RentType, Integer> {
 
-public interface IRentTypeRepository {
-    List<RentType> getList();
 }

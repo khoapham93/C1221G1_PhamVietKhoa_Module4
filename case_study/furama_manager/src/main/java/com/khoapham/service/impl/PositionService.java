@@ -1,16 +1,20 @@
 package com.khoapham.service.impl;
 
-import models.Position;
-import repository.IPositionRepository;
-import repository.impl.PositionRepositoryImpl;
-import service.IPositionService;
+import com.khoapham.models.Position;
+import com.khoapham.repository.IPositionRepository;
+import com.khoapham.service.IPositionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PositionService implements IPositionService {
-    private IPositionRepository iPositionRepository = new PositionRepositoryImpl();
+    @Autowired
+    private IPositionRepository iPositionRepository;
+
     @Override
-    public List<Position> getList() {
-        return iPositionRepository.getList();
+    public List<Position> findAll() {
+        return iPositionRepository.findAll();
     }
 }

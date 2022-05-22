@@ -1,15 +1,13 @@
 package com.khoapham.repository;
 
-import dto.FacilityDTO;
-import models.Facility;
+import com.khoapham.models.Facility;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface IFacilityRepository extends JpaRepository<Facility, Integer> {
+    Page<Facility> findAllByNameContainingAndRoomStandardContaining(String name, String roomStandard, Pageable pageable);
 
-public interface IFacilityRepository extends ICRUDRepository<Facility>{
-    List<FacilityDTO> getList();
-
-    Facility findById(Integer id);
-
-    List<FacilityDTO> search(String fieldSearch1, String fieldSearch2, String fieldSearch3, String searchKey1, String searchKey2, String searchKey3);
+    Page<Facility> findAllByNameContainingAndRoomStandardContainingAndFacilityType_Id(String name, String roomStandard, Integer facilityType, Pageable pageable);
 
 }

@@ -1,100 +1,89 @@
 package com.khoapham.service.impl;
 
-import dto.EmployeeDTO;
-import models.Employee;
-import repository.IEmployeeRepository;
-import repository.impl.EmployeeRepositoryImpl;
-import service.IEmployeeService;
+import com.khoapham.dto.EmployeeDto;
+import com.khoapham.models.Employee;
+import com.khoapham.repository.IEmployeeRepository;
+import com.khoapham.service.IEmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+@Service
 public class EmployeeService implements IEmployeeService {
-    private IEmployeeRepository iEmployeeRepository = new EmployeeRepositoryImpl();
 
-    private static final String NAME_REGEX = "^\\p{L}+[0-9]*( (\\p{L}|[0-9])+)*$";
-    private static final String PHONE_REGEX = "^(090|091|\\(84\\)90|\\(84\\)91)\\d{7}$";
-    private static final String IDCARD_REGEX = "^(\\d{9}|\\d{12})$";
-    private static final String EMAIL_REGEX = "^\\w+([\\.-]?\\w+)*@[a-z]+\\.(\\w+)(\\.\\w{2,3})?";
-
-    private Map<String, String> validate(Employee employee) {
-        Map<String, String> map = new HashMap<>();
-
-        if (employee.getName() == null) {
-            map.put("name", "Name can't empty");
-        } else if (!employee.getName().matches(NAME_REGEX)) {
-            map.put("name", "Name is invalid!");
-        }
-        if (!employee.getPhone().matches(PHONE_REGEX)) {
-            map.put("phone", "Phone is begin with 090 or 091 or (84)...");
-        }
-        if (!employee.getIdCard().matches(IDCARD_REGEX)) {
-            map.put("idCard", "Id card include 9 or 12 numbers");
-        }
-        if (!employee.getEmail().matches(EMAIL_REGEX)) {
-            map.put("email", "Email invalid");
-        }
-        if (employee.getBirthday() == null) {
-            map.put("birthday", "Birthday invalid");
-        }
-        if (employee.getSalary() == null) {
-            map.put("salary", "Salary must be a number!");
-        } else if (employee.getSalary() < 0) {
-            map.put("salary", "Salary must be a positive!");
-        }
-        if (employee.getPositionId() == null) {
-            map.put("position", "Position invalid");
-        }
-        if (employee.getAcademicId() == null) {
-            map.put("academicLevel", "Academic invalid");
-        }
-        if (employee.getDepartmentId() == null) {
-            map.put("department", "Department invalid");
-        }
-        return map;
-    }
+    @Autowired
+    private IEmployeeRepository iEmployeeRepository;
 
     @Override
-    public Map<String, String> save(Employee employee) {
-        Map<String, String> map = validate(employee);
-        if (map.isEmpty()) {
-            iEmployeeRepository.save(employee);
+    public Page<Employee> findAll(String name, String phone, Integer department, Pageable pageable) {
+        if (department == -1) {
+            return this.iEmployeeRepository.findByNameContainingAndPhoneContaining(name, phone, pageable);
+        } else {
+            return this.iEmployeeRepository.findAllByNameContainingAndPhoneContainingAndDepartment_Id(name, phone, department, pageable);
         }
-
-        return map;
-    }
-
-    @Override
-    public Map<String, String> update(Employee employee) {
-
-        Map<String, String> map = validate(employee);
-        if (map.isEmpty()) {
-            boolean checkUpdate = iEmployeeRepository.update(employee);
-            if (!checkUpdate) {
-                map.put("message", "Something's wrong, can't update!");
-            }
-        }
-        return map;
-    }
-
-    @Override
-    public boolean remove(Integer id) {
-        return iEmployeeRepository.remove(id);
-    }
-
-    @Override
-    public List<EmployeeDTO> getList() {
-        return iEmployeeRepository.getList();
     }
 
     @Override
     public Employee findById(Integer id) {
-        return iEmployeeRepository.findById(id);
+        return this.iEmployeeRepository.findById(id).orElse(null);
     }
 
     @Override
-    public List<EmployeeDTO> search(String fieldSearch1, String fieldSearch2, String fieldSearch3, String searchKey1, String searchKey2, String searchKey3) {
-        return iEmployeeRepository.search(fieldSearch1, fieldSearch2, fieldSearch3, searchKey1, searchKey2, searchKey3);
+    public void checkExists(EmployeeDto employeeDto, BindingResult bindingResult) {
+        //email
+        Employee existsEmail = this.iEmployeeRepository.findFirstByEmail(employeeDto.getEmail());
+        //idCard
+        Employee existsPhone = this.iEmployeeRepository.findFirstByPhone(employeeDto.getPhone());
+        //phone
+        Employee existsIdCard = this.iEmployeeRepository.findFirstByIdCard(employeeDto.getIdCard());
+
+        if (employeeDto.getId() == null) {
+            //Add new
+            if (!"".equals(employeeDto.getEmail())) {
+                if (existsEmail != null) {
+                    bindingResult.rejectValue("email", "email.exists");
+                }
+            }
+            if (!"".equals(employeeDto.getPhone())) {
+                if (existsPhone != null) {
+                    bindingResult.rejectValue("phone", "phone.exists");
+                }
+            }
+            if (!"".equals(employeeDto.getIdCard())) {
+                if (existsIdCard != null) {
+                    bindingResult.rejectValue("idCard", "idCard.exists");
+                }
+            }
+        } else {
+            //update
+            if (existsEmail != null) {
+                if (!existsEmail.getId().equals(employeeDto.getId())) {
+                    bindingResult.rejectValue("email", "email.exists");
+                }
+            }
+            if (existsPhone != null) {
+                if (!existsPhone.getId().equals(employeeDto.getId())) {
+                    bindingResult.rejectValue("phone", "phone.exists");
+                }
+            }
+            if (existsIdCard != null) {
+                if (!existsIdCard.getId().equals(employeeDto.getId())) {
+                    bindingResult.rejectValue("idCard", "idCard.exists");
+                }
+            }
+
+        }
+    }
+
+    @Override
+    public void save(Employee employee) {
+        this.iEmployeeRepository.save(employee);
+    }
+
+    @Override
+    public void remove(Integer id) {
+        this.iEmployeeRepository.deleteById(id);
     }
 }

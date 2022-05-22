@@ -1,9 +1,7 @@
 package com.khoapham.repository;
 
-import models.AcademicLevel;
+import com.khoapham.models.AcademicLevel;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-public interface IAcademicLevelRepository {
-    List<AcademicLevel> getList();
+public interface IAcademicLevelRepository extends JpaRepository<AcademicLevel,Integer> {
 }

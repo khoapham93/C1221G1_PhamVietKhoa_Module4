@@ -1,5 +1,6 @@
 package com.khoapham.dto;
 
+import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -23,7 +24,8 @@ public abstract class PersonDto implements Validator {
         this.email = email;
         this.address = address;
     }
-    public PersonDto( String name, LocalDate birthday, String idCard, String phone, String email, String address) {
+
+    public PersonDto(String name, LocalDate birthday, String idCard, String phone, String email, String address) {
         this.name = name;
         this.birthday = birthday;
         this.idCard = idCard;
@@ -32,7 +34,8 @@ public abstract class PersonDto implements Validator {
         this.address = address;
     }
 
-    public PersonDto(){}
+    public PersonDto() {
+    }
 
     public Integer getId() {
         return id;
@@ -90,7 +93,6 @@ public abstract class PersonDto implements Validator {
         this.address = address;
     }
 
-
     @Override
     public boolean supports(Class<?> clazz) {
         return false;
@@ -99,6 +101,25 @@ public abstract class PersonDto implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
 
+        PersonDto personDto = (PersonDto) target;
+
+        String name = personDto.getName();
+        Validation.checkVietnameseName("name", name, errors);
+
+        LocalDate birthday = personDto.getBirthday();
+        Validation.checkBirthday("birthday", birthday, errors);
+
+        String idCard = personDto.getIdCard();
+        Validation.checkIdCard("idCard", idCard, errors);
+
+        String phone = personDto.getPhone();
+        Validation.checkPhone("phone", phone, errors);
+
+        String email = personDto.getEmail();
+        Validation.checkEmail("email", email, errors);
+
+        String address = personDto.getAddress();
+        Validation.checkEmpty("address", address, errors);
     }
 
 }

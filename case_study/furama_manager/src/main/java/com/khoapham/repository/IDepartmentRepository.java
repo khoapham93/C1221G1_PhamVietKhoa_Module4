@@ -1,10 +1,8 @@
 package com.khoapham.repository;
 
+import com.khoapham.models.Department;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import models.Department;
+public interface IDepartmentRepository extends JpaRepository<Department, Integer> {
 
-import java.util.List;
-
-public interface IDepartmentRepository {
-    List<Department> getList();
 }

@@ -93,22 +93,19 @@ public class MainController {
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public String adminPage(@Validated @ModelAttribute AppUserDto userDto,
                             BindingResult bindingResult,
-                            Model model, Principal principal) {
+                            Model model) {
 
         new AppUserDto().validate(userDto, bindingResult);
-
         this.iAppUserService.userNameExists(userDto, bindingResult);
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("userDto", userDto);
             return "/signUpPage";
         } else {
-
             AppUser appUser = new AppUser();
             BeanUtils.copyProperties(userDto, appUser);
             iAppUserService.registerNewUserAccount(appUser);
             AppRole appRole = this.iAppRoleService.findById(Long.valueOf(2)); // rule of user
-
             UserRole userRole = new UserRole();
             this.iUserRoleService.setUserRoleForNewUser(userRole,appRole,appUser);
             return "/signUpSuccess";

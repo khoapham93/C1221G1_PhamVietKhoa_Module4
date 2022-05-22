@@ -1,302 +1,119 @@
 package com.khoapham.controller;
 
-import dto.CustomerDTO;
-import models.Customer;
-import models.CustomerType;
-import service.ICustomerService;
-import service.ICustomerTypeService;
-import service.impl.CustomerServiceImpl;
-import service.impl.CustomerTypeServiceImpl;
+import com.khoapham.dto.CustomerDto;
+import com.khoapham.dto.EmployeeDto;
+import com.khoapham.models.Customer;
+import com.khoapham.models.CustomerType;
+import com.khoapham.models.Employee;
+import com.khoapham.service.ICustomerService;
+import com.khoapham.service.ICustomerTypeService;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
-@WebServlet(name = "controller.CustomerController", urlPatterns = "/customers")
-public class CustomerController extends HttpServlet {
-    private ICustomerService iCustomerService = new CustomerServiceImpl();
-    private ICustomerTypeService iCustomerTypeService = new CustomerTypeServiceImpl();
+@Controller
+@RequestMapping("/customers")
+public class CustomerController {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                createCustomer(request, response);
-                break;
-            case "edit":
-                editCustomer(request, response);
-                break;
-            case "delete":
-                deleteCustomer(request, response);
-                break;
-            default:
-                goListCustomer(request, response);
-        }
+    @Autowired
+    private ICustomerService iCustomerService;
+    @Autowired
+    private ICustomerTypeService iCustomerTypeService;
+
+    @ModelAttribute("customerTypes")
+    public List<CustomerType> findAllCustomerType() {
+        return this.iCustomerTypeService.findAll();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                goCreateCustomer(request, response);
-                break;
-            case "edit":
-                goEditCustomer(request, response);
-                break;
-            case "search":
-                goSearchCustomer(request, response);
-                break;
-            case "view":
-                goDetailCustomer(request, response);
-                break;
-            default:
-                goListCustomer(request, response);
-        }
+    @GetMapping("")
+    public String goListCustomers(Model model,
+                                  @RequestParam Optional<String> name,
+                                  @RequestParam Optional<String> phone,
+                                  @RequestParam Optional<Integer> customerType,
+                                  @PageableDefault(value = 5) Pageable pageable) {
+        String nameVal = name.orElse("");
+        String phoneVal = phone.orElse("");
+        Integer customerTypeVal = customerType.orElse(-1);
+        Page<Customer> customers = this.iCustomerService.findAll(nameVal, phoneVal, customerTypeVal, pageable);
+        model.addAttribute("customers", customers);
+        model.addAttribute("nameVal", nameVal);
+        model.addAttribute("phoneVal", phoneVal);
+        model.addAttribute("customerTypeVal", customerTypeVal);
+        return "/customers/list";
     }
 
-    private void goDetailCustomer(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.setAttribute("urlPath", "customer");
-
-            request.getRequestDispatcher("/view/customers/detail.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+    @GetMapping("/create")
+    public String create(Model model) {
+        model.addAttribute("customerDto", new CustomerDto());
+        return "/customers/create";
     }
 
-    private void goListCustomer(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            List<CustomerDTO> customerDTOList = iCustomerService.getList();
-            request.setAttribute("urlPath", "customer");
-            request.setAttribute("customerList", customerDTOList);
-            request.getRequestDispatcher("/view/customers/list.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
-    }
+    @PostMapping("/save")
+    public String save(@ModelAttribute @Validated CustomerDto customerDto,
+                       BindingResult bindingResult,
+                       Model model) {
 
-    private void goCreateCustomer(HttpServletRequest request, HttpServletResponse response) {
-        try {
-//            String value = null;
-//            double b = value == null || value.isEmpty() ? Double.NaN : Double.parseDouble(value);
-//            System.out.println(b);
-//            System.out.println(Double.isNaN(b));
-
-            //get list customer type
-            List<CustomerType> customerTypes = iCustomerTypeService.getList();
-            request.setAttribute("urlPath", "customer");
-            request.setAttribute("types", customerTypes);
-            request.getRequestDispatcher("/view/customers/create.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getParameter("name");
-        String customerCode = request.getParameter("customerCode");
-
-        LocalDate birthday = null;
-        try {
-            birthday = LocalDate.parse(request.getParameter("birthday"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        String idCard = request.getParameter("idCard");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-
-        Integer customerType = null;
-        try {
-            customerType = Integer.valueOf(request.getParameter("type"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Integer gender = null;
-        try {
-            gender = Integer.valueOf(request.getParameter("gender"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Customer customer =
-                new Customer(
-                        name,
-                        birthday,
-                        idCard,
-                        phone,
-                        email,
-                        address,
-                        customerCode,
-                        customerType,
-                        gender);
-        Map<String, String> map = iCustomerService.save(customer);
-        if (map.isEmpty()) {
-            try {
-                request.setAttribute("message", "Customer was create successfully!");
-                request.setAttribute("urlPath", "customer");
-                request.getRequestDispatcher("/view/customers/create.jsp").forward(request, response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
+        new CustomerDto().validate(customerDto, bindingResult);
+        this.iCustomerService.checkExists(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("customerDto", customerDto);
         } else {
-
-            request.setAttribute("error", map);
-            request.setAttribute("customer", customer);
-
-            goCreateCustomer(request, response);
-
+            Customer customer = new Customer();
+            BeanUtils.copyProperties(customerDto, customer);
+            iCustomerService.save(customer);
+            model.addAttribute("customerDto", new CustomerDto());
+            model.addAttribute("success", "Create customer successfully!");
         }
+        return "/customers/create";
     }
 
-    private void goEditCustomer(HttpServletRequest request, HttpServletResponse response) {
-        Integer id = Integer.valueOf(request.getParameter("id"));
-        Customer customer = iCustomerService.findById(id);
-        List<CustomerType> customerTypes = iCustomerTypeService.getList();
+    @GetMapping("/{id}/edit")
+    public String edit(@PathVariable int id, Model model) {
 
-        if (customer != null) {
-            try {
-                request.setAttribute("types", customerTypes);
-                request.setAttribute("customer", customer);
-                request.setAttribute("urlPath", "customer");
-                request.getRequestDispatcher("/view/customers/edit.jsp").forward(request, response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
+        Customer customer = this.iCustomerService.findById(id);
+        CustomerDto customerDto = new CustomerDto();
+
+        BeanUtils.copyProperties(customer, customerDto);
+
+        model.addAttribute("customerDto", customerDto);
+        return "/customers/edit";
+    }
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute @Validated CustomerDto customerDto,
+                         BindingResult bindingResult,
+                         Model model,
+                         RedirectAttributes redirect) {
+        new CustomerDto().validate(customerDto, bindingResult);
+        this.iCustomerService.checkExists(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("customerDto", customerDto);
+            return "/customers/edit";
         } else {
-            try {
-                request.setAttribute("message", "can't not find customer");
-                request.getRequestDispatcher("/customers").forward(request, response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
+            Customer customer = new Customer();
+            BeanUtils.copyProperties(customerDto, customer);
+            iCustomerService.save(customer);
+            redirect.addFlashAttribute("success", "Update customer successfully!");
+            return "redirect:/customers/";
         }
     }
 
-    private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
-        Integer id = Integer.valueOf(request.getParameter("id"));
-        String name = request.getParameter("name");
-        String customerCode = request.getParameter("customerCode");
-
-        LocalDate birthday = null;
-        try {
-            birthday = LocalDate.parse(request.getParameter("birthday"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        String idCard = request.getParameter("idCard");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String address = request.getParameter("address");
-
-        Integer customerType = null;
-        try {
-            customerType = Integer.valueOf(request.getParameter("type"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Integer gender = null;
-        try {
-            gender = Integer.valueOf(request.getParameter("gender"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Customer customer =
-                new Customer(
-                        id,
-                        name,
-                        birthday,
-                        idCard,
-                        phone,
-                        email,
-                        address,
-                        customerCode,
-                        customerType,
-                        gender);
-        Map<String, String> map = iCustomerService.update(customer);
-        if (map.isEmpty()) {
-            request.setAttribute("message", "Update successfully!");
-            goListCustomer(request, response);
-        } else {
-            request.setAttribute("error", map);
-            goEditCustomer(request, response);
-        }
+    @PostMapping("/delete")
+    public String delete(Customer customer, RedirectAttributes redirect) {
+        this.iCustomerService.remove(customer.getId());
+        redirect.addFlashAttribute("success", "Removed customer successfully!");
+        return "redirect:/customers/";
     }
 
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
-
-        Integer id = Integer.valueOf(request.getParameter("id"));
-        boolean checkDelete = iCustomerService.remove(id);
-        if (!checkDelete) {
-            request.setAttribute("message", "Something's wrong, can't delete!");
-            goListCustomer(request, response);
-        } else {
-            request.setAttribute("message", "delete successfully!");
-            goListCustomer(request, response);
-        }
-    }
-
-    private void goSearchCustomer(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            String fieldSearch1 = request.getParameter("fieldSearch1");
-            String searchKey1 = request.getParameter("searchKey1");
-            String fieldSearch2 = request.getParameter("fieldSearch2");
-            String searchKey2 = request.getParameter("searchKey2");
-            String fieldSearch3 = request.getParameter("fieldSearch3");
-            String searchKey3 = request.getParameter("searchKey3");
-            List<CustomerDTO> customerDTOList = iCustomerService.search(fieldSearch1, fieldSearch2, fieldSearch3, searchKey1, searchKey2, searchKey3);
-            request.setAttribute("customerList", customerDTOList);
-            request.setAttribute("urlPath", "customer");
-            request.getRequestDispatcher("/view/customers/list.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

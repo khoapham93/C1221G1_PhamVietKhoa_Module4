@@ -1,191 +1,57 @@
 package com.khoapham.controller;
 
-import dto.FacilityDTO;
-import models.Facility;
-import models.FacilityType;
-import models.RentType;
-import service.IFacilityService;
-import service.IFacilityTypeService;
-import service.IRentTypeService;
-import service.impl.FacilityServiceImpl;
-import service.impl.FacilityTypeServiceImpl;
-import service.impl.RentTypeServiceImpl;
+import com.khoapham.models.*;
+import com.khoapham.service.IFacilityService;
+import com.khoapham.service.IFacilityTypeService;
+import com.khoapham.service.IRentTypeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
 
-@WebServlet(name = "FacilityController", urlPatterns = "/facility")
-public class FacilityController extends HttpServlet {
-    private IFacilityService iFacilityService = new FacilityServiceImpl();
-    private IRentTypeService iRentTypeService = new RentTypeServiceImpl();
-    private IFacilityTypeService iFacilityTypeService = new FacilityTypeServiceImpl();
+@Controller
+@RequestMapping("/facilities")
+public class FacilityController {
+    @Autowired
+    private IFacilityService iFacilityService;
+    @Autowired
+    private IFacilityTypeService iFacilityTypeService;
+    @Autowired
+    private IRentTypeService iRentTypeService;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                createFacility(request, response);
-                break;
-            case "edit":
-//                editCustomer(request, response);
-                break;
-            case "delete":
-//                deleteCustomer(request, response);
-                break;
-            default:
-                goListFacility(request, response);
-        }
+    @ModelAttribute("facilityTypes")
+    public List<FacilityType> findAllFacilityType() {
+        return this.iFacilityTypeService.findAll();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                goCreateFacility(request, response);
-                break;
-            case "edit":
-//                goEditCustomer(request, response);
-                break;
-            case "search":
-//                goSearchCustomer(request, response);
-                break;
-            case "view":
-//                goDetailCustomer(request, response);
-                break;
-            default:
-                goListFacility(request, response);
-        }
+    @ModelAttribute("rentTypes")
+    public List<RentType> findAllRentType() {
+        return this.iRentTypeService.findAll();
     }
 
-    private void goCreateFacility(HttpServletRequest request, HttpServletResponse response) {
-        List<RentType> rentTypeList = iRentTypeService.getList();
-        List<FacilityType> facilityTypeList = iFacilityTypeService.getList();
-
-        try {
-            request.setAttribute("urlPath", "service");
-            request.setAttribute("rentTypeList", rentTypeList);
-            request.setAttribute("facilityTypeList", facilityTypeList);
-            request.getRequestDispatcher("/view/facility/create.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private void goListFacility(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            List<FacilityDTO> facilityDTOList = iFacilityService.getList();
-            request.setAttribute("urlPath", "service");
-            request.setAttribute("facilityList", facilityDTOList);
-            request.getRequestDispatcher("/view/facility/list.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void createFacility(HttpServletRequest request, HttpServletResponse response) {
-
-        Integer facilityTypeId = null;
-        try {
-            facilityTypeId = Integer.valueOf(request.getParameter("facilityTypeId"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Integer rentTypeId = null;
-        try {
-            rentTypeId = Integer.valueOf(request.getParameter("rentTypeId"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        String code = request.getParameter("code");
-        String name = request.getParameter("name");
-
-        Double floorSquare = null;
-        try {
-            floorSquare = Double.valueOf(request.getParameter("floorSquare"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Double rentalFee = null;
-        try {
-            rentalFee = Double.valueOf(request.getParameter("rentalFee"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Integer maximumPeople = null;
-        try {
-            maximumPeople = Integer.valueOf(request.getParameter("maximumPeople"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        String roomStandard = request.getParameter("roomStandard");
-        String description = request.getParameter("description");
-        Double poolSquare = null;
-        try {
-            poolSquare = Double.valueOf(request.getParameter("poolSquare"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Integer numberFloor = null;
-        try {
-            numberFloor = Integer.valueOf(request.getParameter("numberFloor"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Facility facility =
-                new Facility(facilityTypeId,
-                        rentTypeId,
-                        code,
-                        name,
-                        floorSquare,
-                        rentalFee,
-                        maximumPeople,
-                        roomStandard,
-                        description,
-                        poolSquare,
-                        numberFloor);
-
-        Map<String, String> map = iFacilityService.save(facility);
-
-        if (map.isEmpty()) {
-            try {
-                request.setAttribute("message", "Service was create successfully!");
-                request.setAttribute("urlPath", "service");
-                request.getRequestDispatcher("/view/facility/create.jsp").forward(request, response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            request.setAttribute("error", map);
-            request.setAttribute("facility", facility);
-            goCreateFacility(request, response);
-        }
+    @GetMapping("")
+    public String goListEmployees(Model model,
+                                  @RequestParam Optional<String> name,
+                                  @RequestParam Optional<String> roomStandard,
+                                  @RequestParam Optional<Integer> facilityType,
+                                  @PageableDefault(value = 5) Pageable pageable) {
+        String nameVal = name.orElse("");
+        String roomStandardVal = roomStandard.orElse("");
+        Integer facilityTypeVal = facilityType.orElse(-1);
+        Page<Facility> facilities = this.iFacilityService.findAll(nameVal, roomStandardVal, facilityTypeVal, pageable);
+        model.addAttribute("facilities", facilities);
+        model.addAttribute("nameVal", nameVal);
+        model.addAttribute("roomStandardVal", roomStandardVal);
+        model.addAttribute("facilityTypeVal", facilityTypeVal);
+        return "/facilities/list";
     }
 }

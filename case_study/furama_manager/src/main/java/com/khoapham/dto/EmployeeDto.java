@@ -3,20 +3,25 @@ package com.khoapham.dto;
 import com.khoapham.models.AcademicLevel;
 import com.khoapham.models.Department;
 import com.khoapham.models.Position;
+import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import java.time.LocalDate;
+import javax.validation.constraints.NotNull;
 
-public class EmployeeDTO extends PersonDto {
-
+public class EmployeeDto extends PersonDto {
     private Double salary;
+
+    @NotNull(message = "{object.empty} position")
     private Position position;
+
+    @NotNull(message = "{object.empty} academicLevel")
     private AcademicLevel academicLevel;
+
+    @NotNull(message = "{object.empty} department")
     private Department department;
 
-    public EmployeeDTO() {
+    public EmployeeDto() {
     }
 
     public Double getSalary() {
@@ -58,6 +63,12 @@ public class EmployeeDTO extends PersonDto {
 
     @Override
     public void validate(Object target, Errors errors) {
+        super.validate(target, errors);
 
+        EmployeeDto employeeDto = (EmployeeDto) target;
+
+        Double salary = employeeDto.getSalary();
+        Validation.checkPositiveDouble("salary", salary, errors);
+        
     }
 }

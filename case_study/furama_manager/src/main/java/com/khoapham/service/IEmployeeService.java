@@ -1,16 +1,16 @@
 package com.khoapham.service;
 
+import com.khoapham.dto.EmployeeDto;
 import com.khoapham.models.Employee;
-import dto.EmployeeDTO;
-import models.Employee;
-
-import java.awt.print.Pageable;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.validation.BindingResult;
 
 public interface IEmployeeService extends ICRUDService<Employee> {
-    Pageable<EmployeeDTO> getList();
+
+    Page<Employee> findAll(String name,String phone, Integer department,Pageable pageable);
 
     Employee findById(Integer id);
 
-    List<EmployeeDTO> search(String fieldSearch1, String fieldSearch2, String fieldSearch3, String searchKey1, String searchKey2, String searchKey3);
+    void checkExists(EmployeeDto employeeDto, BindingResult bindingResult);
 }

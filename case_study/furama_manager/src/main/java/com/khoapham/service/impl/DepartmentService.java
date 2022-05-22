@@ -1,16 +1,20 @@
 package com.khoapham.service.impl;
 
-import models.Department;
-import repository.IDepartmentRepository;
-import repository.impl.DepartmentRepositoryImpl;
-import service.IDepartmentService;
+import com.khoapham.models.Department;
+import com.khoapham.repository.IDepartmentRepository;
+import com.khoapham.service.IDepartmentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DepartmentService implements IDepartmentService {
-    private IDepartmentRepository iDepartmentRepository = new DepartmentRepositoryImpl();
+    @Autowired
+    private IDepartmentRepository iDepartmentRepository;
+
     @Override
-    public List<Department> getList() {
-        return iDepartmentRepository.getList();
+    public List<Department> findAll() {
+        return iDepartmentRepository.findAll();
     }
 }

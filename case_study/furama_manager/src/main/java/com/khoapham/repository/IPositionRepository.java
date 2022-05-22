@@ -1,10 +1,8 @@
 package com.khoapham.repository;
 
+import com.khoapham.models.Position;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import models.Position;
+public interface IPositionRepository extends JpaRepository<Position, Integer> {
 
-import java.util.List;
-
-public interface IPositionRepository {
-    List<Position> getList();
 }

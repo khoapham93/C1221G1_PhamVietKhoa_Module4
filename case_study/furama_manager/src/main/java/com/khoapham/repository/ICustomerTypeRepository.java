@@ -1,9 +1,8 @@
 package com.khoapham.repository;
 
-import models.CustomerType;
+import com.khoapham.models.CustomerType;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+public interface ICustomerTypeRepository extends JpaRepository<CustomerType,Integer> {
 
-public interface ICustomerTypeRepository{
-    List<CustomerType> getList();
 }
