@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="row py-2">
+    <div class="col-6 mx-auto">
+        <h5 class="text-center py-1"> Create new Service</h5>
+        <div class="text-center">
+            <span class="message text-success" th:text="${success}"></span>
+        </div>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form th:action="@{/facilities/save}" th:object="${facilityDto}" method="POST">
+                <div class="form-group">
+                    <label>Service type</label>
+                    <select th:field="*{facilityType}"
+                            id="facilityTypeId"
+                            class="form-control"
+                            onchange="showFacilityType()">
+                        <option th:value="null"
+                        >Select Rent type
+                        </option>
+                        <option th:each="row :${facilityTypes}"
+                                th:value="${row.id}"
+                                th:text="${row.facilityType}"
+                        >
+                        </option>
+                    </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('facilityType')}"
+                           th:errors="*{facilityType}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" type="text" th:field="*{name}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('name')}"
+                           th:errors="*{name}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Code</label>
+                    <input class="form-control" type="text" th:field="*{code}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('code')}"
+                           th:errors="*{code}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Floor Square</label>
+                    <input class="form-control" type="number" step="any" th:field="*{floorSquare}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('floorSquare')}"
+                           th:errors="*{floorSquare}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Rental Fee</label>
+                    <input class="form-control" type="number" step="any" th:field="*{rentalFee}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('rentalFee')}"
+                           th:errors="*{rentalFee}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Maximum people</label>
+                    <input class="form-control" type="number" th:field="*{maximumPeople}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('maximumPeople')}"
+                           th:errors="*{maximumPeople}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Rent type</label>
+                    <select th:field="*{rentType}"
+                            class="form-control">
+                        <option th:value="null"
+                        >Select Rent type
+                        </option>
+                        <option th:each="row :${rentTypes}"
+                                th:value="${row.id}"
+                                th:text="${row.rentType}"
+                        >
+                        </option>
+                    </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('rentType')}"
+                           th:errors="*{rentType}"></small>
+                </div>
+
+                <!--                 House and Villa-->
+                <div id="villaAndHouseOnly">
+                    <div class="form-group">
+                        <label>Room standard</label>
+                        <input class="form-control" type="text" th:field="*{roomStandard}"/>
+                        <small Class="text-danger" th:if="${#fields.hasErrors('roomStandard')}"
+                               th:errors="*{roomStandard}"></small>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input class="form-control" type="text" th:field="*{description}"/>
+                        <small Class="text-danger" th:if="${#fields.hasErrors('description')}"
+                               th:errors="*{description}"></small>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Floor</label>
+                        <input class="form-control" type="number" th:field="*{numberFloor}"/>
+                        <small Class="text-danger" th:if="${#fields.hasErrors('numberFloor')}"
+                               th:errors="*{numberFloor}"></small>
+                    </div>
+                </div>
+
+                <!--                Villa-->
+                <div id="villaOnly">
+                    <div class="form-group">
+                        <label>Pool square</label>
+                        <input class="form-control" type="number" th:field="*{poolSquare}"/>
+                        <small Class="text-danger" th:if="${#fields.hasErrors('poolSquare')}"
+                               th:errors="*{poolSquare}"></small>
+                    </div>
+                </div>
+
+                <!--                Room-->
+                <div id="roomOnly">
+                    <div class="form-group">
+                        <label>Free service include</label>
+                        <input class="form-control" type="text" th:field="*{freeServiceInclude}" step="any"/>
+                        <small Class="text-danger" th:if="${#fields.hasErrors('freeServiceInclude')}"
+                               th:errors="*{freeServiceInclude}"></small>
+                    </div>
+                </div>
+                <div class="col-sm-6 mx-auto">
+                    <button type="submit" class="btn btn-primary btn-block">+ Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/commons/layout :: footer"></footer>
+</body>
+<th:block th:replace="/commons/layout :: script"></th:block>
+</html>
+<script>
+    showFacilityType();
+
+    function showFacilityType() {
+        let selected = $("#facilityTypeId").val();
+        if (selected == 3) { // Room
+            $("#villaAndHouseOnly").hide();
+            $("#villaOnly").hide();
+            $("#roomOnly").show();
+            $('#villaAndHouseOnly').find("input").each(function () {
+                $(this).val('');
+            });
+            $('#villaOnly').find("input").each(function () {
+                $(this).val('');
+            });
+        } else if (selected == 2) { //House
+            $("#villaAndHouseOnly").show();
+            $("#villaOnly").hide();
+            $("#roomOnly").hide();
+            $('#villaOnly').find("input").each(function () {
+                $(this).val('');
+            });
+            $('#roomOnly').find("input").each(function () {
+                $(this).val('');
+            });
+        } else if (selected == 1) { //Villa
+            $("#villaAndHouseOnly").show();
+            $("#villaOnly").show();
+            $("#roomOnly").hide();
+            $('#roomOnly').find("input").each(function () {
+                $(this).val('');
+            });
+        }else {
+            $("#villaAndHouseOnly").show();
+            $("#villaOnly").show();
+            $("#roomOnly").show();
+        }
+    }
+</script>

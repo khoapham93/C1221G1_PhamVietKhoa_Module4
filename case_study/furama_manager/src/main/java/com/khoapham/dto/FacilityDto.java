@@ -3,8 +3,11 @@ package com.khoapham.dto;
 import com.khoapham.models.Facility;
 import com.khoapham.models.FacilityType;
 import com.khoapham.models.RentType;
+import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+
+import javax.validation.constraints.NotNull;
 
 public class FacilityDto implements Validator {
     private Integer id;
@@ -17,8 +20,11 @@ public class FacilityDto implements Validator {
     private String description;
     private Double poolSquare;
     private Integer numberFloor;
+    @NotNull(message = "{object.empty} facilityType")
     private FacilityType facilityType;
+    @NotNull(message = "{object.empty} rentType")
     private RentType rentType;
+    private String freeServiceInclude;
 
     public FacilityDto(Integer id,
                        String code,
@@ -71,6 +77,14 @@ public class FacilityDto implements Validator {
     }
 
     public FacilityDto() {
+    }
+
+    public String getFreeServiceInclude() {
+        return freeServiceInclude;
+    }
+
+    public void setFreeServiceInclude(String freeServiceInclude) {
+        this.freeServiceInclude = freeServiceInclude;
     }
 
     public Integer getId() {
@@ -176,8 +190,44 @@ public class FacilityDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        Facility facility = (Facility) target;
+        FacilityDto facilityDto = (FacilityDto) target;
 
+        String code = facilityDto.getCode();
+        Validation.checkFacilityCode("code", code, errors);
+
+        String name = facilityDto.getName();
+        Validation.checkFacilityName("name", name, errors);
+
+        Double floorSquare = facilityDto.getFloorSquare();
+        Validation.checkPositiveDouble("floorSquare", floorSquare, errors);
+
+        Double rentalFee = facilityDto.getRentalFee();
+        Validation.checkPositiveDouble("rentalFee", rentalFee, errors);
+
+        Integer maximumPeople = facilityDto.getMaximumPeople();
+        Validation.checkMaximumPeople("maximumPeople", maximumPeople, errors);
+
+        if (facilityDto.getFacilityType() != null) {
+            Integer facilityTypeId = facilityDto.getFacilityType().getId();
+            if (facilityTypeId < 2) {
+                Double poolSquare = facilityDto.getPoolSquare();
+                Validation.checkPositiveDouble("poolSquare", poolSquare, errors);
+            }
+            if (facilityTypeId < 3) {
+                String roomStandard = facilityDto.getRoomStandard();
+                Validation.checkEmpty("roomStandard", roomStandard, errors);
+
+                String description = facilityDto.getDescription();
+                Validation.checkEmpty("description", description, errors);
+
+                Integer numberFloor = facilityDto.getNumberFloor();
+                Validation.checkNumberFloor("numberFloor", numberFloor, errors);
+            }
+            if (facilityTypeId == 3) {
+                String freeServiceInclude = facilityDto.getFreeServiceInclude();
+                Validation.checkEmpty("freeServiceInclude", freeServiceInclude, errors);
+            }
+        }
 
     }
 }

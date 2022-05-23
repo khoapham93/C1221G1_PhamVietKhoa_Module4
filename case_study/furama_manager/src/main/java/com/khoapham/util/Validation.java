@@ -90,11 +90,44 @@ public class Validation {
             error.rejectValue(fieldName, "gender.invalid");
         }
     }
+
     public static void checkCustomerCode(String fieldName, String customerCode, Errors error) {
         if ("".equals(customerCode)) {
             error.rejectValue(fieldName, "customerCode.empty");
         } else if (!customerCode.matches(CUSTOMER_CODE_REGEX)) {
             error.rejectValue(fieldName, "customerCode.invalid");
+        }
+    }
+
+    public static void checkFacilityCode(String fieldName, String facilityCode, Errors error) {
+        if ("".equals(facilityCode)) {
+            error.rejectValue(fieldName, "facilityCode.empty");
+        } else if (!facilityCode.matches(FACILITY_REGEX)) {
+            error.rejectValue(fieldName, "facilityCode.invalid");
+        }
+    }
+
+    public static void checkFacilityName(String fieldName, String facilityName, Errors error) {
+        if ("".equals(facilityName)) {
+            error.rejectValue(fieldName, "facilityName.empty");
+        } else if (!facilityName.matches(COMMON_NAME_REGEX)) {
+            error.rejectValue(fieldName, "facilityName.invalid");
+        }
+    }
+
+    public static void checkMaximumPeople(String fieldName, Integer people, Errors error) {
+        if (people == null) {
+            error.rejectValue(fieldName, "people.empty");
+        } else if (1 > people || people > 19) {
+            error.rejectValue(fieldName, "people.invalid");
+        }
+    }
+
+    public static void checkNumberFloor(String fieldName, Integer numberFloor, Errors error) {
+        if (numberFloor == null) {
+            error.rejectValue(fieldName, "numberFloor.empty");
+        } else if (1 > numberFloor || numberFloor > 10) {
+            error.rejectValue(fieldName, "numberFloor.invalid");
         }
     }
 

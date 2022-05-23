@@ -17,6 +17,8 @@ public class Facility {
     private String description;
     private Double poolSquare;
     private Integer numberFloor;
+    private String freeServiceInclude;
+
     @ManyToOne
     @JoinColumn(name = "facility_type_id", referencedColumnName = "id")
     private FacilityType facilityType;
@@ -75,6 +77,14 @@ public class Facility {
     }
 
     public Facility() {
+    }
+
+    public String getFreeServiceInclude() {
+        return freeServiceInclude;
+    }
+
+    public void setFreeServiceInclude(String freeServiceInclude) {
+        this.freeServiceInclude = freeServiceInclude;
     }
 
     public Integer getId() {

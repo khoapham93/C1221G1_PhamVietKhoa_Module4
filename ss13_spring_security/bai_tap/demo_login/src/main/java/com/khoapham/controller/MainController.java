@@ -86,24 +86,24 @@ public class MainController {
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String signUp(Model model) {
         AppUserDto appUserDto = new AppUserDto();
-        model.addAttribute("userDto", appUserDto);
+        model.addAttribute("appUserDto", appUserDto);
         return "/signUpPage";
     }
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public String adminPage(@Validated @ModelAttribute AppUserDto userDto,
+    public String adminPage(@Validated @ModelAttribute AppUserDto appUserDto,
                             BindingResult bindingResult,
                             Model model) {
 
-        new AppUserDto().validate(userDto, bindingResult);
-        this.iAppUserService.userNameExists(userDto, bindingResult);
+        new AppUserDto().validate(appUserDto, bindingResult);
+        this.iAppUserService.userNameExists(appUserDto, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            model.addAttribute("userDto", userDto);
+            model.addAttribute("appUserDto", appUserDto);
             return "/signUpPage";
         } else {
             AppUser appUser = new AppUser();
-            BeanUtils.copyProperties(userDto, appUser);
+            BeanUtils.copyProperties(appUserDto, appUser);
             iAppUserService.registerNewUserAccount(appUser);
             AppRole appRole = this.iAppRoleService.findById(Long.valueOf(2)); // rule of user
             UserRole userRole = new UserRole();
