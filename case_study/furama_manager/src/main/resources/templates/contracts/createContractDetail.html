@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="row py-2">
+    <div class="col-6 mx-auto">
+        <h5 class="text-center py-1"> Create new Contract detail</h5>
+        <div class="text-center">
+            <span class="message text-success" th:text="${success}"></span>
+        </div>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form th:action="@{/contract-details/save}" th:object="${contractDetailDto}" method="POST">
+                <div class="form-group">
+                    <label>Contract link</label>
+                    <select th:field="*{contract}"
+                            class="form-control">
+                        <option th:value="null"
+                        >Select Contract
+                        </option>
+                        <option th:each="row :${contracts}"
+                                th:value="${row.id}"
+                                th:text="${row.toString()}"
+                        >
+                        </option>
+                    </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('contract')}"
+                           th:errors="*{contract}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Service include</label>
+                    <select th:field="*{serviceInclude}"
+                            class="form-control">
+                        <option th:value="null"
+                        >Select Contract
+                        </option>
+                        <option th:each="row :${serviceIncludes}"
+                                th:value="${row.id}"
+                                th:text="${row.name}"
+                        >
+                        </option>
+                    </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('serviceInclude')}"
+                           th:errors="*{serviceInclude}"></small>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input class="form-control" type="number" th:field="*{quantity}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('quantity')}"
+                           th:errors="*{quantity}"></small>
+                </div>
+                <div class="col-sm-6 mx-auto">
+                    <button type="submit" class="btn btn-primary btn-block">+ Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/commons/layout :: footer"></footer>
+</body>
+</html>

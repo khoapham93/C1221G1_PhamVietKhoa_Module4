@@ -1,6 +1,6 @@
 package com.khoapham.service.impl;
 
-import com.khoapham.models.RentType;
+import com.khoapham.models.facility.RentType;
 import com.khoapham.repository.IRentTypeRepository;
 import com.khoapham.service.IRentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;

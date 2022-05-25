@@ -1,6 +1,9 @@
-package com.khoapham.models;
+package com.khoapham.models.facility;
+
+import com.khoapham.models.contract.Contract;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "facility")
@@ -18,6 +21,7 @@ public class Facility {
     private Double poolSquare;
     private Integer numberFloor;
     private String freeServiceInclude;
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "facility_type_id", referencedColumnName = "id")
@@ -25,6 +29,9 @@ public class Facility {
     @ManyToOne
     @JoinColumn(name = "rent_type_id", referencedColumnName = "id")
     private RentType rentType;
+
+    @OneToMany(mappedBy = "facility")
+    private Set<Contract> contractSet;
 
     public Facility(Integer id,
                     String code,
@@ -77,6 +84,22 @@ public class Facility {
     }
 
     public Facility() {
+    }
+
+    public Set<Contract> getContractSet() {
+        return contractSet;
+    }
+
+    public void setContractSet(Set<Contract> contractSet) {
+        this.contractSet = contractSet;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public String getFreeServiceInclude() {

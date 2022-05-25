@@ -62,8 +62,8 @@
                     <td th:text=" ${(facilities.number *facilities.getSize()) + rowStat.count}"></td>
                     <td th:text="${row.name}"></td>
                     <td th:text="${row.code}"></td>
-                    <td th:text="${row.floorSquare}"></td>
-                    <td th:text="${row.rentalFee}"></td>
+                    <td th:text="${#numbers.formatDecimal(row.floorSquare, 0, 'COMMA', 0, 'POINT')}"></td>
+                    <td th:text="${#numbers.formatDecimal(row.rentalFee, 0, 'COMMA', 0, 'POINT')}"></td>
                     <td>
                         <span th:if="${row.facilityType}" th:text="${row.facilityType.facilityType}"></span>
                         <span th:unless="${row.facilityType}" th:text="${row.facilityType}"></span>

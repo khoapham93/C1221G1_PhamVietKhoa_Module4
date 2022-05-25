@@ -3,7 +3,7 @@ package com.khoapham.service;
 
 
 
-import com.khoapham.models.Department;
+import com.khoapham.models.employee.Department;
 
 import java.util.List;
 

@@ -1,12 +1,10 @@
 package com.khoapham.dto;
 
-import com.khoapham.models.CustomerType;
+import com.khoapham.models.customer.CustomerType;
 import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 
 public class CustomerDto extends PersonDto {
     private String customerCode;

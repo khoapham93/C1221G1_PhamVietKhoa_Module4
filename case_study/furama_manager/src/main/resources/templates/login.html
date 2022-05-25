@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="row py-2">
+    <div class="col-4 mx-auto">
+        <h5 class="text-center py-1"> Login</h5>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form th:action="@{/j_spring_security_check}" method='POST'>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" name='username'/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name='password'/>
+                </div>
+                <div class="form-group">
+                        <input id="remember" class="form-check-inline" type="checkbox" name="remember-me"/>
+                        <label for="remember">Remember me</label>
+                </div>
+                <!-- /login?error=true -->
+                <div th:if="${#request.getParameter('error') == 'true'}"
+                     class="text-danger form-group">
+                    Username or password is incorrect, please try again!<br/>
+                </div>
+                <div class="col-sm-6 mx-auto">
+                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/commons/layout :: footer"></footer>
+</body>
+<th:block th:replace="/commons/layout :: script"></th:block>
+</html>

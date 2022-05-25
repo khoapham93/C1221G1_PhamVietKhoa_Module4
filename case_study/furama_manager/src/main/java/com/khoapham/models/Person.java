@@ -17,8 +17,9 @@ public abstract class Person {
     private String phone;
     private String email;
     private String address;
+    private Boolean status;
 
-    public Person(Integer id, String name, LocalDate birthday, String idCard, String phone, String email, String address) {
+    public Person(Integer id, String name, LocalDate birthday, String idCard, String phone, String email, String address, Boolean status) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -26,17 +27,30 @@ public abstract class Person {
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.status = status;
     }
-    public Person( String name, LocalDate birthday, String idCard, String phone, String email, String address) {
+
+    public Person(String name, LocalDate birthday, String idCard, String phone, String email, String address, Boolean status) {
+
         this.name = name;
         this.birthday = birthday;
         this.idCard = idCard;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.status = status;
     }
 
-    public Person(){}
+    public Person() {
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;

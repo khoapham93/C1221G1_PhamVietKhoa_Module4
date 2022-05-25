@@ -1,16 +1,15 @@
 package com.khoapham.dto;
 
-import com.khoapham.models.AcademicLevel;
-import com.khoapham.models.Department;
-import com.khoapham.models.Position;
+import com.khoapham.models.employee.AcademicLevel;
+import com.khoapham.models.employee.Department;
+import com.khoapham.models.employee.Position;
 import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotNull;
 
 public class EmployeeDto extends PersonDto {
-    private Double salary;
+    private String salary;
 
     @NotNull(message = "{object.empty} position")
     private Position position;
@@ -24,11 +23,11 @@ public class EmployeeDto extends PersonDto {
     public EmployeeDto() {
     }
 
-    public Double getSalary() {
-        return salary;
+    public String getSalary() {
+        return this.salary;
     }
 
-    public void setSalary(Double salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
 
@@ -67,8 +66,8 @@ public class EmployeeDto extends PersonDto {
 
         EmployeeDto employeeDto = (EmployeeDto) target;
 
-        Double salary = employeeDto.getSalary();
-        Validation.checkPositiveDouble("salary", salary, errors);
-        
+        String salary = employeeDto.getSalary();
+        Validation.checkStringSalary("salary", salary, errors);
+
     }
 }

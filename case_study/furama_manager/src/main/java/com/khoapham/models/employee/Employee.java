@@ -1,10 +1,11 @@
-package com.khoapham.models;
+package com.khoapham.models.employee;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import java.time.LocalDate;
+import com.khoapham.models.contract.Contract;
+import com.khoapham.models.Person;
+import com.khoapham.models.user.AppUser;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "employee")
@@ -21,10 +22,31 @@ public class Employee extends Person {
     @JoinColumn(name = "department_id", referencedColumnName = "id")
     private Department department;
 
+    @OneToMany(mappedBy = "employee")
+    private Set<Contract> contractSet ;
+
+    @OneToOne
+    @JoinColumn(name = "username_id",referencedColumnName = "id")
+    private AppUser appUser;
 
     public Employee() {
     }
 
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
+
+    public Set<Contract> getContractSet() {
+        return contractSet;
+    }
+
+    public void setContractSet(Set<Contract> contractSet) {
+        this.contractSet = contractSet;
+    }
 
     public Double getSalary() {
         return salary;

@@ -1,26 +1,26 @@
-package com.khoapham.models;
+package com.khoapham.models.employee;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Position {
+public class AcademicLevel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String academic;
 
-    private String position;
-
-    @OneToMany(mappedBy = "position")
+    @OneToMany(mappedBy = "academicLevel")
     private Set<Employee> employeeSet;
 
-    public Position(Integer id, String position, Set<Employee> employeeSet) {
+    public AcademicLevel(Integer id, String academic, Set<Employee> employeeSet) {
         this.id = id;
-        this.position = position;
+        this.academic = academic;
         this.employeeSet = employeeSet;
     }
 
-    public Position(){}
+    public AcademicLevel() {
+    }
 
     public Integer getId() {
         return id;
@@ -30,12 +30,12 @@ public class Position {
         this.id = id;
     }
 
-    public String getPosition() {
-        return position;
+    public String getAcademic() {
+        return academic;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setAcademic(String level) {
+        this.academic = level;
     }
 
     public Set<Employee> getEmployeeSet() {

@@ -1,8 +1,9 @@
 package com.khoapham.controller;
 
-import com.khoapham.dto.EmployeeDto;
 import com.khoapham.dto.FacilityDto;
-import com.khoapham.models.*;
+import com.khoapham.models.facility.Facility;
+import com.khoapham.models.facility.FacilityType;
+import com.khoapham.models.facility.RentType;
 import com.khoapham.service.IFacilityService;
 import com.khoapham.service.IFacilityTypeService;
 import com.khoapham.service.IRentTypeService;

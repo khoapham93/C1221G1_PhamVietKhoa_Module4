@@ -1,10 +1,9 @@
 package com.khoapham.controller;
 
 import com.khoapham.dto.CustomerDto;
-import com.khoapham.dto.EmployeeDto;
-import com.khoapham.models.Customer;
-import com.khoapham.models.CustomerType;
-import com.khoapham.models.Employee;
+import com.khoapham.dto.CustomerHaveBooking;
+import com.khoapham.models.customer.Customer;
+import com.khoapham.models.customer.CustomerType;
 import com.khoapham.service.ICustomerService;
 import com.khoapham.service.ICustomerTypeService;
 import org.springframework.beans.BeanUtils;
@@ -110,10 +109,17 @@ public class CustomerController {
     }
 
     @PostMapping("/delete")
-    public String delete(Customer customer, RedirectAttributes redirect) {
-        this.iCustomerService.remove(customer.getId());
+    public String delete(@RequestParam Integer id, RedirectAttributes redirect) {
+        Customer customer = this.iCustomerService.findById(id);
+        this.iCustomerService.remove(customer);
         redirect.addFlashAttribute("success", "Removed customer successfully!");
         return "redirect:/customers/";
     }
 
+    @GetMapping("/customer-have-booking")
+    public String getCustomerHaveBooking(Model model, @PageableDefault(value = 5) Pageable pageable) {
+        Page<CustomerHaveBooking> customerHaveBookings = this.iCustomerService.findAllCustomerHaveBooking(pageable);
+        model.addAttribute("customerHaveBookings", customerHaveBookings);
+        return "/customers/listCustomerHaveBooking";
+    }
 }

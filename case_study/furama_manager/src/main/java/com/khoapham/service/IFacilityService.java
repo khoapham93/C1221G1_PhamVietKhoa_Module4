@@ -2,7 +2,7 @@ package com.khoapham.service;
 
 import com.khoapham.dto.FacilityDto;
 
-import com.khoapham.models.Facility;
+import com.khoapham.models.facility.Facility;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.BindingResult;

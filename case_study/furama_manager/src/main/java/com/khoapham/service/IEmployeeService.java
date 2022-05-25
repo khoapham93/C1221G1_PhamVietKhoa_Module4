@@ -1,7 +1,7 @@
 package com.khoapham.service;
 
 import com.khoapham.dto.EmployeeDto;
-import com.khoapham.models.Employee;
+import com.khoapham.models.employee.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.BindingResult;

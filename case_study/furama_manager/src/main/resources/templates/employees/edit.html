@@ -48,7 +48,9 @@
                 </div>
                 <div class="form-group">
                     <label>Salary</label>
-                    <input class="form-control" type="number" th:field="*{salary}" step="any"/>
+                    <input class="form-control" type="number"
+                           th:field="*{salary}"
+                          />
                     <small Class="text-danger" th:if="${#fields.hasErrors('salary')}"
                            th:errors="*{salary}"></small>
                 </div>
@@ -56,13 +58,10 @@
                     <label>Position</label>
                     <select th:field="*{position}"
                             class="form-control">
-                        <option th:value="null"
-                        >Select Position
-                        </option>
+                        <option th:value="null">Select Position</option>
                         <option th:each="row :${positions}"
                                 th:value="${row.id}"
-                                th:text="${row.position}"
-                        >
+                                th:text="${row.position}">
                         </option>
                     </select>
                     <small Class="text-danger" th:if="${#fields.hasErrors('position')}"

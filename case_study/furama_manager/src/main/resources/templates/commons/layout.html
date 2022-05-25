@@ -27,6 +27,27 @@
 <!-- Header Start -->
 
 <header th:fragment="header_nav" class="navigation">
+    <div class="header-top ">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-2 col-md-4">
+                    <div class="header-top-socials text-center text-lg-left text-md-left">
+                        <a href="https://www.facebook.com/themefisher" target="_blank"><i class="ti-facebook"></i></a>
+                        <a href="https://twitter.com/themefisher" target="_blank"><i class="ti-twitter"></i></a>
+                        <a href="https://github.com/themefisher/" target="_blank"><i class="ti-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-8 text-center text-lg-right text-md-right">
+                    <div class="header-top-info">
+                        <a th:if="${#request.userPrincipal}" th:href="@{#}">
+                            <i class="ti-user mr-2"></i>
+                            <span th:text="${#request.userPrincipal.name}"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg  py-4" id="navbar">
         <div class="container">
             <a class="navbar-brand" th:href="@{/}">
@@ -39,10 +60,10 @@
 
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item" th:classappend="${#request.getServletPath() == '/' ? 'active':''}">
+                        <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" th:classappend="${#request.getServletPath().startsWith('/employees') ? 'active':''}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">Employee</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
@@ -50,15 +71,16 @@
                             <li><a class="dropdown-item" href="/employees/create">Create new Employee</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" th:classappend="${#request.getServletPath().startsWith('/customers') ? 'active':''}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">Customer</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item" href="/customers/">List of Customers</a></li>
                             <li><a class="dropdown-item" href="/customers/create">Create new Customer</a></li>
+                            <li><a class="dropdown-item" href="/customers/customer-have-booking">Customers's booking</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" th:classappend="${#request.getServletPath().startsWith('/facilities') ? 'active':''}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">Service</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown05">
@@ -66,21 +88,20 @@
                             <li><a class="dropdown-item" href="/facilities/create">Create new Service</a></li>
                         </ul>
                     </li>
-                    <!--                    <li class="nav-item"><a class="nav-link" href="project.html">Portfolio</a></li>-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">Blog</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown06">
-                            <li><a class="dropdown-item" href="blog-grid.html">Blog Grid</a></li>
-                            <li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
-                            <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
+                    <li class="nav-item dropdown" th:classappend="${#request.getServletPath().startsWith('/contracts') ? 'active':''}">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">Contract</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="/contracts/">List of Contracts</a></li>
+                            <li><a class="dropdown-item" href="/contracts/create">Create new Contract</a></li>
+                            <li><a class="dropdown-item" href="/contract-details/create">Create new Contract detail</a></li>
                         </ul>
                     </li>
-                    <!--                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>-->
                 </ul>
 
                 <form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
-                    <a href="" class="btn btn-solid-border btn-round-full">Sign In</a>
+                    <a th:if="${#request.userPrincipal}" href="/logout" class="btn btn-solid-border btn-round-full">Sign out</a>
+                    <a th:unless="${#request.userPrincipal}" href="/login" class="btn btn-solid-border btn-round-full">Sign In</a>
                 </form>
             </div>
         </div>

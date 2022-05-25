@@ -1,4 +1,4 @@
-package com.khoapham.models;
+package com.khoapham.models.customer;
 
 import javax.persistence.*;
 import java.util.Set;

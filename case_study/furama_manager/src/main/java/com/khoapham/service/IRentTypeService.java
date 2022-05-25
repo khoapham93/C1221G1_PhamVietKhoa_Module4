@@ -1,7 +1,6 @@
 package com.khoapham.service;
 
-import com.khoapham.models.RentType;
-import org.springframework.stereotype.Service;
+import com.khoapham.models.facility.RentType;
 
 import java.util.List;
 

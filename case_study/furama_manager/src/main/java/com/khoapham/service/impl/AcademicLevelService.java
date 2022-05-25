@@ -1,6 +1,6 @@
 package com.khoapham.service.impl;
 
-import com.khoapham.models.AcademicLevel;
+import com.khoapham.models.employee.AcademicLevel;
 import com.khoapham.repository.IAcademicLevelRepository;
 import com.khoapham.service.IAcademicLevelService;
 import org.springframework.beans.factory.annotation.Autowired;

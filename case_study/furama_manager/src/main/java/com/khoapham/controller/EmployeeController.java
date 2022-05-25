@@ -1,10 +1,10 @@
 package com.khoapham.controller;
 
 import com.khoapham.dto.EmployeeDto;
-import com.khoapham.models.AcademicLevel;
-import com.khoapham.models.Department;
-import com.khoapham.models.Employee;
-import com.khoapham.models.Position;
+import com.khoapham.models.employee.AcademicLevel;
+import com.khoapham.models.employee.Department;
+import com.khoapham.models.employee.Employee;
+import com.khoapham.models.employee.Position;
 import com.khoapham.service.IAcademicLevelService;
 import com.khoapham.service.IDepartmentService;
 import com.khoapham.service.IEmployeeService;
@@ -102,7 +102,7 @@ public class EmployeeController {
         EmployeeDto employeeDto = new EmployeeDto();
 
         BeanUtils.copyProperties(employee, employeeDto);
-
+        employeeDto.setSalary(String.format("%.1f", employee.getSalary()));
         model.addAttribute("employeeDto", employeeDto);
         return "/employees/edit";
     }
@@ -120,6 +120,7 @@ public class EmployeeController {
         } else {
             Employee employee = new Employee();
             BeanUtils.copyProperties(employeeDto, employee);
+            employee.setSalary(Double.valueOf(employeeDto.getSalary()));
             iEmployeeService.save(employee);
             redirect.addFlashAttribute("success", "Update employee successfully!");
             return "redirect:/employees/";
@@ -127,8 +128,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/delete")
-    public String delete(Employee employee, RedirectAttributes redirect) {
-        this.iEmployeeService.remove(employee.getId());
+    public String delete(@RequestParam Integer id, RedirectAttributes redirect) {
+        Employee employee = this.iEmployeeService.findById(id);
+        this.iEmployeeService.remove(employee);
         redirect.addFlashAttribute("success", "Removed employee successfully!");
         return "redirect:/employees/";
     }

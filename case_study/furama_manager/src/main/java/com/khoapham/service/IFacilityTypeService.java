@@ -1,6 +1,6 @@
 package com.khoapham.service;
 
-import com.khoapham.models.FacilityType;
+import com.khoapham.models.facility.FacilityType;
 
 import java.util.List;
 

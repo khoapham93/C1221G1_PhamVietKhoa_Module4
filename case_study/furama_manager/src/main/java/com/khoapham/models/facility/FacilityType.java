@@ -1,25 +1,25 @@
-package com.khoapham.models;
+package com.khoapham.models.facility;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "rent_type")
-public class RentType {
+@Table(name = "facility_type")
+public class FacilityType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String rentType;
-    @OneToMany(mappedBy = "rentType")
+    private String facilityType;
+
+    @OneToMany(mappedBy = "facilityType")
     private Set<Facility> facilitySet;
 
-    public RentType(Integer id, String rentType) {
+    public FacilityType(Integer id, String facilityType) {
         this.id = id;
-        this.rentType = rentType;
+        this.facilityType = facilityType;
     }
 
-    public RentType() {
-
+    public FacilityType() {
     }
 
     public Set<Facility> getFacilitySet() {
@@ -38,11 +38,11 @@ public class RentType {
         this.id = id;
     }
 
-    public String getRentType() {
-        return rentType;
+    public String getFacilityType() {
+        return facilityType;
     }
 
-    public void setRentType(String rentType) {
-        this.rentType = rentType;
+    public void setFacilityType(String facilityType) {
+        this.facilityType = facilityType;
     }
 }

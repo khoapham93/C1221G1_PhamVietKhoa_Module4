@@ -1,7 +1,7 @@
 package com.khoapham.service.impl;
 
 import com.khoapham.dto.EmployeeDto;
-import com.khoapham.models.Employee;
+import com.khoapham.models.employee.Employee;
 import com.khoapham.repository.IEmployeeRepository;
 import com.khoapham.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
+
+import java.util.List;
 
 @Service
 public class EmployeeService implements IEmployeeService {
@@ -19,9 +21,9 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public Page<Employee> findAll(String name, String phone, Integer department, Pageable pageable) {
         if (department == -1) {
-            return this.iEmployeeRepository.findByNameContainingAndPhoneContaining(name, phone, pageable);
+            return this.iEmployeeRepository.findByNameContainingAndPhoneContainingAndStatus(name, phone, true, pageable);
         } else {
-            return this.iEmployeeRepository.findAllByNameContainingAndPhoneContainingAndDepartment_Id(name, phone, department, pageable);
+            return this.iEmployeeRepository.findAllByNameContainingAndPhoneContainingAndDepartment_IdAndStatus(name, phone, department, true, pageable);
         }
     }
 
@@ -78,12 +80,19 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
+    public List<Employee> findAll() {
+        return this.iEmployeeRepository.findAll();
+    }
+
+    @Override
     public void save(Employee employee) {
+        employee.setStatus(true);
         this.iEmployeeRepository.save(employee);
     }
 
     @Override
-    public void remove(Integer id) {
-        this.iEmployeeRepository.deleteById(id);
+    public void remove(Employee employee) {
+        employee.setStatus(false);
+        this.iEmployeeRepository.save(employee);
     }
 }

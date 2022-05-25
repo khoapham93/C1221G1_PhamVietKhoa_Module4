@@ -59,7 +59,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="row,rowStat : ${customers}" class="">
-                    <td th:text=" ${(customers.number *5) + rowStat.count}"></td>
+                    <td th:text=" ${(customers.number *customers.getSize()) + rowStat.count}"></td>
                     <td th:text="${row.name}"></td>
                     <td th:text="${row.phone}"></td>
                     <td th:text="${row.email}"></td>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="main-wrapper ">
+    <div class="container">
+        <div class="row ">
+            <div >
+                <p class="mt-3">List of customer using service </p>
+            </div>
+            <div class="row col-12">
+                <p class="message text-success" th:text="${success}"></p>
+            </div>
+            <table class="table table-borderless table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" class="col-2">Customer</th>
+                    <th scope="col" class="col-2">Service</th>
+                    <th scope="col" >Start Date</th>
+                    <th scope="col" >End Date</th>
+                    <th scope="col" class="col-3">Service include</th>
+                    <th scope="col" class="col-1">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="row,rowStat : ${customerHaveBookings}" class="">
+                    <td th:text=" ${(customerHaveBookings.number *customerHaveBookings.getSize()) + rowStat.count}"></td>
+                    <td th:text="${row.getNameCustomer()}"></td>
+                    <td th:text="${row.getNameFacility()}">
+
+                    </td>
+                    <td th:text="${row.getStartDate()}"></td>
+                    <td th:text="${row.getEndDate()}"></td>
+                    <td th:text="${row.getNameServiceInclude()}"></td>
+                    <td th:text="${#numbers.formatDecimal(row.getTotal(), 0, 'COMMA', 1, 'POINT')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        paging-->
+        <nav class="d-flex justify-content-center py-3">
+            <ul class="pagination">
+                <li th:if="${customerHaveBookings.hasPrevious()}" class="page-item active px-1">
+                    <a th:href="@{/customers/customer-have-booking(page=${customerHaveBookings.number - 1})}" class="page-link">Previous</a>
+                </li>
+                <li th:unless="${customerHaveBookings.hasPrevious()}" class="page-item disabled px-1">
+                    <a th:href="@{/customers/customer-have-booking(page=${customerHaveBookings.number - 1})}" class="page-link">Previous</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">
+                        <span th:text="${customerHaveBookings.number +1}"></span>
+                        <span>/</span>
+                        <span th:text="${customerHaveBookings.totalPages}"></span>
+                    </a>
+                </li>
+                <li th:if="${customerHaveBookings.hasNext()}" class="page-item active px-1">
+                    <a th:href="@{/customers/customer-have-booking(page=${customerHaveBookings.number + 1})}" class="page-link">Next</a>
+                </li>
+                <li th:unless="${customerHaveBookings.hasNext()}" class="page-item disabled px-1">
+                    <a th:href="@{/customers/customer-have-booking(page=${customerHaveBookings.number + 1})}" class="page-link">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <!--        paging-->
+
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete customer
+                    <span class="text-danger font-weight-bold" id="nameDelete"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="mx-auto row">
+                    <form th:action="@{/customers/delete}" method="post">
+                        <input type="hidden" name="id" id="idDelete">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/commons/layout :: footer"></footer>
+<div th:replace="commons/layout :: scroll-to-top"></div>
+</body>
+<th:block th:replace="/commons/layout :: script"></th:block>
+</html>
+<script>
+    function deleteCustomer(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = " " + name + "?";
+    }
+</script>
+

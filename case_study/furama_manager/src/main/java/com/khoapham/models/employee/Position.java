@@ -1,26 +1,26 @@
-package com.khoapham.models;
+package com.khoapham.models.employee;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Department {
+public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String department;
 
-    @OneToMany(mappedBy = "department")
+    private String position;
+
+    @OneToMany(mappedBy = "position")
     private Set<Employee> employeeSet;
 
-    public Department() {
-    }
-
-    public Department(Integer id, String department, Set<Employee> employeeSet) {
+    public Position(Integer id, String position, Set<Employee> employeeSet) {
         this.id = id;
-        this.department = department;
+        this.position = position;
         this.employeeSet = employeeSet;
     }
+
+    public Position(){}
 
     public Integer getId() {
         return id;
@@ -30,12 +30,12 @@ public class Department {
         this.id = id;
     }
 
-    public String getDepartment() {
-        return department;
+    public String getPosition() {
+        return position;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public Set<Employee> getEmployeeSet() {

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="row py-2">
+    <div class="col-4 mx-auto">
+        <h3 th:if="${message != null}" th:text="${message}" style="color: red;"></h3>
+        <div th:if="${userInfo != null}" th:text="${userInfo}"></div>
+    </div>
+</div>
+<footer th:replace="/commons/layout :: footer"></footer>
+</body>
+
+</html>

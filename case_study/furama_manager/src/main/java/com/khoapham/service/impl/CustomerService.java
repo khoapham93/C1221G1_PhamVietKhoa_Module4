@@ -1,7 +1,8 @@
 package com.khoapham.service.impl;
 
 import com.khoapham.dto.CustomerDto;
-import com.khoapham.models.Customer;
+import com.khoapham.models.customer.Customer;
+import com.khoapham.dto.CustomerHaveBooking;
 import com.khoapham.repository.ICustomerRepository;
 import com.khoapham.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
+
+import java.util.List;
 
 @Service
 public class CustomerService implements ICustomerService {
@@ -18,9 +21,9 @@ public class CustomerService implements ICustomerService {
     @Override
     public Page<Customer> findAll(String name, String phone, Integer customerType, Pageable pageable) {
         if (customerType == -1) {
-            return this.iCustomerRepository.findByNameContainingAndPhoneContaining(name, phone, pageable);
+            return this.iCustomerRepository.findByNameContainingAndPhoneContainingAndStatus(name, phone, true, pageable);
         } else {
-            return this.iCustomerRepository.findAllByNameContainingAndPhoneContainingAndCustomerType_Id(name, phone, customerType, pageable);
+            return this.iCustomerRepository.findAllByNameContainingAndPhoneContainingAndCustomerType_IdAndStatus(name, phone, customerType, true, pageable);
         }
     }
 
@@ -88,12 +91,24 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
+    public Page<CustomerHaveBooking> findAllCustomerHaveBooking(Pageable pageable) {
+        return this.iCustomerRepository.findAllCustomerHaveBooking(pageable);
+    }
+
+    @Override
+    public List<Customer> findAll() {
+        return this.iCustomerRepository.findAll();
+    }
+
+    @Override
     public void save(Customer customer) {
+        customer.setStatus(true);
         this.iCustomerRepository.save(customer);
     }
 
     @Override
-    public void remove(Integer id) {
-        this.iCustomerRepository.deleteById(id);
+    public void remove(Customer customer) {
+        customer.setStatus(false);
+        this.iCustomerRepository.save(customer);
     }
 }

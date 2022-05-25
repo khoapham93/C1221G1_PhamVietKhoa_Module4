@@ -131,6 +131,40 @@ public class Validation {
         }
     }
 
+    public static void checkStartDate(String fieldName, LocalDate startDate, Errors error) {
+        LocalDate now = LocalDate.now();
+        if (startDate == null) {
+            error.rejectValue(fieldName, "startDate.empty");
+        } else if (startDate.compareTo(now) < 0) {
+            error.rejectValue(fieldName, "startDate.past");
+        }
+    }
+
+    public static void checkEndDate(String fieldName, LocalDate startDate, LocalDate endDate, Errors error) {
+        LocalDate now = LocalDate.now();
+        if (endDate == null) {
+            error.rejectValue(fieldName, "endDate.empty");
+        } else if (endDate.compareTo(startDate) < 0) {
+            error.rejectValue(fieldName, "endDate.past");
+        }
+    }
+
+    public static void checkPositiveInteger(String fieldName, Integer field, Errors error) {
+        if (field == null) {
+            error.rejectValue(fieldName, "field.empty");
+        } else if (field < 0) {
+            error.rejectValue(fieldName, "Integer.invalid");
+        }
+    }
+
+    public static void checkStringSalary(String fieldName, String salary, Errors error){
+        if ("".equals(salary)){
+            error.rejectValue(fieldName, "field.empty");
+        }else if (!salary.matches(POSITIVE_DOUBLE_REGEX)){
+            error.rejectValue(fieldName, "salary.invalid");
+        }
+    }
+
     public static void main(String[] args) {
         LocalDate now = LocalDate.now();
         System.out.println(now);

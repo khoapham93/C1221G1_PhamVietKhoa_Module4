@@ -1,6 +1,6 @@
 package com.khoapham.service;
 
-import com.khoapham.models.AcademicLevel;
+import com.khoapham.models.employee.AcademicLevel;
 
 import java.util.List;
 

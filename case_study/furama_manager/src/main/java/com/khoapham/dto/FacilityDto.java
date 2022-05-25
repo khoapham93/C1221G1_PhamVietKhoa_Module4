@@ -1,8 +1,7 @@
 package com.khoapham.dto;
 
-import com.khoapham.models.Facility;
-import com.khoapham.models.FacilityType;
-import com.khoapham.models.RentType;
+import com.khoapham.models.facility.FacilityType;
+import com.khoapham.models.facility.RentType;
 import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

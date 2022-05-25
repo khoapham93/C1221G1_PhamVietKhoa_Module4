@@ -1,6 +1,6 @@
 package com.khoapham.service.impl;
 
-import com.khoapham.models.Department;
+import com.khoapham.models.employee.Department;
 import com.khoapham.repository.IDepartmentRepository;
 import com.khoapham.service.IDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
