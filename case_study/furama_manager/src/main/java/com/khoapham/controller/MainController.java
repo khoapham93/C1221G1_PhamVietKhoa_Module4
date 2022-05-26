@@ -15,13 +15,6 @@ import java.security.Principal;
 
 @Controller
 public class MainController {
-    @Autowired
-    private IAppUserService iAppUserService;
-    @Autowired
-    private IUserRoleService iUserRoleService;
-    @Autowired
-    private IAppRoleService iAppRoleService;
-
     @GetMapping("/")
     public String goHomePage() {
         return "/index";
@@ -35,11 +28,7 @@ public class MainController {
     @GetMapping("/403")
     public String accessDenied(Model model, Principal principal) {
         if (principal != null) {
-            User loginedUser = (User) ((Authentication) principal).getPrincipal();
-            String userInfo = WebUtils.toString(loginedUser);
-            model.addAttribute("userInfo", userInfo);
-            String message = "Hi " + principal.getName() //
-                    + "<br> You do not have permission to access this page!";
+            String message = "Hi " + principal.getName();
             model.addAttribute("message", message);
         }
         return "403Page";

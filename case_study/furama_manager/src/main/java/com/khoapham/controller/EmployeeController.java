@@ -5,10 +5,7 @@ import com.khoapham.models.employee.AcademicLevel;
 import com.khoapham.models.employee.Department;
 import com.khoapham.models.employee.Employee;
 import com.khoapham.models.employee.Position;
-import com.khoapham.service.IAcademicLevelService;
-import com.khoapham.service.IDepartmentService;
-import com.khoapham.service.IEmployeeService;
-import com.khoapham.service.IPositionService;
+import com.khoapham.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,7 +24,12 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
-
+    @Autowired
+    private IAppUserService iAppUserService;
+    @Autowired
+    private IUserRoleService iUserRoleService;
+    @Autowired
+    private IAppRoleService iAppRoleService;
     @Autowired
     private IEmployeeService iEmployeeService;
     @Autowired

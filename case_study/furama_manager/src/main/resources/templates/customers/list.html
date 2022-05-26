@@ -2,6 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/commons/layout :: head">
 </head>
+<style th:replace="/commons/layout :: style-3dots-table">
+</style>
 <body>
 <header th:replace="/commons/layout :: header_nav"></header>
 <div class="main-wrapper ">
@@ -47,20 +49,29 @@
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col" class="col-1">Code</th>
+                    <th scope="col" class="col-2">Name</th>
+                    <th scope="col">Gender</th>
                     <th scope="col">Phone</th>
-                    <th scope="col">Email</th>
+                    <th scope="col" class="col-2">Email</th>
                     <th scope="col">Id Card</th>
-                    <th scope="col">Customer Type</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                    <th scope="col">View</th>
+                    <th scope="col">Class</th>
+                    <th scope="col" class="col-3">Address</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="row,rowStat : ${customers}" class="">
                     <td th:text=" ${(customers.number *customers.getSize()) + rowStat.count}"></td>
+                    <td th:text="${row.customerCode}"></td>
                     <td th:text="${row.name}"></td>
+                    <td>
+                        <th:block th:switch="${row.gender}">
+                            <span th:case="1">Nam</span>
+                            <span th:case="0">Nữ</span>
+                            <span th:case="*">Khác</span>
+                        </th:block>
+                    </td>
                     <td th:text="${row.phone}"></td>
                     <td th:text="${row.email}"></td>
                     <td th:text="${row.idCard}"></td>
@@ -68,22 +79,37 @@
                         <span th:if="${row.customerType}" th:text="${row.customerType.type}"></span>
                         <span th:unless="${row.customerType}" th:text="${row.customerType}"></span>
                     </td>
-                    <td><a th:href="@{/customers/{id}/edit(id=${row.getId()})}"
-                           class="btn btn-outline-warning">
-                        edit
-                    </a>
-                    </td>
+                    <td th:text="${row.address}"></td>
                     <td>
-                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal"
-                                th:attr="onclick=|deleteCustomer(${row.id},'${row.name}')|"
-                        >
-                            Delete
-                        </button>
+                        <div class="dropout">
+                            <button class="more">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a th:href="@{/customers/{id}/edit(id=${row.getId()})}"
+                                       class="btn btn-warning w-100">
+                                        Edit
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deleteModal"
+                                            th:attr="onclick=|deleteCustomer(${row.id},'${row.name}')|"
+                                    >
+                                        Delete
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a th:href="@{/customers/{id}/view(id=${row.getId()})}"
+                                       class="btn btn-info w-100">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </td>
-                    <td><a th:href="@{/customers/{id}/view(id=${row.getId()})}"
-                           class="btn btn-outline-info">
-                        view
-                    </a></td>
                 </tr>
                 </tbody>
             </table>
@@ -159,11 +185,13 @@
 <div th:replace="commons/layout :: scroll-to-top"></div>
 </body>
 <th:block th:replace="/commons/layout :: script"></th:block>
+<th:block th:replace="/commons/layout :: script-3dots"></th:block>
 </html>
 <script>
     function deleteCustomer(id, name) {
         document.getElementById("idDelete").value = id;
         document.getElementById("nameDelete").innerText = " " + name + "?";
     }
+
 </script>
 

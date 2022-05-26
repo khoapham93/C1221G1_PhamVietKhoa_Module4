@@ -4,10 +4,19 @@
 </head>
 <body>
 <header th:replace="/commons/layout :: header_nav"></header>
-<div class="row py-2">
-    <div class="col-4 mx-auto">
-        <h3 th:if="${message != null}" th:text="${message}" style="color: red;"></h3>
-        <div th:if="${userInfo != null}" th:text="${userInfo}"></div>
+
+<div class="container-fluid row">
+    <div class="py-2 text-center mx-auto">
+        <h1 class="py-1 text-danger"> Access Denied</h1>
+        <hr class="" style="margin:auto;width:50%">
+        <br>
+        <br>
+        <p th:if="${message != null}" th:text="${message}"></p>
+        <p>
+            You dont have permission to access this site.</p>
+        <p>
+            Please contact the administrator!
+        </p>
     </div>
 </div>
 <footer th:replace="/commons/layout :: footer"></footer>
