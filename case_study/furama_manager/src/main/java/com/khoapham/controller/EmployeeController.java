@@ -5,6 +5,8 @@ import com.khoapham.models.employee.AcademicLevel;
 import com.khoapham.models.employee.Department;
 import com.khoapham.models.employee.Employee;
 import com.khoapham.models.employee.Position;
+import com.khoapham.models.user.AppRole;
+import com.khoapham.models.user.AppUser;
 import com.khoapham.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,9 +91,9 @@ public class EmployeeController {
         } else {
             Employee employee = new Employee();
             BeanUtils.copyProperties(employeeDto, employee);
+            employee.setSalary(Double.valueOf(employeeDto.getSalary()));
             iEmployeeService.save(employee);
             model.addAttribute("employeeDto", new EmployeeDto());
-
             model.addAttribute("success", "Create employee successfully!");
         }
         return "/employees/create";
@@ -114,6 +116,7 @@ public class EmployeeController {
                          BindingResult bindingResult,
                          Model model,
                          RedirectAttributes redirect) {
+
         new EmployeeDto().validate(employeeDto, bindingResult);
         this.iEmployeeService.checkExists(employeeDto, bindingResult);
         if (bindingResult.hasErrors()) {
@@ -127,6 +130,13 @@ public class EmployeeController {
             redirect.addFlashAttribute("success", "Update employee successfully!");
             return "redirect:/employees/";
         }
+    }
+
+    @GetMapping("/{id}/view")
+    public String view(@PathVariable int id, Model model) {
+        Employee employee = this.iEmployeeService.findById(id);
+        model.addAttribute("employee", employee);
+        return "/employees/detail";
     }
 
     @PostMapping("/delete")

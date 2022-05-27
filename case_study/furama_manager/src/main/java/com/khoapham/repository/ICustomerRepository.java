@@ -7,7 +7,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
+    List<Customer> findAllByStatus(Boolean status);
 
     Page<Customer> findByNameContainingAndPhoneContainingAndStatus(String name, String phone, Boolean status, Pageable pageable);
 
@@ -26,7 +29,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
             "       c2.start_date startDate,\n" +
             "       c2.end_date endDate,\n" +
             "       GROUP_CONCAT(si.name) nameServiceInclude,\n" +
-            "       sum(f.rental_fee + coalesce(cd.quantity * si.price, 0)) total\n" +
+            "       sum(coalesce(cd.quantity * si.price, 0)) + f.rental_fee  total\n" +
             "FROM customer c\n" +
             "         INNER JOIN contract c2 ON c.id = c2.customer_id\n" +
             "         INNER JOIN facility f ON c2.facility_id = f.id\n" +
@@ -38,7 +41,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
                     "       c2.start_date startDate,\n" +
                     "       c2.end_date endDate,\n" +
                     "       GROUP_CONCAT(si.name) nameServiceInclude,\n" +
-                    "       sum(f.rental_fee + coalesce(cd.quantity * si.price, 0)) total\n" +
+                    "       sum(coalesce(cd.quantity * si.price, 0)) + f.rental_fee  total\n" +
                     "FROM customer c\n" +
                     "         INNER JOIN contract c2 ON c.id = c2.customer_id\n" +
                     "         INNER JOIN facility f ON c2.facility_id = f.id\n" +

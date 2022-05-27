@@ -3,10 +3,12 @@ package com.khoapham.dto;
 import java.time.LocalDate;
 
 public interface CustomerHaveBooking {
+    String getContractId();
     String getNameCustomer();
     String getNameFacility();
     LocalDate getStartDate();
     LocalDate getEndDate();
-    String getNameServiceInclude();
+    Double getDeposit();
     Double getTotal();
+    String getNameServiceInclude();
 }

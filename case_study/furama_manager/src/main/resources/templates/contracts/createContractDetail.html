@@ -12,28 +12,13 @@
         </div>
         <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
             <form th:action="@{/contract-details/save}" th:object="${contractDetailDto}" method="POST">
-                <div class="form-group">
-                    <label>Contract link</label>
-                    <select th:field="*{contract}"
-                            class="form-control">
-                        <option th:value="null"
-                        >Select Contract
-                        </option>
-                        <option th:each="row :${contracts}"
-                                th:value="${row.id}"
-                                th:text="${row.toString()}"
-                        >
-                        </option>
-                    </select>
-                    <small Class="text-danger" th:if="${#fields.hasErrors('contract')}"
-                           th:errors="*{contract}"></small>
-                </div>
+                <input type="hidden" th:field="*{contract}">
                 <div class="form-group">
                     <label>Service include</label>
                     <select th:field="*{serviceInclude}"
                             class="form-control">
                         <option th:value="null"
-                        >Select Contract
+                        >Select Service Attach
                         </option>
                         <option th:each="row :${serviceIncludes}"
                                 th:value="${row.id}"

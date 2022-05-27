@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="row py-2">
+    <div class="col-6 mx-auto">
+        <h5 class="text-center py-1"> Employee information</h5>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.name}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Birthday</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.birthday}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">ID Card</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.idCard}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Phone</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.phone}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.email}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Address</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.address}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Salary</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${#numbers.formatDecimal(employee.salary, 0, 'COMMA', 0, 'POINT')}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Position</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.position.position}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Academic</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.academicLevel.academic}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Department</label>
+                    <div class="col-sm-9">
+                        <div class="form-control" th:text="${employee.department.department}"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="/commons/layout :: footer"></footer>
+</body>
+</html>

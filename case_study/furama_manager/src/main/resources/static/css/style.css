@@ -231,7 +231,6 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   width: 100%;
   height: 100%;
   opacity: 0.5;
-  background: #000;
 }
 
 .overly-2, .bg-counter, .cta-block, .latest-blog {
@@ -512,7 +511,7 @@ ul.dropdown-menu li {
 }
 
 .slider {
-  background: url("../images/bg/home-1.jpg") no-repeat;
+  background: url("https://furamavietnam.com/wp-content/uploads/2019/07/Vietnam_Danang_Furama_Resort_Exterior_Ocean-Pool-6.jpg") no-repeat;
   background-size: cover;
   background-position: 10% 0%;
   padding: 200px 0 280px 0;

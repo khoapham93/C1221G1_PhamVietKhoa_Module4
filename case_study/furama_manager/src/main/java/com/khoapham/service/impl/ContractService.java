@@ -1,5 +1,6 @@
 package com.khoapham.service.impl;
 
+import com.khoapham.dto.CustomerHaveBooking;
 import com.khoapham.models.contract.Contract;
 import com.khoapham.repository.IContractRepository;
 import com.khoapham.service.IContractService;
@@ -35,14 +36,39 @@ public class ContractService implements IContractService {
     }
 
     @Override
+    public Page<CustomerHaveBooking> findAllContractAndDetail(LocalDate fromDate, LocalDate toDate, Pageable pageable) {
+        String startBegin = "";
+        String startEnd = "";
+        String endBegin = "";
+        String end = "";
+        if (fromDate == null && toDate == null) {
+            startEnd = LocalDate.now().plusYears(1).toString();
+            end = LocalDate.now().plusYears(1).toString();
+        } else if (fromDate != null && toDate != null) {
+            startBegin = fromDate.toString();
+            startEnd = toDate.toString();
+            end = toDate.toString();
+        } else if (fromDate != null) {
+            startBegin = fromDate.toString();
+            startEnd = LocalDate.now().plusYears(1).toString();
+            end = LocalDate.now().plusYears(1).toString();
+        }else {
+            startEnd = toDate.toString();
+            end = toDate.toString();
+        }
+
+        return this.iContractRepository.findAllContractAndDetail(startBegin, startEnd, endBegin, end, pageable);
+    }
+
+    @Override
     public List<Contract> findAll() {
-        return this.iContractRepository.findAll();
+        return this.iContractRepository.findAllByStatus(true);
     }
 
     @Override
     public void save(Contract contract) {
 
-            contract.setStatus(true);
+        contract.setStatus(true);
 
         this.iContractRepository.save(contract);
     }

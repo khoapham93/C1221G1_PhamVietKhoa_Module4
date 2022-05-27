@@ -1,5 +1,7 @@
 package com.khoapham.models.facility;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.khoapham.models.contract.Contract;
 
 import javax.persistence.*;
@@ -26,10 +28,11 @@ public class Facility {
     @ManyToOne
     @JoinColumn(name = "facility_type_id", referencedColumnName = "id")
     private FacilityType facilityType;
+
     @ManyToOne
     @JoinColumn(name = "rent_type_id", referencedColumnName = "id")
     private RentType rentType;
-
+    @JsonBackReference
     @OneToMany(mappedBy = "facility")
     private Set<Contract> contractSet;
 

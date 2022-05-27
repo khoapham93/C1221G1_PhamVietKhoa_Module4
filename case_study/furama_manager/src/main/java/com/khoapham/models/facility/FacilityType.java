@@ -1,5 +1,7 @@
 package com.khoapham.models.facility;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,7 +12,7 @@ public class FacilityType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String facilityType;
-
+    @JsonBackReference
     @OneToMany(mappedBy = "facilityType")
     private Set<Facility> facilitySet;
 

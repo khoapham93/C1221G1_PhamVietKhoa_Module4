@@ -47,13 +47,11 @@ public class ContractDetailService implements IContractDetailService {
             if (contractDetailDto.getId() == null) {
                 //add new
                 if (contractDetail != null) {
-                    bindingResult.rejectValue("contract", "contract_service.exists");
                     bindingResult.rejectValue("serviceInclude", "contract_service.exists");
                 }
             } else {
                 //update
                 if (!contractDetailDto.getId().equals(contractDetail.getId())) {
-                    bindingResult.rejectValue("contract", "contract_service.exists");
                     bindingResult.rejectValue("serviceInclude", "contract_service.exists");
                 }
             }

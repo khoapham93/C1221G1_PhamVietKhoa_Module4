@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/commons/layout :: head">
+</head>
+<style th:replace="/commons/layout :: style-3dots-table">
+</style>
+<body>
+<header th:replace="/commons/layout :: header_nav"></header>
+<div class="main-wrapper ">
+    <div class="container">
+        <div class="row ">
+            <div class="section-title">
+                <p class="mt-3">Searching contract </p>
+                <form class="form-inline my-lg-0" th:action="@{/contracts/list}">
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control mr-sm-2" type="search" placeholder="fromDate" aria-label="Search"
+                                   th:name="fromDate"
+                                   th:value="${fromDateVal}">
+                        </div>
+                        <div class="col">
+                            <input class="form-control mr-sm-2" type="search" placeholder="toDate" aria-label="Search"
+                                   th:name="toDate"
+                                   th:value="${toDateVal}">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <table class="table table-borderless table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+                    <th scope="col">Deposit</th>
+                    <th scope="col">Total</th>
+                    <th scope="col" class="col-3">Attach</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="row,rowStat : ${contractAndDetail}" class="">
+                    <td th:text=" ${(contractAndDetail.number *contractAndDetail.getSize()) + rowStat.count}"></td>
+                    <td th:text="${row.nameFacility}"></td>
+                    <td th:text="${row.nameCustomer}"></td>
+                    <td th:text="${row.startDate}"></td>
+                    <td th:text="${row.endDate}"></td>
+                    <td th:text="${row.deposit}"></td>
+                    <td th:text="${#numbers.formatDecimal(row.total, 0, 'COMMA', 0, 'POINT')}"></td>
+                    <td th:text="${row.nameServiceInclude}"></td>
+                    <td>
+                        <div class="dropout">
+                            <button class="more">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a th:href="@{/contract-details/{id}/create(id=${row.contractId})}"
+                                       class="btn btn-success w-100">
+                                        Add Attach
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a th:href="@{/contracts/{id}/edit(id=${row.contractId})}"
+                                       class="btn btn-warning w-100">
+                                        Edit
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deleteModal"
+                                            th:attr="onclick=|deleteContract(${row.contractId})|"
+                                    >
+                                        Delete
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <a th:href="@{/contracts/{id}/view(id=${row.contractId})}"
+                                       class="btn btn-info w-100">
+                                        Details
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        paging-->
+        <nav class="d-flex justify-content-center py-3">
+            <ul class="pagination">
+                <li th:if="${contractAndDetail.hasPrevious()}" class="page-item active px-1">
+                    <a th:href="@{/contracts/list(page=${contractAndDetail.number - 1},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Previous</a>
+                </li>
+                <li th:unless="${contractAndDetail.hasPrevious()}" class="page-item disabled px-1">
+                    <a th:href="@{/contracts/list(page=${contractAndDetail.number - 1},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Previous</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link">
+                        <span th:text="${contractAndDetail.number +1}"></span>
+                        <span>/</span>
+                        <span th:text="${contractAndDetail.totalPages}"></span>
+                    </a>
+                </li>
+                <li th:if="${contractAndDetail.hasNext()}" class="page-item active px-1">
+                    <a th:href="@{/contracts/list(page=${contractAndDetail.number + 1},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Next</a>
+                </li>
+                <li th:unless="${contractAndDetail.hasNext()}" class="page-item disabled px-1">
+                    <a th:href="@{/contracts/list(page=${contractAndDetail.number + 1},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <!--        paging-->
+
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Contract</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete contract
+                    <span class="text-danger font-weight-bold" id="nameDelete"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="mx-auto row">
+                    <form th:action="@{/contracts/delete}" method="post">
+                        <input type="hidden" name="id" id="idDelete">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/commons/layout :: footer"></footer>
+<div th:replace="commons/layout :: scroll-to-top"></div>
+</body>
+<th:block th:replace="/commons/layout :: script"></th:block>
+<th:block th:replace="/commons/layout :: script-3dots"></th:block>
+</html>
+<script>
+    function deleteContract(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = " " + name + "?";
+    }
+</script>
+

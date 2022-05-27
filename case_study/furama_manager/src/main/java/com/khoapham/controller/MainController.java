@@ -1,12 +1,5 @@
 package com.khoapham.controller;
 
-import com.khoapham.service.IAppRoleService;
-import com.khoapham.service.IAppUserService;
-import com.khoapham.service.IUserRoleService;
-import com.khoapham.util.WebUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +14,7 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String loginPage(Model model) {
+    public String loginPage() {
         return "login";
     }
 

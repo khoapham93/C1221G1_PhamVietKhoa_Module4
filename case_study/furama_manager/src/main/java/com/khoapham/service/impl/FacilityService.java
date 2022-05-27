@@ -40,14 +40,12 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public List<Facility> findAll() {
-        return this.iFacilityRepository.findAll();
+        return this.iFacilityRepository.findAllByStatus(true);
     }
 
     @Override
     public void save(Facility facility) {
-
-            facility.setStatus(true);
-
+        facility.setStatus(true);
         this.iFacilityRepository.save(facility);
     }
 

@@ -1,5 +1,6 @@
 package com.khoapham.service.impl;
 
+import com.khoapham.models.employee.Employee;
 import com.khoapham.models.user.AppUser;
 import com.khoapham.models.user.UserRole;
 import com.khoapham.repository.IAppUserReopsitory;
@@ -28,7 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService, IAppUserServi
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        AppUser appUser = this.iAppUserReopsitory.findByUserName(userName);
+        AppUser appUser = this.iAppUserReopsitory.findByUserNameAndEnabled(userName, true);
 
         if (appUser == null) {
             System.out.println("User not found! " + userName);
@@ -56,10 +57,18 @@ public class UserDetailsServiceImpl implements UserDetailsService, IAppUserServi
     }
 
     @Override
-    public void registerNewUserAccount(AppUser appUser) {
-        String encrytePassword = EncrytedPasswordUtils.encrytePassword(appUser.getEncrytedPassword());
+    public void registerNewUserAccount(Employee employee, AppUser appUser) {
+        appUser.setUserName(employee.getEmail());
+        String encrytePassword = EncrytedPasswordUtils.encrytePassword("123");
         appUser.setEncrytedPassword(encrytePassword);
         appUser.setEnabled(true);
+        this.iAppUserReopsitory.save(appUser);
+        employee.setAppUser(appUser);
+    }
+
+    @Override
+    public void remove(AppUser appUser) {
+        appUser.setEnabled(false);
         this.iAppUserReopsitory.save(appUser);
     }
 

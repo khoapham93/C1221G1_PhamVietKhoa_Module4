@@ -1,5 +1,6 @@
 package com.khoapham.service;
 
+import com.khoapham.dto.CustomerHaveBooking;
 import com.khoapham.models.contract.Contract;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,4 +12,5 @@ public interface IContractService extends ICRUDService<Contract> {
 
     Contract findById(Integer id);
 
+    Page<CustomerHaveBooking> findAllContractAndDetail(LocalDate fromDate, LocalDate toDate, Pageable pageable);
 }

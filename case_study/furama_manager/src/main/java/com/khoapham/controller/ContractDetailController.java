@@ -13,10 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -41,32 +39,31 @@ public class ContractDetailController {
         return this.iServiceIncludeService.findAll();
     }
 
-    @GetMapping("/create")
-    public String create(Model model) {
-        model.addAttribute("contractDetailDto", new ContractDetailDto());
+    @GetMapping("/{id}/create")
+    public String create(@PathVariable Integer id, Model model) {
+        ContractDetailDto contractDetailDto = new ContractDetailDto();
+        contractDetailDto.setContract(this.iContractService.findById(id));
+        model.addAttribute("contractDetailDto", contractDetailDto);
         return "/contracts/createContractDetail";
     }
 
     @PostMapping("/save")
     public String save(@ModelAttribute @Validated ContractDetailDto contractDetailDto,
                        BindingResult bindingResult,
-                       Model model) {
-
+                       Model model,
+                       RedirectAttributes redirect) {
         new ContractDetailDto().validate(contractDetailDto, bindingResult);
         this.iContractDetailService.checkExists(contractDetailDto, bindingResult);
         if (bindingResult.hasErrors()) {
-
             model.addAttribute("contractDetailDto", contractDetailDto);
+            return "/contracts/createContractDetail";
         } else {
             ContractDetail contractDetail = new ContractDetail();
             BeanUtils.copyProperties(contractDetailDto, contractDetail);
-
             iContractDetailService.save(contractDetail);
-
-            model.addAttribute("contractDetailDto", new ContractDetailDto());
-            model.addAttribute("success", "Create contractDetail successfully!");
+            redirect.addFlashAttribute("success", "Create contractDetail successfully!");
+            return "redirect:/contracts/list";
         }
-        return "/contracts/createContractDetail";
     }
 
 }

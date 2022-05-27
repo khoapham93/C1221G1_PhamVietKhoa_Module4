@@ -1,6 +1,7 @@
 package com.khoapham.controller;
 
 import com.khoapham.dto.ContractDto;
+import com.khoapham.dto.CustomerHaveBooking;
 import com.khoapham.models.contract.Contract;
 import com.khoapham.models.customer.Customer;
 import com.khoapham.models.employee.Employee;
@@ -19,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -64,6 +66,20 @@ public class ContractController {
         model.addAttribute("fromDateVal", fromDateVal);
         model.addAttribute("toDateVal", toDateVal);
         return "/contracts/list";
+    }
+
+    @GetMapping("/list")
+    public String goListCustomersAndDetail(Model model,
+                                           @RequestParam Optional<LocalDate> fromDate,
+                                           @RequestParam Optional<LocalDate> toDate,
+                                           @PageableDefault(value = 5) Pageable pageable) {
+        LocalDate fromDateVal = fromDate.orElse(null);
+        LocalDate toDateVal = toDate.orElse(null);
+        Page<CustomerHaveBooking> contractAndDetail = this.iContractService.findAllContractAndDetail(fromDateVal,toDateVal,pageable);
+        model.addAttribute("fromDateVal", fromDateVal);
+        model.addAttribute("toDateVal", toDateVal);
+        model.addAttribute("contractAndDetail", contractAndDetail);
+        return "/contracts/listAndDetail";
     }
 
     @GetMapping("/create")
