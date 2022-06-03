@@ -1,6 +1,7 @@
 package com.khoapham.controller;
 
 import com.khoapham.dto.EmployeeDto;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.employee.AcademicLevel;
 import com.khoapham.models.employee.Department;
 import com.khoapham.models.employee.Employee;
@@ -18,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -100,7 +102,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(@PathVariable int id, Model model) {
+    public String edit(@PathVariable int id, Model model) throws ObjectNotFound {
 
         Employee employee = this.iEmployeeService.findById(id);
         EmployeeDto employeeDto = new EmployeeDto();
@@ -133,18 +135,22 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}/view")
-    public String view(@PathVariable int id, Model model) {
+    public String view(@PathVariable int id, Model model) throws ObjectNotFound {
         Employee employee = this.iEmployeeService.findById(id);
         model.addAttribute("employee", employee);
         return "/employees/detail";
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam Integer id, RedirectAttributes redirect) {
+    public String delete(@RequestParam Integer id, RedirectAttributes redirect) throws ObjectNotFound {
         Employee employee = this.iEmployeeService.findById(id);
         this.iEmployeeService.remove(employee);
         redirect.addFlashAttribute("success", "Removed employee successfully!");
         return "redirect:/employees/";
     }
 
+    @ExceptionHandler(ObjectNotFound.class)
+    public ModelAndView showNotFoundPage() {
+        return new ModelAndView("notFound");
+    }
 }

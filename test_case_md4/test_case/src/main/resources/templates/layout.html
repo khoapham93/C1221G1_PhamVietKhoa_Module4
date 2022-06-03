@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
+    <meta name="author" content="themefisher.com">
+
+    <title>TestCase| Module 4</title>
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" th:href="@{/plugins/bootstrap/css/bootstrap.min.css}">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" th:href="@{/plugins/themify/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/plugins/fontawesome/css/all.css}">
+    <link rel="stylesheet" th:href="@{/plugins/magnific-popup/dist/magnific-popup.css}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<style th:fragment="style-3dots-table">
+    .more {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+
+    .more span {
+        display: block;
+        width: .25rem;
+        height: .25rem;
+        background: #363636;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .more span:not(:last-child) {
+        margin-bottom: .125rem;
+    }
+
+    .dropout {
+        z-index: 9001;
+        width: fit-content;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dropout ul {
+        position: absolute;
+        top: -1.1rem;
+        right: 1.5rem;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.12s ease;
+    }
+
+    .dropout.active ul {
+        padding: 5px;
+        background-color: white;
+        transform: scaleX(1);
+        border-radius: 5px;
+        min-width: 150px;
+    }
+
+    .dropout.active li {
+        padding: 5px;
+    }
+</style>
+<body>
+<!-- Header Start -->
+
+<header th:fragment="header_nav" class="navigation">
+    <div class="header-top ">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-2 col-md-4">
+                    <div class="header-top-socials text-center text-lg-left text-md-left">
+                        <a href="https://www.facebook.com/themefisher" target="_blank"><i class="ti-facebook"></i></a>
+                        <a href="https://twitter.com/themefisher" target="_blank"><i class="ti-twitter"></i></a>
+                        <a href="https://github.com/themefisher/" target="_blank"><i class="ti-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg  py-4" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">
+                Test Case|<span>MD4</span>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+                    aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Create new order</a>
+                    </li>
+                </ul>
+                <form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
+                    <a th:if="${#request.userPrincipal}" href="#" class="btn btn-solid-border btn-round-full">Sign out</a>
+                    <a th:unless="${#request.userPrincipal}" href="#" class="btn btn-solid-border btn-round-full">Sign In</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Header Close -->
+
+<!-- footer Start -->
+<footer th:fragment="footer" class="footer section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Test Case MD4</h4>
+
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Somethings</h4>
+                    <ul class="list-unstyled footer-menu lh-35">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="widget">
+                    <h4 class="text-capitalize mb-4">Subscribe Us</h4>
+                    <p>Subscribe to get latest news article and resources </p>
+
+                    <form action="#" class="sub-form">
+                        <input type="text" class="form-control mb-3" placeholder="Subscribe Now ...">
+                        <a href="#" class="btn btn-main btn-small">subscribe</a>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3 ml-auto col-sm-6">
+                <div class="widget">
+                    <div class="logo mb-4">
+                        <h3>Code<span>Gym</span></h3>
+                    </div>
+                    <h6><a href="tel:+23-345-67890">Support@megakit.com</a></h6>
+                    <a href="mailto:support@gmail.com"><span class="text-color h4">+23-456-6588</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-btm pt-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        &copy; Copyright Reserved to <span class="text-color">Megakit.</span> by <a href="https://themefisher.com/"
+                                                                                                    target="_blank">Themefisher</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-left text-lg-right">
+                    <ul class="list-inline footer-socials">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="ti-facebook mr-2"></i>Facebook</a>
+                        </li>
+                        <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="ti-twitter mr-2"></i>Twitter</a></li>
+                        <li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i
+                                class="ti-linkedin mr-2 "></i>Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<th:block th:fragment="script">
+    <!-- Main jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Bootstrap 4.3.1 -->
+    <script th:src="@{/plugins/bootstrap/js/popper.js}"></script>
+    <script th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script>
+</th:block>
+<th:block th:fragment="script-3dots">
+    <script>
+        document.querySelector('table').onclick = ({
+                                                       target
+                                                   }) => {
+            if (!target.classList.contains('more')) return
+            document.querySelectorAll('.dropout.active').forEach(
+                (d) => d !== target.parentElement && d.classList.remove('active')
+            )
+            target.parentElement.classList.toggle('active')
+        }
+    </script>
+</th:block>
+</html>
+

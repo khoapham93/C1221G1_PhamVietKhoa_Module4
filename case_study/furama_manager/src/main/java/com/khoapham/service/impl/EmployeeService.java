@@ -1,14 +1,12 @@
 package com.khoapham.service.impl;
 
 import com.khoapham.dto.EmployeeDto;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.employee.Employee;
 import com.khoapham.models.user.AppRole;
 import com.khoapham.models.user.AppUser;
 import com.khoapham.repository.IEmployeeRepository;
-import com.khoapham.service.IAppRoleService;
-import com.khoapham.service.IAppUserService;
-import com.khoapham.service.IEmployeeService;
-import com.khoapham.service.IUserRoleService;
+import com.khoapham.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +17,8 @@ import java.util.List;
 
 @Service
 public class EmployeeService implements IEmployeeService {
+    @Autowired
+    private IEmailService iEmailService;
     @Autowired
     private IAppUserService iAppUserService;
     @Autowired
@@ -38,8 +38,14 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee findById(Integer id) {
-        return this.iEmployeeRepository.findById(id).orElse(null);
+    public Employee findById(Integer id) throws ObjectNotFound {
+
+        Employee employee = this.iEmployeeRepository.findById(id).orElse(null);
+        if (employee == null) {
+            throw new ObjectNotFound();
+        } else {
+            return employee;
+        }
     }
 
     @Override
@@ -96,16 +102,23 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void save(Employee employee) {
-        if (employee.getId() == null){
+        if (employee.getId() == null) {
             AppUser appUser = new AppUser();
             AppRole roleUser = this.iAppRoleService.findById(2);
             AppRole roleAdmin = this.iAppRoleService.findById(1);
-
             //Create new acount and
             this.iAppUserService.registerNewUserAccount(employee, appUser);
             //create Role
             this.iUserRoleService.setUserRoleForNewUser(employee, roleUser, roleAdmin, appUser);
             employee.setAppUser(appUser);
+
+            //sending email
+            String contentEmail = "Hi " + employee.getName() + "\n" +
+                    "Welcome to our company\n " +
+                    "Your account is:\n" +
+                    "Username: " + appUser.getUserName() + "\n" +
+                    "Password: 123";
+            iEmailService.sendSimpleMessage(employee.getEmail(), "Your Account at Furama", contentEmail);
         }
 
         employee.setStatus(true);

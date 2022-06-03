@@ -1,6 +1,8 @@
 package com.khoapham.service.impl;
 
 import com.khoapham.dto.CustomerHaveBooking;
+import com.khoapham.dto.ServiceAttachInContract;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.contract.Contract;
 import com.khoapham.repository.IContractRepository;
 import com.khoapham.service.IContractService;
@@ -31,8 +33,13 @@ public class ContractService implements IContractService {
     }
 
     @Override
-    public Contract findById(Integer id) {
-        return this.iContractRepository.findById(id).orElse(null);
+    public Contract findById(Integer id) throws ObjectNotFound {
+        Contract contract = this.iContractRepository.findById(id).orElse(null);
+        if (contract == null) {
+            throw new ObjectNotFound();
+        } else {
+            return contract;
+        }
     }
 
     @Override
@@ -52,12 +59,17 @@ public class ContractService implements IContractService {
             startBegin = fromDate.toString();
             startEnd = LocalDate.now().plusYears(1).toString();
             end = LocalDate.now().plusYears(1).toString();
-        }else {
+        } else {
             startEnd = toDate.toString();
             end = toDate.toString();
         }
 
         return this.iContractRepository.findAllContractAndDetail(startBegin, startEnd, endBegin, end, pageable);
+    }
+
+    @Override
+    public List<ServiceAttachInContract> findDetailByContractId(Integer id) {
+        return this.iContractRepository.findDetailByContract(id);
     }
 
     @Override

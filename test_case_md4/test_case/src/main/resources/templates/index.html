@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+</head>
+<style th:replace="layout :: style-3dots-table">
+</style>
+<body>
+<header th:replace="layout :: header_nav"></header>
+<div class="main-wrapper ">
+    <div class="container">
+        <div class="row ">
+            <div class="section-title">
+                <p class="mt-3">Order list</p>
+                <form class="form-inline my-lg-0" th:action="@{/}" th:object="${dateRangeDto}">
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control mr-sm-2" type="date" aria-label="Search"
+                                   th:field="*{fromDate}">
+                        </div>
+                        <div class="col">
+                            <input class="form-control mr-sm-2" type="date" aria-label="Search"
+                                   th:field="*{toDate}">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">check</button>
+                        </div>
+                    </div>
+                    <div class="row col-12">
+                        <small Class="text-danger" th:if="${#fields.hasErrors('toDate')}"
+                               th:text="${#fields.errors('toDate').get(0)}"></small>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12">
+                <div class="section-title">
+                    <form class="form-inline my-lg-0" th:action="@{/}">
+                        <div class="row">
+                            <input type="hidden" name="top" value="desc">
+                            <div class="px-1">
+                                Top
+                            </div>
+                            <div class="px-1">
+                                <select name="pageSize" class="form-control">
+                                    <option value="1" th:selected="${1==pageSize}">1</option>
+                                    <option value="3" th:selected="${3==pageSize}">3</option>
+                                    <option value="5" th:selected="${5==pageSize}">5</option>
+                                    <option value="10" th:selected="${10==pageSize}">10</option>
+                                </select>
+                            </div>
+                            <div class="px-1">
+                                Orders have highest total
+                            </div>
+                            <div class="px-1">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row col-12">
+                <p class="message text-success" th:text="${success}"></p>
+            </div>
+            <table class="table table-borderless table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Order code</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Price (USD)</th>
+                    <th scope="col">ProductType</th>
+                    <th scope="col">Date buy</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total (USD)</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="row,rowStat : ${orders}" class="">
+                    <td th:text=" ${(orders.number *orders.getSize()) + rowStat.count}"></td>
+                    <td th:text="${row.id}"></td>
+                    <td th:text="${row.product.name}"></td>
+                    <td th:text="${row.product.price}"></td>
+                    <td th:text="${row.product.productType.name}"></td>
+                    <td th:text="${row.dateBuy}"></td>
+                    <td th:text="${row.quantity}"></td>
+                    <td th:text="${row.quantity * row.product.price}"></td>
+                    <td>
+                        <div class="dropout">
+                            <button class="more">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a th:href="@{/{id}/edit(id=${row.getId()})}"
+                                       class="btn btn-success w-100">
+                                        Detail
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a th:href="@{/{id}/edit(id=${row.getId()})}"
+                                       class="btn btn-warning w-100">
+                                        Edit
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        paging-->
+        <nav class="d-flex justify-content-center py-3">
+            <ul class="pagination">
+                <li th:if="${orders.hasPrevious()}" class="page-item active px-1">
+                    <a th:href="@{/(page=${orders.number - 1},
+                                    top=${topVal},
+                                    pageSize= ${pageSize},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Previous</a>
+                </li>
+                <li th:unless="${orders.hasPrevious()}" class="page-item disabled px-1">
+                    <a th:href="@{/(page=${orders.number - 1},
+                                    top=${topVal},
+                                    pageSize= ${pageSize},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Previous</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link">
+                        <span th:text="${orders.number +1}"></span>
+                        <span>/</span>
+                        <span th:text="${orders.totalPages}"></span>
+                    </a>
+                </li>
+
+                <li th:if="${orders.hasNext()}" class="page-item active px-1">
+                    <a th:href="@{/(page=${orders.number + 1},
+                                    top=${topVal},
+                                    pageSize= ${pageSize},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Next</a>
+                </li>
+                <li th:unless="${orders.hasNext()}" class="page-item disabled px-1">
+                    <a th:href="@{/(page=${orders.number + 1},
+                                   top=${topVal},
+                                   pageSize= ${pageSize},
+                                    fromDate=${fromDateVal},
+                                    toDate=${toDateVal})}" class="page-link">Next</a>
+                </li>
+            </ul>
+        </nav>
+        <!--        paging-->
+    </div>
+</div>
+<footer th:replace="layout :: footer"></footer>
+</body>
+<th:block th:replace="layout :: script"></th:block>
+<th:block th:replace="layout :: script-3dots"></th:block>
+</html>
+
+

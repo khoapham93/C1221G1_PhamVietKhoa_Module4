@@ -1,6 +1,7 @@
 package com.khoapham.controller;
 
 import com.khoapham.dto.FacilityDto;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.facility.Facility;
 import com.khoapham.models.facility.FacilityType;
 import com.khoapham.models.facility.RentType;
@@ -17,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
@@ -80,5 +82,10 @@ public class FacilityController {
             model.addAttribute("success", "Create facility successfully!");
         }
         return "/facilities/create";
+    }
+
+    @ExceptionHandler(ObjectNotFound.class)
+    public ModelAndView showNotFoundPage() {
+        return new ModelAndView("notFound");
     }
 }

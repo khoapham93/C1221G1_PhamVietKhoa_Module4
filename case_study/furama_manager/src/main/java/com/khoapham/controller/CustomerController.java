@@ -2,8 +2,10 @@ package com.khoapham.controller;
 
 import com.khoapham.dto.CustomerDto;
 import com.khoapham.dto.CustomerHaveBooking;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.customer.Customer;
 import com.khoapham.models.customer.CustomerType;
+import com.khoapham.models.employee.Employee;
 import com.khoapham.service.ICustomerService;
 import com.khoapham.service.ICustomerTypeService;
 import org.springframework.beans.BeanUtils;
@@ -16,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -78,7 +81,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(@PathVariable int id, Model model) {
+    public String edit(@PathVariable int id, Model model) throws ObjectNotFound {
 
         Customer customer = this.iCustomerService.findById(id);
         CustomerDto customerDto = new CustomerDto();
@@ -109,7 +112,7 @@ public class CustomerController {
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam Integer id, RedirectAttributes redirect) {
+    public String delete(@RequestParam Integer id, RedirectAttributes redirect) throws ObjectNotFound {
         Customer customer = this.iCustomerService.findById(id);
         this.iCustomerService.remove(customer);
         redirect.addFlashAttribute("success", "Removed customer successfully!");
@@ -121,5 +124,17 @@ public class CustomerController {
         Page<CustomerHaveBooking> customerHaveBookings = this.iCustomerService.findAllCustomerHaveBooking(pageable);
         model.addAttribute("customerHaveBookings", customerHaveBookings);
         return "/customers/listCustomerHaveBooking";
+    }
+    @GetMapping("/{id}/view")
+    public String view(@PathVariable int id, Model model) throws ObjectNotFound {
+        Customer customer = this.iCustomerService.findById(id);
+        model.addAttribute("customer", customer);
+        return "/customers/detail";
+    }
+
+
+    @ExceptionHandler(ObjectNotFound.class)
+    public ModelAndView showNotFoundPage() {
+        return new ModelAndView("notFound");
     }
 }

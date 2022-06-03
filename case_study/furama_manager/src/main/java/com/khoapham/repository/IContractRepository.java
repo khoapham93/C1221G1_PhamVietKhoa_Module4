@@ -1,6 +1,7 @@
 package com.khoapham.repository;
 
 import com.khoapham.dto.CustomerHaveBooking;
+import com.khoapham.dto.ServiceAttachInContract;
 import com.khoapham.models.contract.Contract;
 import com.khoapham.models.customer.Customer;
 import org.springframework.data.domain.Page;
@@ -57,4 +58,15 @@ public interface IContractRepository extends JpaRepository<Contract, Integer> {
                                                        @Param("endBegin") String endBegin,
                                                        @Param("end") String end,
                                                        Pageable pageable);
+
+    @Query(value = "SELECT si.name serviceIncludeName,\n" +
+            "       si.unit serviceIncludeUnit,\n" +
+            "       si.detail serviceIncludeDetail,\n" +
+            "       cd.quantity quantity,\n" +
+            "       (cd.quantity * si.price) total\n" +
+            "FROM contract_detail cd\n" +
+            "         INNER JOIN service_include si ON cd.service_include_id = si.id\n" +
+            "WHERE cd.contract_id = :id",
+            nativeQuery = true)
+    List<ServiceAttachInContract> findDetailByContract(@Param("id") Integer id);
 }

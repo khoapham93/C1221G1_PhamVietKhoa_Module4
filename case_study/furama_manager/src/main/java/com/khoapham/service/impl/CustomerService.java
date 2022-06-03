@@ -1,6 +1,7 @@
 package com.khoapham.service.impl;
 
 import com.khoapham.dto.CustomerDto;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.customer.Customer;
 import com.khoapham.dto.CustomerHaveBooking;
 import com.khoapham.repository.ICustomerRepository;
@@ -28,8 +29,13 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer findById(Integer id) {
-        return this.iCustomerRepository.findById(id).orElse(null);
+    public Customer findById(Integer id) throws ObjectNotFound {
+        Customer customer = this.iCustomerRepository.findById(id).orElse(null);
+        if (customer == null) {
+            throw new ObjectNotFound();
+        } else {
+            return customer;
+        }
     }
 
     @Override

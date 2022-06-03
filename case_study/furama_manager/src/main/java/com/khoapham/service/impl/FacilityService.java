@@ -1,6 +1,7 @@
 package com.khoapham.service.impl;
 
 import com.khoapham.dto.FacilityDto;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.facility.Facility;
 import com.khoapham.repository.IFacilityRepository;
 import com.khoapham.service.IFacilityService;
@@ -29,8 +30,13 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
-    public Facility findById(Integer id) {
-        return this.iFacilityRepository.findById(id).orElse(null);
+    public Facility findById(Integer id) throws ObjectNotFound {
+        Facility facility = this.iFacilityRepository.findById(id).orElse(null);
+        if (facility == null){
+            throw new ObjectNotFound();
+        }else {
+            return facility;
+        }
     }
 
     @Override

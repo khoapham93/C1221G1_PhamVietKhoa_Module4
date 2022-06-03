@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<header th:replace="/layout :: header_nav"></header>
+
+<div class="row py-5">
+    <div class="col-4 mx-auto">
+        <h3 class="text-center"> Update for oder has code <span th:text="${ordersDto.id}"></span></h3>
+        <div class="container mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg py-4">
+            <form th:action="@{/update}" th:object="${ordersDto}"
+                  method="POST" novalidate="novalidate">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="form-group py-1">
+                    <label>Product Type</label>
+                    <select th:field="*{product.productType}"
+                            class="form-control"
+                            id="productType"
+                            onchange="getProductType()">
+                        <option th:each="row :${productTypes}"
+                                th:value="${row.id}"
+                                th:text="${row.name}">
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group py-1">
+                    <label>Product</label>
+                    <select th:field="*{product}"
+                            class="form-control"
+                            id="product">
+                    </select>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('product')}"
+                           th:text="${#fields.errors('product').get(0)}"></small>
+                </div>
+                <div class="form-group py-1">
+                    <label>Date buy</label>
+                    <input class="form-control" type="date" th:field="*{dateBuy}" th:value="*{dateBuy}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('dateBuy')}"
+                           th:text="${#fields.errors('dateBuy').get(0)}"></small>
+                </div>
+                <div class="form-group py-1">
+                    <label>Quantity</label>
+                    <input class="form-control" type="text" step="any" th:field="*{quantity}" th:value="*{quantity}"/>
+                    <small Class="text-danger" th:if="${#fields.hasErrors('quantity')}"
+                           th:text="${#fields.errors('quantity').get(0)}"></small>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mx-auto">
+                        <a type="button" href="/" class="btn btn-warning btn-block">Cancel</a>
+                    </div>
+                    <div class="col-sm-6 mx-auto">
+                        <button type="submit" class="btn btn-success btn-block">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/layout :: footer"></footer>
+</body>
+<th:block th:replace="/layout :: script"></th:block>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+</html>
+<script>
+    getProductType();
+
+    function getProductType() {
+        let selected = $("#productType").val();
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET", //GET, DELETE, PUT...
+            url: "http://localhost:8080/order-res/" + selected,
+            success: function (products) {
+                console.log(products);
+                let outHTML = "";
+                for (let productObj of products) {
+                    outHTML += `<option value="${productObj.id}">${productObj.name}</option>`;
+                }
+                console.log(outHTML);
+                $("#product").html(outHTML);
+            },
+            error: function (resultError) {
+                console.log(resultError);
+                $("#product").html("Not found!");
+            }
+        });
+    }
+
+</script>

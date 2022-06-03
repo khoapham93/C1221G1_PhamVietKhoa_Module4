@@ -24,9 +24,7 @@ public class ContractDetailService implements IContractDetailService {
 
     @Override
     public void save(ContractDetail contractDetail) {
-
-            contractDetail.setStatus(true);
-
+        contractDetail.setStatus(true);
         this.iContractDetailRepository.save(contractDetail);
     }
 

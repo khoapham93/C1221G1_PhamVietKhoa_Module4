@@ -1,6 +1,7 @@
 package com.khoapham.controller;
 
 import com.khoapham.dto.ContractDetailDto;
+import com.khoapham.exception.ObjectNotFound;
 import com.khoapham.models.contract.Contract;
 import com.khoapham.models.contract.ContractDetail;
 import com.khoapham.models.contract.ServiceInclude;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -40,7 +42,7 @@ public class ContractDetailController {
     }
 
     @GetMapping("/{id}/create")
-    public String create(@PathVariable Integer id, Model model) {
+    public String create(@PathVariable Integer id, Model model) throws ObjectNotFound {
         ContractDetailDto contractDetailDto = new ContractDetailDto();
         contractDetailDto.setContract(this.iContractService.findById(id));
         model.addAttribute("contractDetailDto", contractDetailDto);
@@ -66,4 +68,8 @@ public class ContractDetailController {
         }
     }
 
+    @ExceptionHandler(ObjectNotFound.class)
+    public ModelAndView showNotFoundPage() {
+        return new ModelAndView("notFound");
+    }
 }

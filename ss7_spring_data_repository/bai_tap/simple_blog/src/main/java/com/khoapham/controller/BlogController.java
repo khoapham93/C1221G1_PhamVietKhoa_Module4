@@ -2,20 +2,17 @@ package com.khoapham.controller;
 
 import com.khoapham.model.Blog;
 import com.khoapham.service.IBlogService;
-
 import com.khoapham.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -49,7 +46,7 @@ public class BlogController {
             }
         }
 
-        Page<Blog> productList = iBlogService.search(keywordVal, pageable);
+            Page<Blog> productList = iBlogService.search(keywordVal, pageable);
 
         model.addAttribute("blogs", productList);
         model.addAttribute("keywordVal", keywordVal);
