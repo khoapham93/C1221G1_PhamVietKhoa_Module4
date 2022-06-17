@@ -1,5 +1,6 @@
 package com.khoapham.models.customer;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.khoapham.models.Person;
 import com.khoapham.models.contract.Contract;
 
@@ -16,6 +17,7 @@ public class Customer extends Person {
     @Column(columnDefinition = "BIT")
     private Integer gender;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customer")
     private Set<Contract> contractSet ;
 

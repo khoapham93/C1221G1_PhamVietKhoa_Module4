@@ -1,5 +1,7 @@
 package com.khoapham.models.customer;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,6 +12,8 @@ public class CustomerType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String type;
+
+    @JsonBackReference
     @OneToMany(mappedBy = "customerType")
     private Set<Customer> customerSet;
 

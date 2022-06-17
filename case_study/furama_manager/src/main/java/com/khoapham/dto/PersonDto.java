@@ -1,5 +1,6 @@
 package com.khoapham.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.khoapham.util.Validation;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 public abstract class PersonDto implements Validator {
     private Integer id;
     private String name;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private LocalDate birthday;
     private String idCard;
     private String phone;
