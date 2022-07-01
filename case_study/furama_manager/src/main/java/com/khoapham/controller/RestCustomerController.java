@@ -46,7 +46,7 @@ public class RestCustomerController {
         Integer customerTypeVal = customerType.orElse(-1);
         Pageable pageable = PageRequest.of(page, size);
         Page<Customer> customers = this.iCustomerService.findAll(nameVal, phoneVal, customerTypeVal, pageable);
-        return new ResponseEntity<>(customers, HttpStatus.OK);
+            return new ResponseEntity<>(customers, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
